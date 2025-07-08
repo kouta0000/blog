@@ -37,7 +37,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
                 width={900}
                 sizes="(max-width: 900px) 400px, 900px"
                 alt={post.title}
-                aspectRatio="16:9"
+                aspectRatio="1:1"
                 loading="lazy"
                 decoding="async"
               />
@@ -54,7 +54,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
               width={900}
               sizes="(max-width: 900px) 400px, 900px"
               alt={post.title}
-              aspectRatio="16:9"
+              aspectRatio="1:1"
               loading="lazy"
               decoding="async"
             />
@@ -62,7 +62,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
         </div>
       ))
   }
-  <div class="mt-2">
+  
     <header>
       <div class="mb-1">
         <span class="text-sm">
@@ -105,7 +105,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
         }
       </h2>
     </header>
-
+ <div class="mt-1">
     {post.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-lg">{post.excerpt}</p>}
     {
       post.tags && Array.isArray(post.tags) ? (
