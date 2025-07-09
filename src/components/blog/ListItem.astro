@@ -15,7 +15,7 @@ export interface Props {
   post: Post;
 }
 
-const { post } = Astro.props;
+const { post }:Props = Astro.props;
 const image = (await findImage(post.image)) as ImageMetadata | undefined;
 
 const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
@@ -27,15 +27,15 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
   {
     image &&
       (link ? (
-        <a class="relative block group" href={link ?? 'javascript:void(0)'}>
+        <a class="relative block group row-span-2" href={link ?? 'javascript:void(0)'}>
           <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg">
             {image && (
               <Image
                 src={image}
                 class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
-                widths={[400, 900]}
-                width={900}
-                sizes="(max-width: 900px) 400px, 900px"
+                widths={[500, 600]}
+                width={600}
+                sizes="(max-width: 600px) 500px, 600px"
                 alt={post.title}
                 aspectRatio="1:1"
                 loading="lazy"
@@ -50,9 +50,9 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
             <Image
               src={image}
               class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
-              widths={[400, 900]}
-              width={900}
-              sizes="(max-width: 900px) 400px, 900px"
+              widths={[500, 600]}
+              width={600}
+              sizes="(max-width: 600px) 500px, 600px"
               alt={post.title}
               aspectRatio="1:1"
               loading="lazy"
@@ -63,8 +63,8 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
       ))
   }
   
-    <header>
-      <div class="mb-1">
+    <header class="row-span-2 md:row-span-1 flex justify-center items-center">
+      <div class="mb-1 hidden sm:block">
         <span class="text-xs sm:text-sm">
           <Icon name="tabler:clock" class="w-3 h-3 inline-block -mt-0.5 dark:text-gray-400" />
           <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
@@ -90,7 +90,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
           }
         </span>
       </div>
-      <h2 class="text-md sm:text-2xl font-bold leading-tight mb-2 font-heading dark:text-slate-300">
+      <h2 class="text-md sm:text-2xl font-semibold leading-tight mb-2 font-heading dark:text-slate-300 text-justify">
         {
           link ? (
             <a
@@ -105,7 +105,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
         }
       </h2>
     </header>
- <div class="mt-1 col-span-2">
+ <div class="mt-1 col-span-2 sm:col-span-1">
     {post.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-sm sm:text-lg">{post.excerpt}</p>}
     {
       post.tags && Array.isArray(post.tags) ? (
