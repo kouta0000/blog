@@ -22,7 +22,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
 ---
 
 <article
-  class={`max-w-md mx-auto md:max-w-none grid grid-cols-2 gap-6 md:gap-8 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ${image ? 'md:grid-cols-2' : ''}`}
+  class={`bg-white/50 overflow-hidden rounded-3xl p-5  max-w-md mx-auto md:max-w-none grid grid-cols-3 gap-3 md:gap-8 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ${image ? 'md:grid-cols-2' : ''}`}
 >
   {
     image &&
@@ -63,7 +63,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
       ))
   }
   
-    <header class="row-span-2 flex flex-col justify-center items-center md:row-span-1">
+    <header class="row-span-2 col-span-2 md:col-span-1 flex flex-col justify-center items-center md:row-span-1">
       <div class="mb-1 hidden sm:block">
         <span class="text-xs sm:text-sm">
           <Icon name="tabler:clock" class="w-3 h-3 inline-block -mt-0.5 dark:text-gray-400" />
@@ -90,7 +90,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
           }
         </span>
       </div>
-      <h2 class="text-center text-sm sm:text-xl font-semibold leading-tight mb-2 font-heading dark:text-slate-300">
+      <h2 class="text-start md:text-center text-sm sm:text-xl font-semibold leading-tight mb-2 font-heading dark:text-slate-300">
         {
           link ? (
             <a
@@ -105,11 +105,11 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
         }
       </h2>
     </header>
- <div class="text-center mt-1 col-span-2 sm:col-span-1">
-    {post.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-xs sm:text-lg">{post.excerpt}</p>}
+ <div class="text-start md:text-center mt-1 col-span-3 sm:col-span-1">
+    {post.excerpt && <p class="hidden md:block flex-grow text-muted dark:text-slate-400 text-xs sm:text-sm">{post.excerpt}</p>}
     {
       post.tags && Array.isArray(post.tags) ? (
-        <footer class="mt-5">
+        <footer class="md:mt-5">
           <PostTags tags={post.tags} />
         </footer>
       ) : (

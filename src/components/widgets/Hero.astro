@@ -16,84 +16,39 @@ const {
   id,
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+
 ---
 
-<section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
-  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-    <slot name="bg">
-      {bg ? <Fragment set:html={bg} /> : null}
-    </slot>
+<div class="scroll-smooth relative not-prose absolute sticky top-0 -z-1 bg-[url(~/assets/images/forest.jpg)] w-full h-screen bg-[size:300px_auto] bg-repeat" {...id ? { id } : {}}>
+  <div id="scrollButton" class="absolute inset-0 bg-white/70 flex flex-col items-center justify-center p-20 gap-20">
+    <h1 class="text-3xl text-gray-600 font-heading font-bold text-center">
+      Kota Koizumiのブログ
+    </h1>
+  <div  class="p-3 rounded-full bg-gray-50 text-teal-600 animate-bounce">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
+    </svg>
+    
   </div>
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="py-12 md:py-20">
-      <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
-        {
-          tagline && (
-            <p
-              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-              set:html={tagline}
-            />
-          )
-        }
-        {
-          title && (
-            <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-              set:html={title}
-            />
-          )
-        }
-        <div class="max-w-3xl mx-auto">
-          {
-            subtitle && (
-              <p
-                class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-                set:html={subtitle}
-              />
-            )
-          }
-          {
-            actions && (
-              <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-                {Array.isArray(actions) ? (
-                  actions.map((action) => (
-                    <div class="flex w-full sm:w-auto">
-                      <Button {...(action || {})} class="w-full sm:mb-0" />
-                    </div>
-                  ))
-                ) : (
-                  <Fragment set:html={actions} />
-                )}
-              </div>
-            )
-          }
-        </div>
-        {content && <Fragment set:html={content} />}
-      </div>
-      <div
-        class="intersect-once intercept-no-queue intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-      >
-        {
-          image && (
-            <div class="relative m-auto max-w-5xl">
-              {typeof image === 'string' ? (
-                <Fragment set:html={image} />
-              ) : (
-                <Image
-                  class="mx-auto rounded-md w-full"
-                  widths={[400, 768, 1024, 2040]}
-                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
-                  loading="eager"
-                  width={1024}
-                  height={576}
-                  {...image}
-                />
-              )}
-            </div>
-          )
-        }
-      </div>
-    </div>
-  </div>
-</section>
+  </div>  
+</div>
+<script>
+  function scrollToNextViewport() {
+    const currentScrollY = window.scrollY; // 現在のスクロール位置
+    const viewportHeight = window.innerHeight; // ビューポートの高さ
+
+    // 次のビューポートの高さの開始位置にスクロール
+    window.scrollTo({
+      top: currentScrollY + viewportHeight,
+      behavior: 'smooth' // スムーズなアニメーションでスクロール
+    });
+  }
+
+  // ボタンにイベントリスナーをアタッチ
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollButton = document.getElementById('scrollButton');
+    if (scrollButton) {
+      scrollButton.addEventListener('click', scrollToNextViewport);
+    }
+  });
+</script>

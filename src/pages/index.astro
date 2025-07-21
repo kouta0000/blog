@@ -11,6 +11,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Timeline from '~/components/ui/Timeline.astro';
 
 const metadata = {
   title: 'Kota — Free template for creating websites with Astro + Tailwind CSS',
@@ -20,16 +21,14 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-
   <Hero
-    image={{ src: '~/assets/images/desert.jpeg', alt: 'AstroWind Hero Image' }}
-  >
-  
-  </Hero>
+  image={{alt: 'AstroWind Hero Image' }}
+>
+</Hero>
 
   <!-- Note Widget ******************* -->
 
-  <Note description="言語、思想、読書記、メモ" />
+  
 
   <!-- Features Widget *************** -->
 
@@ -39,7 +38,5 @@ const metadata = {
     title="最新記事"
   />
 
-  <!-- FAQs Widget ******************* -->
-
-  
+<Timeline />
 </Layout>
