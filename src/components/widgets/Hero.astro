@@ -34,21 +34,19 @@ const {
 </div>
 <script>
   function scrollToNextViewport() {
-    const currentScrollY = window.scrollY; // 現在のスクロール位置
-    const viewportHeight = window.innerHeight; // ビューポートの高さ
+    const currentScrollY = window.scrollY;
+    const viewportHeight = window.innerHeight;
 
-    // 次のビューポートの高さの開始位置にスクロール
     window.scrollTo({
-      top: viewportHeight,
-      behavior: 'smooth' // スムーズなアニメーションでスクロール
+      top: currentScrollY + viewportHeight,
+      behavior: 'smooth'
     });
   }
 
-  // ボタンにイベントリスナーをアタッチ
-  document.addEventListener('DOMContentLoaded', () => {
-    const scrollButton = document.getElementById('scrollButton');
-    if (scrollButton) {
-      scrollButton.addEventListener('click', scrollToNextViewport);
+  document.addEventListener('click', (event) => {
+    // Check if the clicked element, or any of its parents, has the ID 'scrollButton'
+    if (event.target.matches('#scrollButton') || event.target.closest('#scrollButton')) {
+      scrollToNextViewport();
     }
   });
 </script>
