@@ -15,7 +15,7 @@ const {
 
   id,
   isDark = false,
-  classes = {container:"bg-teal-50"},
+  classes = {container:"bg-teal-50 pt-10"},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 ---
@@ -27,7 +27,7 @@ const {
     columns={columns}
     defaultIcon={defaultIcon}
     classes={{
-      container: 'pt-20',
+      container: '',
       title: 'md:text-[1.3rem]',
       icon: 'text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0',
       ...((classes?.items as Record<string, never>) ?? {}),
