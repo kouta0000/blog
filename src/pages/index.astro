@@ -25,18 +25,23 @@ const metadata = {
   image={{alt: 'AstroWind Hero Image' }}
 >
 </Hero>
-
-  <!-- Note Widget ******************* -->
-
-  
-
-  <!-- Features Widget *************** -->
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <BlogLatestPosts
-    title="最新記事"
-  />
-
-<Timeline />
+<BlogLatestPosts title="最近の記事" />
+<Features
+id="features"
+tagline="お知らせ"
+items={[
+  {
+    title: 'ブログ始まる',
+    description:
+      'これから投稿を増やしていきます',
+    icon: 'tabler:brand-tailwind',
+  },
+  {
+    title: '実験です',
+    description:
+      '近況を随時更新',
+    icon: 'tabler:components',
+  },
+]}
+/>
 </Layout>
