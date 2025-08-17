@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
@@ -8,6 +8,7 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import BlogHighlightedPosts from '~/components/widgets/BlogLatestPosts.astro'
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -25,7 +26,8 @@ const metadata = {
   image={{alt: 'AstroWind Hero Image' }}
 >
 </Hero>
-<BlogLatestPosts title="最近の記事" />
+<BlogLatestPosts title="最近の記事" count={8} linkText="一覧へ" classes={{container:"rounded-t-[8em] lg:rounded-t-[10em] bg-white snap-y snap-mandatory overflow-y-scroll"}}/>
+<WidgetWrapper isDark={false} containerClass={'bg-teal-50 pt-20'}>
 <Features
 id="features"
 tagline="お知らせ"
@@ -44,4 +46,32 @@ items={[
   },
 ]}
 />
+</WidgetWrapper>
+<BlogHighlightedPosts title="フランス語　超入門　シリーズ" linkText='一覧へ' classes={{container:"bg-white"}} postIds={['superintro0','a']}/>
+<WidgetWrapper isDark={false} containerClass={'bg-slate-50 pt-20'}>
+<Features2
+id="features"
+tagline="便利グッズ"
+items={[
+  {
+    title: 'フランス語頻度順',
+    description:
+      'コーパスデータをもとに頻度順に単語をまとめています（工事中）',
+    icon: 'tabler:brand-tailwind',
+  },
+  {
+    title: '活用ジェネレータ',
+    description:
+      '動詞活用テスト表を生成する便利サイト（工事中）',
+    icon: 'tabler:components',
+  },
+  {
+    title: 'フランス語オンライン辞書まとめ',
+    description:
+      'フランス語のオンライン辞書は便利なものがたくさんあります。仏仏のみです',
+    icon: 'tabler:components',
+  },
+]}
+/>
+</WidgetWrapper>
 </Layout>

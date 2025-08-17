@@ -20,14 +20,14 @@ export interface Props extends Widget {
 
 const {
   title = await Astro.slots.render('title'),
-  linkText = '一覧へ',
+  linkText = '',
   linkUrl = getBlogPermalink(),
   information = await Astro.slots.render('information'),
   count = 4,
 
   id,
   isDark = false,
-  classes = {container:"rounded-t-[8em] lg:rounded-t-[10em] bg-white snap-y snap-mandatory overflow-y-scroll"},
+  classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
@@ -38,13 +38,12 @@ const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count }) : [];
   APP_BLOG.isEnabled ? (
     <WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container as string} bg={bg}>
       <div class="snap-start">
-      <Note description="言語、思想、読書記、メモ" />
       </div>
-      <div class="flex flex-col lg:justify-between lg:flex-row mb-8">
+      <div class="flex flex-col mb-8">
         {title && (
           <div class="md:max-w-sm pt-7 pb-2">
             <h2
-              class="text-center text-xl font-bold tracking-tight sm:text-xl sm:leading-none group font-heading mb-2"
+              class="text-center h-full text-xl font-bold tracking-tight sm:text-xl sm:leading-none group font-heading mb-2"
               set:html={title}
             />
             {APP_BLOG.list.isEnabled && linkText && linkUrl && (
