@@ -15,19 +15,18 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Timeline from '~/components/ui/Timeline.astro';
 
 const metadata = {
-  title: 'Kota — Free template for creating websites with Astro + Tailwind CSS',
+  title: '狐庵独語',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
   <Hero
   image={{alt: 'AstroWind Hero Image' }}
 >
 </Hero>
 <BlogLatestPosts title="最近の記事" count={8} linkText="一覧へ" classes={{container:"rounded-t-[5em] lg:rounded-t-[8em] bg-white snap-y snap-mandatory overflow-y-scroll"}}/>
-<WidgetWrapper isDark={false} containerClass={'bg-teal-50 pt-20'}>
+<WidgetWrapper isDark={false} containerClass={'bg-teal-50'}>
 <Features
 id="features"
 tagline="お知らせ"
@@ -48,7 +47,7 @@ items={[
 />
 </WidgetWrapper>
 <BlogHighlightedPosts title="フランス語　超入門　シリーズ" linkText='一覧へ' classes={{container:"bg-white"}} postIds={['superintro0','a']}/>
-<WidgetWrapper isDark={false} containerClass={'bg-slate-50 pt-20'}>
+<WidgetWrapper isDark={false} containerClass={'bg-slate-50'}>
 <Features2
 id="features"
 tagline="便利グッズ"

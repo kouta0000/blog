@@ -18,9 +18,9 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
 ---
 
 <article
-  class="bg-teal-100 rounded-2xl p-4 mb-6 transition shadow-md intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+  class="p-4 bg-teal-50 outline-2 outline-offset-0 outline-dashed outline-teal-400 transition intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
 >
-  <div class="relative md:h-64 bg-gray-400 dark:bg-slate-700 rounded shadow-lg mb-6">
+  <div class="relative md:h-40 bg-gray-400 dark:bg-slate-700 rounded shadow-lg mb-6">
     {
       image &&
         (link ? (
@@ -32,7 +32,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
               width={400}
               sizes="(max-width: 900px) 400px, 900px"
               alt={post.title}
-              aspectRatio="1:1"
+              aspectRatio="1:2"
               layout="cover"
               loading="lazy"
               decoding="async"
@@ -46,7 +46,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
             width={400}
             sizes="(max-width: 900px) 400px, 900px"
             alt={post.title}
-            aspectRatio="1:1"
+            aspectRatio="1:2"
             layout="cover"
             loading="lazy"
             decoding="async"
@@ -67,5 +67,5 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
     }
   </h3>
 
-  <p class="hidden md:block text-muted dark:text-slate-400 text-sm">{post.excerpt}</p>
+  <p class="hidden md:block text-muted dark:text-slate-400 text-md text-center">- {post.excerpt}</p>
 </article>

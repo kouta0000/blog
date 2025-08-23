@@ -22,13 +22,13 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
 ---
 
 <article
-  class={`bg-teal-100 overflow-hidden rounded-3xl p-5 max-w-md mx-auto md:max-w-none grid grid-cols-3 gap-3 md:gap-8 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ${image ? 'md:grid-cols-2' : ''}`}
+  class={`overflow-hidden p-6 md:p-12 border-b-2 border-dashed border-teal-300 max-w-md mx-auto md:max-w-none grid grid-cols-3 gap-3 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ${image ? 'md:grid-cols-2' : ''}`}
 >
   {
     image &&
       (link ? (
         <a class="relative block group row-span-2" href={link ?? 'javascript:void(0)'}>
-          <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg">
+          <div class="relative h-0 pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-xl">
             {image && (
               <Image
                 src={image}
@@ -45,7 +45,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
           </div>
         </a>
       ) : (
-        <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg">
+        <div class="relative h-0 pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-xl">
           {image && (
             <Image
               src={image}
@@ -64,7 +64,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
   }
   
     <header class="row-span-2 col-span-2 md:col-span-1 flex flex-col justify-center items-center md:row-span-1">
-      <div class="mb-1 hidden sm:block">
+      <div class="mb-1 block">
         <span class="text-xs sm:text-sm">
           <Icon name="tabler:clock" class="w-3 h-3 inline-block -mt-0.5 dark:text-gray-400" />
           <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
@@ -82,7 +82,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
               <>
                 {' '}
                 ·{' '}
-                <a class="hover:underline" href={getPermalink(post.category.slug, 'category')}>
+                <a class="text-teal-800 underline" href={getPermalink(post.category.slug, 'category')}>
                   {post.category.title}
                 </a>
               </>
@@ -90,7 +90,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
           }
         </span>
       </div>
-      <h2 class="text-start md:text-center text-md sm:text-xl font-semibold leading-tight mb-2 font-heading dark:text-slate-600">
+      <h2 class="text-start md:text-center text-lg sm:text-xl font-semibold leading-tight mb-2 font-heading dark:text-slate-600">
         {
           link ? (
             <a
@@ -104,12 +104,13 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
           )
         }
       </h2>
+      {post.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-sm md:text-md">{post.excerpt}</p>}
     </header>
- <div class="text-start md:text-center mt-1 col-span-3 sm:col-span-1">
-    {post.excerpt && <p class="hidden md:block flex-grow text-muted dark:text-slate-400 text-xs sm:text-sm">{post.excerpt}</p>}
+ <div class="text-start md:text-center mt-1 col-span-3 md:col-span-1">
+    
     {
       post.tags && Array.isArray(post.tags) ? (
-        <footer class="md:mt-5">
+        <footer class="">
           <PostTags tags={post.tags} />
         </footer>
       ) : (

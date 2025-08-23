@@ -10,16 +10,12 @@ export const headerData = {
           href: getBlogPermalink(),
         },
         {
-          text: '最新記事',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+          text: 'フランス語超入門',
+          href: getPermalink('furansu', 'category'),
         },
         {
-          text: 'カテゴリー',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'タグ',
-          href: getPermalink('astro', 'tag'),
+          text: 'このサイトについて',
+          href: getPermalink('about', 'post'),
         },
       ],
     },
@@ -32,8 +28,8 @@ export const footerData = {
    
   ],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: '規約', href: getPermalink('/terms') },
+    { text: 'プライバシーポリシー', href: getPermalink('/privacy') },
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
