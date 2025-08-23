@@ -28,7 +28,6 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'server',
-
   integrations: [tailwind({
     applyBaseStyles: false,
   }), sitemap(), mdx(), icon({
@@ -82,5 +81,7 @@ export default defineConfig({
     },
   },
 
-  adapter: netlify(),
+  adapter: netlify({
+    edgeMiddleware: true
+  }),
 });
