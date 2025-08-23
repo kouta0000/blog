@@ -9,7 +9,6 @@ import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
-import netlify from '@astrojs/netlify'
 import type { AstroIntegration } from 'astro';
 
 
@@ -19,6 +18,8 @@ import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehype
 
 import svelte from '@astrojs/svelte';
 
+import netlify from '@astrojs/netlify';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const hasExternalScripts = false;
@@ -27,7 +28,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'server',
-  adapter:netlify(),
+
   integrations: [tailwind({
     applyBaseStyles: false,
   }), sitemap(), mdx(), icon({
@@ -63,6 +64,7 @@ export default defineConfig({
   }), astrowind({
     config: './src/config.yaml',
   }), svelte()],
+
   image: {
     domains: ['cdn.pixabay.com'],
   },
@@ -79,4 +81,6 @@ export default defineConfig({
       },
     },
   },
+
+  adapter: netlify(),
 });
