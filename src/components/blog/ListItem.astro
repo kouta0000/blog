@@ -46,7 +46,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
           </div>
         </a>
       ) : (
-        <div class="relative h-0 pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-xl">
+        <div class="relative h-0 pb-[56.25%] row-span-2 overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-xl">
           {image && (
             <Image
               src={image}
@@ -107,7 +107,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
       </h2>
       {post.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-sm md:text-md">{post.excerpt}</p>}
     </header>
- <div class="text-start md:text-center mt-1 col-span-3 md:col-span-1">
+ <div class="text-start md:text-center mt-1 col-span-1 md:col-span-1">
     
     {
       post.tags && Array.isArray(post.tags) ? (
