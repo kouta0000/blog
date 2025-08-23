@@ -1,7 +1,7 @@
 ---
 title: "このサイトについて" 
 excerpt: "サイト概要"
-date: 2025-08-10
+pubDate: 2025-08-10
 category: "about"
 tags:
 - about

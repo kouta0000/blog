@@ -22,21 +22,20 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
 ---
 
 <article
-  class={`overflow-hidden rounded-t-3xl bg-teal-100 p-3 md:p-5 border-b-2 border-dashed border-teal-400 max-w-md mx-auto md:max-w-none  intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade`}
+  class={`overflow-hidden p-6  border-b-2 border-dashed border-teal-400 max-w-md mx-auto md:max-w-xl  intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade grid grid-cols-3 gap-3 ${image ? 'md:grid-cols-2' : ''}`}
 >
-<div class={`size-full p-6 bg-white grid grid-cols-3 gap-3 rounded-xl ${image ? 'md:grid-cols-2' : ''}`}>
   {
     image &&
       (link ? (
-        <a class="relative block group row-span-2" href={link ?? 'javascript:void(0)'}>
-          <div class="relative h-0 pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded-3xl shadow-xl">
+        <a class="relative block group row-span-3 " href={link ?? 'javascript:void(0)'}>
+          <div class="relative pb-[56.25%] md:h-20 aspect-square overflow-hidden bg-gray-400 dark:bg-slate-700 rounded-2xl shadow-2xl">
             {image && (
               <Image
                 src={image}
-                class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
-                widths={[500, 600]}
-                width={600}
-                sizes="(max-width: 600px) 500px, 600px"
+                class="absolute inset-0 object-cover w-full h-full mb-6 shadow-xl bg-gray-400 dark:bg-slate-700"
+                widths={[300, 400]}
+                width={400}
+                sizes="(max-width: 400px) 300px, 400px"
                 alt={post.title}
                 aspectRatio="1:1"
                 loading="lazy"
@@ -51,9 +50,9 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
             <Image
               src={image}
               class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
-              widths={[500, 600]}
-              width={600}
-              sizes="(max-width: 600px) 500px, 600px"
+              widths={[300, 400]}
+              width={400}
+              sizes="(max-width: 400px) 300px, 400px"
               alt={post.title}
               aspectRatio="1:1"
               loading="lazy"
@@ -91,7 +90,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
           }
         </span>
       </div>
-      <h2 class="text-start md:text-center text-md sm:text-lg font-semibold leading-tight mb-2 font-heading dark:text-slate-600">
+      <h2 class="text-start md:text-center text-md sm:text-lg md:text-2xl font-semibold leading-tight mb-2 font-heading dark:text-slate-600">
         {
           link ? (
             <a
@@ -107,7 +106,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
       </h2>
       {post.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-xs md:text-md">{post.excerpt}</p>}
     </header>
- <div class="text-start md:text-center mt-1 col-span-3 md:col-span-1">
+ <div class="text-start md:text-center mt-1 col-span-2 md:col-span-1">
     
     {
       post.tags && Array.isArray(post.tags) ? (
@@ -118,6 +117,5 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
         <Fragment />
       )
     }
-  </div>
   </div>
 </article>
