@@ -22,8 +22,9 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
 ---
 
 <article
-  class={`overflow-hidden p-6 md:p-12 border-b-2 border-dashed border-teal-300 max-w-md mx-auto md:max-w-none grid grid-cols-3 gap-3 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ${image ? 'md:grid-cols-2' : ''}`}
+  class={`overflow-hidden rounded-t-3xl bg-teal-100 p-3 md:p-5 border-b-2 border-dashed border-teal-400 max-w-md mx-auto md:max-w-none  intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade`}
 >
+<div class={`size-full p-6 bg-white grid grid-cols-3 gap-3 rounded-xl ${image ? 'md:grid-cols-2' : ''}`}>
   {
     image &&
       (link ? (
@@ -117,5 +118,6 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
         <Fragment />
       )
     }
+  </div>
   </div>
 </article>

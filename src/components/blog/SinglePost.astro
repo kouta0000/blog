@@ -4,6 +4,7 @@ import { Icon } from 'astro-icon/components';
 import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
 import SocialShare from '~/components/common/SocialShare.astro';
+import LikeButton from '~/components/blog/LikeButton.svelte';
 
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
@@ -95,9 +96,12 @@ const { post, url } = Astro.props;
     >
       <slot />
     </div>
-    <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">
+    <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex gap-5 flex-col">
       <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
-      <SocialShare url={url} text={post.title} class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600" />
+    </div>
+    <div class="mx-auto max-w-3xl px-6 mt-4 flex gap-5 items-center">
+      <SocialShare url={url} text={post.title} class="align-middle text-gray-500 dark:text-slate-600 pt-1.5" />
+      <LikeButton slug={post.id} client:load />
     </div>
   </article>
 </section>
