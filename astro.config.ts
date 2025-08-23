@@ -64,7 +64,7 @@ export default defineConfig({
   }), astrowind({
     config: './src/config.yaml',
   }), svelte()],
-
+  actions: true,
   image: {
     domains: ['cdn.pixabay.com'],
   },
