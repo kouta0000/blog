@@ -54,11 +54,11 @@
     }
   </script>
 
-  <div tabindex="0" class="collapse collapse-plus realtive mx-auto w-full md:w-9/10 lg:w-4/5 rounded-xl p-5 bg-slate-100">
-    <div class="collapse-title font-semibold bg-slate-50 rounded-t-xl">
+  <div tabindex="0" class="collapse collapse-plus realtive mx-auto w-full md:w-9/10 lg:w-4/5 rounded-xl p-5 bg-slate-50">
+    <div class="collapse-title font-semibold bg-white rounded-t-xl">
         コメント： {comments.length}
     </div>
-    <div class="collapse-content w-full bg-slate-50 p-2 rounded-b-xl">
+    <div class="collapse-content w-full bg-white p-2 rounded-b-xl">
         {#each comments as comment}
     <div class="chat chat-start">
         <div class="chat-image avatar flex flex-col text-sm mt-10">
@@ -79,7 +79,7 @@
     
   </div>
   
-  <div class="relative mx-auto bg-slate-100 w-full md:w-9/10 lg:w-4/5 p-5 flex flex-col items-center" >
+  <div class="rounded-xl relative mx-auto bg-slate-100 w-full md:w-9/10 lg:w-4/5 p-5 flex flex-col items-center" >
     <input type="hidden" name="post_slug" bind:value={post_id} />
 
     <div class="mb-4 w-full">
