@@ -54,15 +54,15 @@
     }
   </script>
 
-  <div tabindex="0" class="collapse collapse-plus realtive mx-auto w-full md:w-9/10 lg:w-4/5 rounded-t-xl p-5 bg-slate-50">
-    <div class="collapse-title font-semibold bg-white rounded-t-xl">
+  <div tabindex="0" class="collapse realtive mx-auto w-full md:w-9/10 lg:w-4/5 rounded-t-xl p-5 bg-slate-50">
+    <div class="collapse-title font-semibold bg-white rounded-full active:rounded-t-xl">
         コメント： {comments.length}
     </div>
     <div class="collapse-content w-full bg-white p-2 rounded-b-xl">
         {#each comments as comment}
     <div class="chat chat-start">
-        <div class="chat-image avatar flex flex-col text-sm mt-10">
-            <div class="size-10 mask mask-squircle bg-teal-500">
+        <div class="chat-image avatar flex flex-col text-xs mt-10 text-center">
+            <div class="size-8 mask mask-squircle bg-teal-500">
             </div>
             {comment.author_name}
         </div>
@@ -70,7 +70,7 @@
             
             <time class="text-xs opacity-50">{comment.created_at}</time>
         </div>
-        <div class="chat-bubble p-3 mb-3 ml-5 break-words">
+        <div class="chat-bubble p-3 mb-3 ml-5 break-words text-sm opacity-80">
             <p>{comment.content}</p>
         </div>
     </div>
