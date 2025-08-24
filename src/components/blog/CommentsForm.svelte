@@ -55,7 +55,7 @@
   </script>
 
   <div tabindex="0" class="collapse realtive mx-auto w-full md:w-9/10 lg:w-4/5 rounded-t-xl p-5 bg-slate-50">
-    <div class="collapse-title font-semibold bg-white rounded-full active:rounded-t-xl">
+    <div class="collapse-title font-semibold bg-white rounded-full">
         コメント： {comments.length}
     
     <div class="collapse-content w-full bg-white p-2 rounded-b-xl">
