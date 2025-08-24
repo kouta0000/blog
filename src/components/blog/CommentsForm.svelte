@@ -57,7 +57,7 @@
   <div tabindex="0" class="collapse realtive mx-auto w-full md:w-9/10 lg:w-4/5 rounded-t-xl p-5 bg-slate-50">
     <div class="collapse-title font-semibold bg-white rounded-full active:rounded-t-xl">
         コメント： {comments.length}
-    </div>
+    
     <div class="collapse-content w-full bg-white p-2 rounded-b-xl">
         {#each comments as comment}
     <div class="chat chat-start">
@@ -76,7 +76,7 @@
     </div>
     {/each}
     </div>
-    
+    </div>
   </div>
   
   <div class="rounded-b-xl relative mx-auto bg-slate-50 w-full md:w-9/10 lg:w-4/5 p-5 flex flex-col items-center" >
