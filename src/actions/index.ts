@@ -214,7 +214,7 @@ export const server = {
           .from('Comments')
           .select('*')
           .eq('post_id', post_id)
-          .order('created_at', { ascending: false });
+          .order('created_at', { ascending: true });
         if (error) {
           console.error('Error fetching comments:', error);
           throw new Error('コメントの取得に失敗しました。');
