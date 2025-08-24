@@ -184,4 +184,43 @@ export const server = {
         }
       },
     }),
+
+    addComment:defineAction({
+      input: z.object({
+        post_id: z.string(),
+        author_name: z.string().min(1, { message: "お名前を入力してください。" }),
+        content: z.string().min(1, { message: "コメントを入力してください。" }),
+      }),
+      handler: async ({ post_id, author_name, content }) => {
+        const { data, error } = await supabase.from('Comments').insert({
+          post_id:post_id,
+          author_name: author_name,
+          content: content,
+        });
+        if (error) {
+          console.error('Failed to add comment:', error);
+          throw new Error('コメントの送信に失敗しました。');
+        }
+        return { success: true, comment: data };
+      },
+    }),
+
+    getComments:defineAction({
+      input: z.object({
+        post_id: z.string(),
+      }),
+      handler: async ({ post_id }) => {
+        const { data, error } = await supabase
+          .from('Comments')
+          .select('*')
+          .eq('post_id', post_id)
+          .order('created_at', { ascending: false });
+        if (error) {
+          console.error('Error fetching comments:', error);
+          throw new Error('コメントの取得に失敗しました。');
+        }
+    
+        return { result: data };
+      },
+    })
 }
