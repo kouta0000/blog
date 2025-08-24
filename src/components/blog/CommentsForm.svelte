@@ -62,7 +62,7 @@
     <div class="collapse-content w-full bg-white p-2 rounded-b-xl">
         {#each comments as comment}
     <div class="chat chat-start">
-        <div class="chat-image avatar flex flex-col text-xs mt-10 text-center">
+        <div class="chat-image avatar flex flex-col text-xs mt-10 text-center max-w-10 break-words">
             <div class="size-8 mask mask-squircle bg-teal-500">
             </div>
             {comment.author_name}
