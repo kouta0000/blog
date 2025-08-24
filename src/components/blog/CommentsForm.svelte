@@ -54,7 +54,8 @@
     }
   </script>
 
-  <div tabindex="0" class="collapse realtive mx-auto w-full md:w-9/10 lg:w-4/5 rounded-t-xl p-5 bg-slate-50">
+  <div tabindex="0" class="collapse collapse-arrow realtive mx-auto w-full md:w-9/10 lg:w-4/5 rounded-t-xl p-5 bg-slate-50">
+    <input type="checkbox" />
     <div class="collapse-title font-semibold bg-white rounded-t-xl text-sm">
         コメント： {comments.length}
     </div>
