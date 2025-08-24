@@ -55,10 +55,10 @@
   </script>
 
   <div tabindex="0" class="collapse realtive mx-auto w-full md:w-9/10 lg:w-4/5 rounded-t-xl p-5 bg-slate-50">
-    <div class="collapse-title font-semibold bg-white rounded-t-full">
+    <div class="collapse-title font-semibold bg-white rounded-t-xl text-sm">
         コメント： {comments.length}
     </div>
-    <div class="collapse-content w-full bg-white p-2 rounded-b-full">
+    <div class="collapse-content w-full bg-white p-2 rounded-b-xl">
         {#each comments as comment}
     <div class="chat chat-start">
         <div class="chat-image avatar flex flex-col text-xs mt-10 text-center">
