@@ -18,9 +18,9 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
 ---
 
 <article
-  class="p-6 md:p-10 outline-1 outline-offset-0 outline-dashed outline-teal-400 transition intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+  class="p-6 md:p-10 outline-2 outline-offset-0 outline-dashed outline-teal-400 transition intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
 >
-  <div class="relative overflow-hidden rounded-3xl bg-gray-400 dark:bg-slate-700 shadow-xl mb-6">
+  <div class="relative overflow-hidden shadow-xl mb-6 mask mask-squircle">
     {
       image &&
         (link ? (

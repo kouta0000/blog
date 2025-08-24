@@ -32,6 +32,7 @@ export default {
     },
   },
   plugins: [
+    require('daisyui'),
     typographyPlugin,
     plugin(({ addVariant }) => {
       addVariant('intersect', '&:not([no-intersect])');
