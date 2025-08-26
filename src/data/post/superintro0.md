@@ -1,7 +1,7 @@
 --- 
 title: "フランス語超入門" 
 excerpt: "序"
-date: 2025-08-16 
+publishDate: 2025-08-16 
 image: '~/assets/images/desert.jpg'
 category: "フランス語超入門"
 tags:
