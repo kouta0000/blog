@@ -144,13 +144,13 @@ const nextpost = await getNextPost(post);
       <SmileButton slug={post.id} client:load />
       </div>
     </div>
-    <div class="max-w-3xl mx-auto flex justify-start mt-10">
+    <div class="max-w-3xl mx-auto flex justify-end my-10">
       <Button variant="tertiary" class="px-3 md:px-3 mt-3 " href={getBlogPermalink()}>
        
         <Icon name="tabler:chevron-left" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1 " />
         一覧に戻る
       </Button>
-      </div>
+    </div>
     
     <WidgetWrapper containerClass={'bg-white max-w-3xl flex flex-col items-center'}>
     <CommentsForm post_id={post.id} client:load/>
