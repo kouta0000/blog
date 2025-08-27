@@ -6,6 +6,7 @@ import Image from '~/components/common/Image.astro';
 
 import { findImage } from '~/utils/images';
 import { getPermalink } from '~/utils/permalinks';
+import { Icon } from 'astro-icon/components';
 
 export interface Props {
   post: Post;
@@ -18,9 +19,21 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
 ---
 
 <article
-  class="p-6 md:p-10 outline-2 outline-offset-0 outline-dashed outline-teal-400 transition intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+  class=" relative p-3 md:p-6  transition intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
 >
-  <div class="relative overflow-hidden shadow-xl mb-6 mask mask-squircle">
+  <div class="absolute inset-2 z-10">
+    {
+      post.tags && Array.isArray(post.tags) ? (
+        <header class="">
+          <PostTags tags={post.tags} class="text-sm md:text-md flex flex-wrap" />
+        </header>
+      ) : (
+        <Fragment />
+      )
+    }
+  </div>
+  
+  <div class="relative overflow-hidden mask mask-squircle">
     {
       image &&
         (link ? (
@@ -54,7 +67,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
         ))
     }
   </div>
-
+ 
   <h3 class="text-center text-md sm:text-lg font-bold leading-tight mb-2 font-heading dark:text-slate-300">
     {
       link ? (
@@ -68,4 +81,9 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
   </h3>
 
   <p class="text-muted dark:text-slate-400 text-sm text-center">{post.excerpt}</p>
+  <hr class="h-[3px] my-4 bg-gray-200 border-0 dark:bg-gray-700 rounded-full">
+  <p class="text-gray-500 dark:text-slate-400 text-xs text-right">
+    <Icon name="tabler:clock" class="w-3 h-3 inline-block -mt-0.5 dark:text-gray-400" />
+    <time datetime={String(post.publishDate)} class="inline-block">投稿日：{post.publishDate.getFullYear()}年{post.publishDate.getMonth()+1}月{post.publishDate.getDate()}日</time>
+  </p>
 </article>

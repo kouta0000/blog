@@ -1,9 +1,12 @@
 ---
 title: "フランス語超入門" 
-date: 2025-08-16
-excerpt: "第6講　いつのことかで動詞かかわる"
+publishDate: 2025-08-22
+excerpt: "第6講　時制"
 image: '~/assets/images/black.png'
+category: "フランス語超入門"
 tags:
 - フランス語
-- 超入門
+- 時制
+- 印欧語
+- 単純過去
 ---

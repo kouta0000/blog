@@ -11,7 +11,12 @@ export interface Props {
   isCategory?: boolean;
 }
 
-const { tags, class: className = 'text-sm md:text-lg flex justify-center flex-wrap', title = undefined, isCategory = false } = Astro.props;
+const {
+  tags,
+  class: className = '',
+  title = undefined,
+  isCategory = false,
+} = Astro.props;
 ---
 
 {

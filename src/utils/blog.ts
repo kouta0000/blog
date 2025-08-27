@@ -279,3 +279,26 @@ export async function getRelatedPosts(originalPost: Post, maxResults: number = 4
 
   return selectedPosts;
 }
+export const getPrevPost = async (originalPost) => {
+  const posts = await fetchPosts();
+  const index = posts.findIndex(post => post.id === originalPost.id); // Find the post by its unique ID
+  
+  if (index === -1 || index === posts.length - 1) { // Check if the post is the last one or doesn't exist
+    return null;
+  }
+  
+  const prevPost = posts[index + 1];
+  return prevPost;
+};
+
+export const getNextPost = async (originalPost) => {
+  const posts = await fetchPosts();
+  const index = posts.findIndex(post => post.id === originalPost.id); // Find the post by its unique ID
+  
+  if (index <= 0) { // Check if the post is the first one or doesn't exist
+    return null;
+  }
+  
+  const nextPost = posts[index - 1];
+  return nextPost;
+};
