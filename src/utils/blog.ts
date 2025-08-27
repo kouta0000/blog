@@ -291,7 +291,7 @@ export const getPrevPost = async (originalPost) => {
   return prevPost;
 };
 
-export const getNextPost = async (originalPost) => {
+export const getNextPost = async (originalPost:Post) => {
   const posts = await fetchPosts();
   const index = posts.findIndex(post => post.id === originalPost.id); // Find the post by its unique ID
   
@@ -302,3 +302,6 @@ export const getNextPost = async (originalPost) => {
   const nextPost = posts[index - 1];
   return nextPost;
 };
+export const getTocFromPost = async (post:Post) => {
+  
+}

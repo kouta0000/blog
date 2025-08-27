@@ -1,0 +1,55 @@
+---
+import type { Post } from "~/types";
+import { Icon } from "astro-icon/components";
+import { getEntry, render } from "astro:content";
+interface Props {
+    post:Post;
+}
+const { post } = Astro.props;
+const entry = await getEntry('post', post.id)
+if (!entry) {
+    throw new Error('Could not find blog post')
+}
+const {Content, headings, remarkPluginFrontmatter} = await render(entry);
+const toc = headings.map((h,i) => {
+    return {depth:h.depth, title:h.text, link:h.slug}
+})
+---
+{headings[0] && (
+<div tabindex="0" class="collapse">
+    <input type="checkbox" />
+    <div class="collapse-title mb-4 flex justify-end swap">
+        <input type="checkbox" />
+        <Icon name="tabler:toggle-left" class={'size-6 swap-off'}/>
+        <Icon name="tabler:toggle-right-filled" class={'size-6 swap-on'}/>
+    </div>
+    <div class="collapse-content bg-gray-100 rounded-2xl pb-5">
+    <h1 class="text-heading text-xl px-5 py-5">🚀 もくじ</h1>
+    <div class="bg-white rounded-2xl p-10">
+        <ul class="list">
+            {
+                toc && (
+                    toc.map((t)=>(
+                        <a href={`#${t.link}`}>
+                        {
+                            (t.depth==2) ? (
+                            <li class="text-sm text-muted hover:underline hover:text-blue-400 list-row flex items-center">
+                                <Icon name="tabler:brand-tinder"/>
+                                 {t.title}    
+                            </li>
+                        ):(
+                            <li class="text-xs ml-3 text-muted hover:underline hover:text-blue-400 list-row flex items-center">
+                                <Icon name="tabler:brand-tinder-filled"/>
+                                 {t.title}
+                            </li>
+                        )
+                        }
+                        </a>
+                    ))
+                )
+            }
+        </ul>
+    </div>
+    </div>
+</div>
+) }

@@ -35,7 +35,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
   
   <div class="relative overflow-hidden mask mask-squircle">
     {
-      image &&
+      image ?
         (link ? (
           <a href={link}>
             <Image
@@ -64,7 +64,20 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
             loading="lazy"
             decoding="async"
           />
-        ))
+        )):(
+        <Image
+            src={'~/assets/images/desert.jpeg'}
+            class="w-full md:h-full shadow-lg bg-gray-400 dark:bg-slate-700"
+            widths={[400, 900]}
+            width={400}
+            sizes="(max-width: 900px) 400px, 900px"
+            alt={post.title}
+            aspectRatio="1:2"
+            layout="cover"
+            loading="lazy"
+            decoding="async"
+          />
+        )
     }
   </div>
  

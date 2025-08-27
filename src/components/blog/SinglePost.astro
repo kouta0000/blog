@@ -11,6 +11,7 @@ import LikeButton from '~/components/blog/LikeButton.svelte';
 import FireButton from '~/components/blog/FireButton.svelte';
 import SmileButton from '~/components/blog/SmileButton.svelte';
 import CommentsForm from '~/components/blog/CommentsForm.svelte';
+import TableofContents from './TableofContents.astro';
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
 import { getPrevPost } from '~/utils/blog';
@@ -98,24 +99,29 @@ const nextpost = await getNextPost(post);
             decoding="async"
           />
         ) : (
-          <div class="max-w-3xl mx-auto px-4 sm:px-6">
+          <div class="max-w-sm md:max-w-2xl mx-auto px-4 sm:px-6">
             <div class="border-t dark:border-slate-700" />
           </div>
         )
       }
+      <div class="mx-auto max-w-3xl my-5">
+        <TableofContents post={post} />
+      </div>
     </header>
+    
+    
     <div
       class="mx-auto prose-headings:-transform-x-5 prose-headings:w-2/3 prose-h2:text-2xl px-6 sm:px-6 max-w-3xl prose prose-md prose-zinc lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0 prose-li:mx-2"
     >
       <slot />
     </div>
-    <div class="max-w-3xl mx-auto my-5">
+    <div class="max-w-3xl mx-auto my-10">
     {
       (prevpost || nextpost) && (
         <div class="container flex flex-col items-center">
           <div class="flex flex-row mx-auto container justify-between">
             <Button
-              variant="tertiary"
+              variant="secondary"
               class={`md:px-3 px-3 mr-2 ${!prevpost ? 'invisible' : ''}`}
               href={getPermalink(prevpost?.slug)}
             >
@@ -123,7 +129,7 @@ const nextpost = await getNextPost(post);
               <p class="ml-2">前の記事</p>
             </Button>
     
-            <Button variant="tertiary" class={`md:px-3 px-3 ${!nextpost ? 'invisible' : ''}`} href={getPermalink(nextpost?.slug)}>
+            <Button variant="secondary" class={`md:px-3 px-3 ${!nextpost ? 'invisible' : ''}`} href={getPermalink(nextpost?.slug)}>
               <span class="mr-2">次の記事</span>
               <Icon name="tabler:chevron-right" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" />
             </Button>
@@ -144,11 +150,18 @@ const nextpost = await getNextPost(post);
       <SmileButton slug={post.id} client:load />
       </div>
     </div>
-    <div class="max-w-3xl mx-auto flex justify-end my-10">
-      <Button variant="tertiary" class="px-3 md:px-3 mt-3 " href={getBlogPermalink()}>
-       一覧に戻る
-        <Icon name="tabler:chevron-left" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1 " />
+    <div class="max-w-3xl mx-auto flex flex-col items-end my-10">
+      { post.category && (
+      <Button variant="primary" class="px-3 md:px-3 mt-3" href={getPermalink(post.category.slug, 'category')}>
+        {post.category.title} 
+        <Icon name="tabler:chevron-right" class="w-5 h-5 mr-1 ml-1.5" />
         
+       </Button>
+       )
+      }
+      <Button variant="primary" class="px-3 md:px-3 mt-3 " href={getBlogPermalink()}>
+       全ての記事
+        <Icon name="tabler:chevron-right" class="w-5 h-5 mr-1 ml-1.5 " />
       </Button>
     </div>
     

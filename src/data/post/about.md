@@ -2,6 +2,7 @@
 title: "このサイトについて" 
 excerpt: "サイト概要"
 publishDate: 2025-01-01
+image: '~/assets/images/desert.jpeg'
 category: "about"
 tags:
 - about
