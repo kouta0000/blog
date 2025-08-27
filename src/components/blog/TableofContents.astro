@@ -16,15 +16,13 @@ const toc = headings.map((h,i) => {
 })
 ---
 {headings[0] && (
-<div tabindex="0" class="collapse">
+<div tabindex="0" class="collapse collapse-arrow">
     <input type="checkbox" />
     <div class="collapse-title mb-4 flex justify-end swap">
-        <input type="checkbox" />
-        <Icon name="tabler:toggle-left" class={'size-6 swap-off'}/>
-        <Icon name="tabler:toggle-right-filled" class={'size-6 swap-on'}/>
+        
     </div>
     <div class="collapse-content bg-gray-100 rounded-2xl pb-5">
-    <h1 class="text-heading text-xl px-5 py-5">🚀 もくじ</h1>
+    <h1 class="text-heading text-lg px-5 py-5">🚀 もくじ</h1>
     <div class="bg-white rounded-2xl p-10">
         <ul class="list">
             {
