@@ -5,6 +5,7 @@ import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
 import SocialShare from '~/components/common/SocialShare.astro';
 import Button from '../ui/Button.astro';
+import ToBlogLink from './ToBlogLink.astro';
 
 import LikeButton from '~/components/blog/LikeButton.svelte';
 import FireButton from '~/components/blog/FireButton.svelte';
@@ -14,24 +15,21 @@ import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
 import { getPrevPost } from '~/utils/blog';
 import { getNextPost } from '~/utils/blog';
+import { getBlogPermalink } from '~/utils/permalinks';
 
 import type { Post } from '~/types';
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
 
 export interface Props {
   post: Post;
-  prevpost: Post | null;
-  nextpost: Post |null;
   url: string | URL;
-
 }
-
 const { 
   post, 
-  prevpost= await getPrevPost(post),
-  nextpost = await getNextPost(post),
-  url 
+  url,
   } = Astro.props;
+const prevpost= await getPrevPost(post);
+const nextpost = await getNextPost(post);
 ---
 
 <section class="px-2 py-8 sm:py-16 lg:py-20 mx-auto">
@@ -114,20 +112,20 @@ const {
     <div class="max-w-3xl mx-auto my-5">
     {
       (prevpost || nextpost) && (
-        <div class="container flex">
+        <div class="container flex flex-col items-center">
           <div class="flex flex-row mx-auto container justify-between">
             <Button
               variant="tertiary"
               class={`md:px-3 px-3 mr-2 ${!prevpost ? 'invisible' : ''}`}
               href={getPermalink(prevpost?.slug)}
             >
-              <Icon name="tabler:chevron-left" class="w-6 h-6" />
+              <Icon name="tabler:chevron-left" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" />
               <p class="ml-2">前の記事</p>
             </Button>
     
             <Button variant="tertiary" class={`md:px-3 px-3 ${!nextpost ? 'invisible' : ''}`} href={getPermalink(nextpost?.slug)}>
               <span class="mr-2">次の記事</span>
-              <Icon name="tabler:chevron-right" class="w-6 h-6" />
+              <Icon name="tabler:chevron-right" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" />
             </Button>
           </div>
         </div>
@@ -137,6 +135,7 @@ const {
     <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex gap-5 flex-col">
       <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
     </div>
+    
     <div class="mx-auto max-w-3xl px-6 mt-4 flex flex-wrap justify-between items-center gap-y-3 gap-x-5">
       <SocialShare url={url} text={post.title} class="align-middle text-gray-500 dark:text-slate-600 pt-1.5" />
       <div class="flex gap-1">
@@ -145,6 +144,14 @@ const {
       <SmileButton slug={post.id} client:load />
       </div>
     </div>
+    <div class="max-w-3xl mx-auto flex justify-start mt-10">
+      <Button variant="tertiary" class="px-3 md:px-3 mt-3 " href={getBlogPermalink()}>
+       
+        <Icon name="tabler:chevron-left" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1 " />
+        一覧に戻る
+      </Button>
+      </div>
+    
     <WidgetWrapper containerClass={'bg-white max-w-3xl flex flex-col items-center'}>
     <CommentsForm post_id={post.id} client:load/>
     </WidgetWrapper>

@@ -21,11 +21,11 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
 <article
   class=" relative p-3 md:p-6  transition intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
 >
-  <div class="absolute inset-2 z-10">
+  <div class="absolute inset-4 z-10">
     {
       post.tags && Array.isArray(post.tags) ? (
         <header class="">
-          <PostTags tags={post.tags} class="text-sm md:text-md flex flex-wrap" />
+          <PostTags tags={post.tags} class="text-xs md:text-md flex flex-wrap" />
         </header>
       ) : (
         <Fragment />
