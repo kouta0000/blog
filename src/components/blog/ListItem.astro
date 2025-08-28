@@ -29,7 +29,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
   {
     post.tags && Array.isArray(post.tags) ? (
       <footer class="">
-        <PostTags tags={post.tags} class="text-xs md:text-md flex pr-2 flex-wrap"/>
+        <PostTags tags={post.tags} class="text-xs md:text-md flex pr-2 flex-wrap pointer-events-none"/>
       </footer>
     ) : (
       <Fragment />
