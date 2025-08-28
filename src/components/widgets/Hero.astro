@@ -3,6 +3,7 @@ import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 
 import type { Hero as Props } from '~/types';
+import { Icon } from 'astro-icon/components';
 
 const {
   title = await Astro.slots.render('title'),
@@ -19,16 +20,10 @@ const {
 
 ---
 
-<div class="relative not-prose absolute sticky top-0 -z-1 bg-[url(~/assets/images/1f3bb7a5-ea6b-4c8a-9d53-228d6c22d25f (2).jpg)] w-full h-screen bg-[size:300px_auto] bg-repeat" {...id ? { id } : {}}>
-  <div id="scrollButton" class="absolute inset-0 bg-white/70 flex flex-col items-center justify-center p-20 gap-20">
-    <h1 class="text-3xl text-gray-600 font-heading font-bold text-center">
-      ブログ
-    </h1>
-  <div  class="p-3 rounded-full bg-teal-50 text-teal-600 animate-bounce">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
-    </svg>
-    
+<div class="relative not-prose absolute sticky top-0 -z-1 bg-[url(~/assets/images/background1.jpg)] w-full h-screen bg-[size:300px_auto] bg-repeat" {...id ? { id } : {}}>
+  <div id="scrollButton" class="absolute inset-0 bg-white/90 flex flex-col items-center justify-end p-40 gap-20">
+  <div  class="p-3 md:p-5 mask mask-squircle bg-gray-200/50 animate-bounce">
+    <Icon name="tabler:chevron-down" class={'size-7'}/>
   </div>
   </div>  
 </div>

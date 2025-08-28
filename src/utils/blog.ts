@@ -302,6 +302,4 @@ export const getNextPost = async (originalPost:Post) => {
   const nextPost = posts[index - 1];
   return nextPost;
 };
-export const getTocFromPost = async (post:Post) => {
-  
-}
+

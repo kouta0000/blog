@@ -29,13 +29,13 @@ const {
       )}
       <ul class={className}>
         {tags.map((tag) => (
-          <li class="rounded-3xl bg-teal-50 dark:bg-slate-300 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium">
+          <li class="rounded-3xl bg-teal-50/60 dark:bg-slate-300 inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-0.5 px-2 lowercase font-medium">
             {!APP_BLOG?.tag?.isEnabled ? (
               tag.title
             ) : (
               <a
                 href={getPermalink(tag.slug, isCategory ? 'category' : 'tag')}
-                class="flex gap-1 text-teal-700 dark:text-slate-600 hover:text-primary dark:hover:text-gray-200"
+                class="flex gap-1 text-teal-800 dark:text-slate-600 hover:text-primary dark:hover:text-gray-200"
               >
                 <p># {tag.title}</p>
               </a>
