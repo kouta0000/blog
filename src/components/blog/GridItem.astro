@@ -25,7 +25,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
     {
       post.tags && Array.isArray(post.tags) ? (
         <header class="">
-          <PostTags tags={post.tags} class="text-xs md:text-md flex flex-wrap" />
+          <PostTags tags={post.tags} class="text-xs md:text-md flex flex-wrap pointer-events-auto" />
         </header>
       ) : (
         <Fragment />
