@@ -71,7 +71,7 @@
             
             <time class="text-xs opacity-50">{comment.created_at}</time>
         </div>
-        <div class="chat-bubble p-3 mb-3 ml-5 break-words text-xs md:text-sm opacity-80 dark:bg-slate-900">
+        <div class="chat-bubble p-3 mb-3 ml-5 break-words text-xs md:text-sm opacity-80 dark:bg-slate-900 dark:text-slate-200">
             <p>{comment.content}</p>
         </div>
     </div>
