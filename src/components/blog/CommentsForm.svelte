@@ -85,12 +85,12 @@
 
     <div class="mb-4 w-full">
       <label for="author_name" class="block text-sm font-medium">お名前</label>
-      <input type="text" class="input input-accent w-full" id="author_name" required bind:value={author_name} />
+      <input type="text" class="input input-accent w-full dark:bg-slate-950 dark:text-slate-200" id="author_name" required bind:value={author_name} />
     </div>
 
     <div class="mb-4 w-full">
       <label for="content" class="block text-sm font-medium">コメント</label>
-      <textarea id="content" class="textarea textarea-accent w-full" rows="4" required bind:value={content}></textarea>
+      <textarea id="content" class="textarea textarea-accent w-full dark:bg-slate-950 dark:text-slate-200" rows="4" required bind:value={content}></textarea>
     </div>
 
     <button type="button" class="btn btn-accent w-full" disabled={submitting} onclick={handleSubmit}>
