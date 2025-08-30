@@ -8,7 +8,7 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import BlogHighlightedPosts from '~/components/widgets/BlogLatestPosts.astro'
+import BlogHighlightedPosts from '~/components/widgets/BlogHighlightedPosts.astro'
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -25,7 +25,7 @@ const metadata = {
   image={{alt: 'AstroWind Hero Image' }}
 >
 </Hero>
-<BlogLatestPosts title="最近の記事" count={4} linkText="一覧へ" classes={{container:"pb-10 rounded-t-[5em] lg:rounded-t-[8em] bg-white snap-y snap-mandatory overflow-y-scroll"}}/>
+<BlogLatestPosts title="最近の記事" count={9} linkText="一覧へ" classes={{container:"pb-10 rounded-t-[5em] lg:rounded-t-[8em] bg-white snap-y snap-mandatory overflow-y-scroll"}}/>
 <WidgetWrapper isDark={false} containerClass={'bg-teal-50'}>
 <Features
 id="features"
@@ -46,7 +46,7 @@ items={[
 ]}
 />
 </WidgetWrapper>
-<BlogHighlightedPosts title="フランス語超入門" linkText='一覧へ' classes={{container:"pb-10 bg-white"}}/>
+<BlogHighlightedPosts title="フランス語超入門" linkText='一覧へ' classes={{container:"pb-10 bg-white"}} category={'フランス語超入門'} />
 <WidgetWrapper isDark={false} containerClass={'bg-slate-50'}>
 <Features2
 id="features"

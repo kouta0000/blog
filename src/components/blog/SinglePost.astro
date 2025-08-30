@@ -104,14 +104,11 @@ const nextpost = await getNextPost(post);
           </div>
         )
       }
-      <div class="mx-auto max-w-3xl my-5">
-        <TableofContents post={post} />
-      </div>
     </header>
     
     
     <div
-      class="mx-auto prose-headings:-transform-x-5 prose-headings:w-2/3 prose-h2:text-2xl px-6 sm:px-6 max-w-3xl prose prose-md prose-zinc lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0 prose-li:mx-2"
+      class="mx-auto text-gray-900 prose-headings:-transform-x-5 prose-headings:w-2/3 prose-h2:text-2xl px-2 sm:px-4 max-w-3xl prose prose-md prose-zinc lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0 prose-li:mx-2"
     >
       <slot />
     </div>

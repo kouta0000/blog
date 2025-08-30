@@ -33,14 +33,14 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
     }
   </div>
   
-  <div class="relative overflow-hidden mask mask-squircle">
+  <div class="relative overflow-hidden p-2 sm:p-4 lg:p-10">
     {
       image &&
         (link ? (
           <a href={link}>
             <Image
               src={image}
-              class="w-full md:h-full shadow-lg bg-gray-400 dark:bg-slate-700"
+              class="w-full md:h-full rounded-3xl bg-gray-400 dark:bg-slate-700"
               widths={[400, 900]}
               width={400}
               sizes="(max-width: 900px) 400px, 900px"

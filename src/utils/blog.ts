@@ -302,4 +302,12 @@ export const getNextPost = async (originalPost:Post) => {
   const nextPost = posts[index - 1];
   return nextPost;
 };
+export const findPostsByCategory = async (category:string) => {
+  const posts = await fetchPosts();
+  const selectedPosts = posts.filter((p) => {
+    if (p.category?.title === category ) return p
+  });
+  return selectedPosts
+}
+
 

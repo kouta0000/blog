@@ -4,7 +4,7 @@ import { APP_BLOG } from 'astrowind:config';
 import Grid from '~/components/blog/Grid.astro';
 
 import { getBlogPermalink } from '~/utils/permalinks';
-import { findPostsByIds } from '~/utils/blog';
+import { findPostsByIds, findPostsByCategory } from '~/utils/blog';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Widget } from '~/types';
 
@@ -13,7 +13,7 @@ export interface Props extends Widget {
   linkText?: string;
   linkUrl?: string | URL;
   information?: string;
-  postIds: string[];
+  category?: string;
 }
 
 const {
@@ -21,15 +21,14 @@ const {
   linkText = '',
   linkUrl = getBlogPermalink(),
   information = await Astro.slots.render('information'),
-  postIds=[],
-
+  category= '',
   id,
   isDark = false,
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const posts = APP_BLOG.isEnabled ? await findPostsByIds(postIds) : [];
+const posts = APP_BLOG.isEnabled ? await findPostsByCategory(category) : []
 ---
 
 {
@@ -40,14 +39,14 @@ const posts = APP_BLOG.isEnabled ? await findPostsByIds(postIds) : [];
           <div class="md:max-w-sm">
             <h2
               class="text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-2"
-              set:html={title}
+              set:html={category}
             />
             {APP_BLOG.list.isEnabled && linkText && linkUrl && (
               <a
-                class="text-muted dark:text-slate-400 hover:text-primary transition ease-in duration-200 block mb-6 lg:mb-0"
+                class="mt-5 text-muted dark:text-slate-400 hover:text-primary transition ease-in duration-200 block mb-6 lg:mb-0"
                 href={linkUrl}
               >
-                {linkText} »
+                {linkText}
               </a>
             )}
           </div>
