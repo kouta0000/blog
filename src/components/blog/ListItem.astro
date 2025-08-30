@@ -24,18 +24,6 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
 <article
   class={`relative p-3 overflow-hidden max-w-md mx-auto md:max-w-xl  intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade grid grid-cols-4 gap-3 ${ !image? "grid-cols-1": ""}`}
 >
-<div class="text-start md:text-center mt-1 absolute inset-8 z-10 pointer-events-none w-1/2">
-    
-  {
-    post.tags && Array.isArray(post.tags) ? (
-      <footer class="">
-        <PostTags tags={post.tags} class="text-xs md:text-md flex pr-2 flex-wrap pointer-events-auto"/>
-      </footer>
-    ) : (
-      <Fragment />
-    )
-  }
-</div>
   {
     image &&
       (link ? (
