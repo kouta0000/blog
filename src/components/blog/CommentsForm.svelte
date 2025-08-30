@@ -56,7 +56,7 @@
 
   <div tabindex="0" class="collapse collapse-arrow realtive mx-auto w-full md:w-9/10 lg:w-4/5 rounded-t-xl p-5 bg-slate-50 dark:bg-slate-900 dark:text-slate-50">
     <input type="checkbox" />
-    <div class="collapse-title font-semibold bg-white rounded-t-xl text-sm text-gray-700 dark:text-gray-100">
+    <div class="collapse-title font-semibold bg-white dark:bg-slate-950 rounded-t-xl text-sm text-gray-700 dark:text-gray-100">
         コメント： {comments.length}
     </div>
     <div class="collapse-content w-full bg-white dark:bg-slate-950 p-2 rounded-b-xl">
