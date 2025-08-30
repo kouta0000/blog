@@ -1,14 +1,84 @@
 ---
 import Item from '~/components/blog/GridItem.astro';
 import type { Post } from '~/types';
+import { Swiper, SwiperSlide, SwiperWrapper, SwiperPagination, SwiperButtonNext, SwiperButtonPrev} from 'astro-swiper';
 
 export interface Props {
   posts: Array<Post>;
 }
 
+function pairArray(arr: Array<Post>) {
+  const result: Array<Array<Post>> = [];
+  for (let i = 0; i < arr.length; i += 2) {
+    result.push(arr.slice(i, i + 2));
+  }
+  return result;
+}
+
 const { posts } = Astro.props;
+const postpairs: Post[][] = pairArray(posts);
 ---
 
-<div class="grid grid-cols-3 md:grid-cols-4 -mb-6">
-  {posts.map((post) => <Item post={post} />)}
+<div class="md:hidden">
+  <Swiper
+    options={{
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      slidesPerView: 2,
+      spaceBetween: 20,
+    }}>
+    <SwiperWrapper>
+      {postpairs.map((post) => (
+        <SwiperSlide>
+          <div class="flex flex-col">
+            {post[0] && (
+              <Item post={post[0]} />
+            )}
+            {post[1] && (
+              <Item post={post[1]} />
+            )}
+          </div>
+        </SwiperSlide>
+      ))}
+    </SwiperWrapper>
+    <SwiperButtonPrev />
+    <SwiperButtonNext />
+    <div class="mt-10">
+    <SwiperPagination />
+    </div>
+  </Swiper>
+</div>
+
+<div class="hidden md:block">
+  <Swiper
+    options={{
+      pagination: {
+        el: '.swiper-pagination'
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      slidesPerView: 4,
+      spaceBetween: 20,
+    }}>
+    <SwiperWrapper>
+      {posts.map((post) => (
+        <SwiperSlide>
+          <Item post={post} />
+        </SwiperSlide>
+      ))}
+    </SwiperWrapper>
+    <SwiperButtonPrev />
+    <SwiperButtonNext />
+    <div class="mt-10">
+      <SwiperPagination />
+      </div>
+  </Swiper>
 </div>
