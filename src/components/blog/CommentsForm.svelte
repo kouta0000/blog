@@ -54,12 +54,12 @@
     }
   </script>
 
-  <div tabindex="0" class="collapse collapse-arrow realtive mx-auto w-full md:w-9/10 lg:w-4/5 rounded-t-xl p-5 bg-slate-50">
+  <div tabindex="0" class="collapse collapse-arrow realtive mx-auto w-full md:w-9/10 lg:w-4/5 rounded-t-xl p-5 bg-slate-50 dark:bg-slate-900 dark:text-slate-50">
     <input type="checkbox" />
-    <div class="collapse-title font-semibold bg-white rounded-t-xl text-sm text-gray-700">
+    <div class="collapse-title font-semibold bg-white rounded-t-xl text-sm text-gray-700 dark:text-gray-100">
         コメント： {comments.length}
     </div>
-    <div class="collapse-content w-full bg-white p-2 rounded-b-xl">
+    <div class="collapse-content w-full bg-white dark-bg-slate-950 p-2 rounded-b-xl">
         {#each comments as comment}
     <div class="chat chat-start">
         <div class="chat-image avatar flex flex-col text-[8px] md:text-xs mt-10 text-center max-w-10 break-words">
@@ -71,7 +71,7 @@
             
             <time class="text-xs opacity-50">{comment.created_at}</time>
         </div>
-        <div class="chat-bubble p-3 mb-3 ml-5 break-words text-xs md:text-sm opacity-80">
+        <div class="chat-bubble p-3 mb-3 ml-5 break-words text-xs md:text-sm opacity-80 dark:bg-slate-900">
             <p>{comment.content}</p>
         </div>
     </div>
