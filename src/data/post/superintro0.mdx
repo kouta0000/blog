@@ -1,7 +1,4 @@
 --- 
-import Audio from '~/components/common/Audio.astro';
-import salutAudio from '~/assets/audios/salut.mp3';
-
 title: "フランス語超入門" 
 excerpt: "はじめに"
 publishDate: 2025-08-16 
@@ -12,6 +9,9 @@ tags:
 - フランス語
 - 入門
 ---
+import Audio from '~/components/common/Audio.astro';
+import salutAudio from '~/assets/audios/salut.mp3';
+
 <Audio src={salutAudio.src} text="Salut, les amis !" />
 
 フランス語超入門シリーズをはじめます。
