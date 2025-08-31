@@ -30,7 +30,7 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const posts = APP_BLOG.isEnabled ? ( postIds ? await findPostsByIds(postIds): await findPostsByCategory(category)) : []
+const posts = APP_BLOG.isEnabled ? ( postIds!==[] ? await findPostsByIds(postIds): await findPostsByCategory(category)) : []
 ---
 
 {
