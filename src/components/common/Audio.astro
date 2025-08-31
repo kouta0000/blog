@@ -10,7 +10,7 @@ const imagepath = await findImage(src)
 ---
 { src ? (
     <audio id="audio">
-        <source src={typeof imagepath === 'string' ? imagepath: ''} type="audio/mpeg" />
+        <source src={src} type="audio/mpeg" />
         </audio>
         <span class="flex items-center gap-2 inline align-baseline whitespace-nowrap">
             <a href={src} download="salut.mp3"><span>{text}</span></a>
