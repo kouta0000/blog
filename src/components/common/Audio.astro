@@ -8,7 +8,7 @@ const {text, color, src } = Astro.props;
 ---
 { src ? (
     <audio id="audio">
-        <source src={src} type="audio/mpeg">
+        <source src={src} type="audio/mpeg" />
         </audio>
         <span class="flex items-center gap-2 inline align-baseline whitespace-nowrap">
             <span>{text}</span>
