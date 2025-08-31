@@ -10,7 +10,7 @@ const {text, color, src } = Astro.props;
 const imagepath = await findImage(src)
 ---
 { src ? (
-    <audio id="audio">
+    <audio id={text}>
         <source src={src} type="audio/mpeg" />
     </audio>
         <span class="flex items-center gap-2 inline align-baseline whitespace-nowrap">
@@ -30,7 +30,7 @@ const imagepath = await findImage(src)
 <script lang='ts'>
     
     const handleClick = async () => {
-        const audio = document.getElementById('audio');
+        const audio = document.getElementById(text);
         audio.play();
     };
 
