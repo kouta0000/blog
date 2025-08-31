@@ -54,12 +54,12 @@
     }
   </script>
 
-  <div tabindex="0" class="collapse collapse-arrow realtive mx-auto w-full md:w-9/10 lg:w-4/5 rounded-t-xl p-5 bg-slate-50">
+  <div tabindex="0" class="collapse collapse-arrow realtive mx-auto w-full md:w-9/10 lg:w-4/5 rounded-t-xl p-5 bg-slate-50 dark:bg-slate-900 dark:text-slate-50">
     <input type="checkbox" />
-    <div class="collapse-title font-semibold bg-white rounded-t-xl text-sm text-gray-700">
+    <div class="collapse-title font-semibold bg-white dark:bg-slate-950 rounded-t-xl text-sm text-gray-700 dark:text-gray-100">
         コメント： {comments.length}
     </div>
-    <div class="collapse-content w-full bg-white p-2 rounded-b-xl">
+    <div class="collapse-content w-full bg-white dark:bg-slate-950 p-2 rounded-b-xl">
         {#each comments as comment}
     <div class="chat chat-start">
         <div class="chat-image avatar flex flex-col text-[8px] md:text-xs mt-10 text-center max-w-10 break-words">
@@ -71,7 +71,7 @@
             
             <time class="text-xs opacity-50">{comment.created_at}</time>
         </div>
-        <div class="chat-bubble p-3 mb-3 ml-5 break-words text-xs md:text-sm opacity-80">
+        <div class="chat-bubble p-3 mb-3 ml-5 break-words text-xs md:text-sm opacity-80 dark:bg-slate-900 dark:text-slate-200">
             <p>{comment.content}</p>
         </div>
     </div>
@@ -80,17 +80,17 @@
     
   </div>
   
-  <div class="rounded-b-xl relative mx-auto bg-slate-50 w-full md:w-9/10 lg:w-4/5 p-5 flex flex-col items-center" >
+  <div class="rounded-b-xl relative mx-auto bg-slate-50 dark:bg-slate-900 w-full md:w-9/10 lg:w-4/5 p-5 flex flex-col items-center" >
     <input type="hidden" name="post_slug" bind:value={post_id} />
 
     <div class="mb-4 w-full">
       <label for="author_name" class="block text-sm font-medium">お名前</label>
-      <input type="text" class="input input-accent w-full" id="author_name" required bind:value={author_name} />
+      <input type="text" class="input input-accent w-full dark:bg-slate-950 dark:text-slate-200" id="author_name" required bind:value={author_name} />
     </div>
 
     <div class="mb-4 w-full">
       <label for="content" class="block text-sm font-medium">コメント</label>
-      <textarea id="content" class="textarea textarea-accent w-full" rows="4" required bind:value={content}></textarea>
+      <textarea id="content" class="textarea textarea-accent w-full dark:bg-slate-950 dark:text-slate-200" rows="4" required bind:value={content}></textarea>
     </div>
 
     <button type="button" class="btn btn-accent w-full" disabled={submitting} onclick={handleSubmit}>
