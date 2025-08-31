@@ -7,10 +7,11 @@ interface Props {
     text?: string;
 }
 const {text, color, src } = Astro.props;
-const imagepath = await findImage(src)
+const imagepath = await findImage(src);
+const id = Math.floor(Math.random()*100);
 ---
 { src ? (
-    <audio id={text}>
+    <audio id={`${id}`}>
         <source src={src} type="audio/mpeg" />
     </audio>
         <span class="flex items-center gap-2 inline align-baseline whitespace-nowrap">
@@ -30,7 +31,7 @@ const imagepath = await findImage(src)
 <script lang='ts'>
     
     const handleClick = async () => {
-        const audio = document.getElementById(text);
+        const audio = document.getElementById(id);
         audio.play();
     };
 
