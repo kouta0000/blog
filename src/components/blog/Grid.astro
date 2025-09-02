@@ -31,8 +31,8 @@ const postpairs: Post[][] = pairArray(posts);
         nextEl: ".my-swiper-button-next",
         prevEl: ".my-swiper-button-prev",
       },
-      slidesPerView: 2,
-      spaceBetween: 20,
+      slidesPerView: 3,
+      spaceBetween: 10,
     }}>
     <SwiperWrapper>
       {posts.map((post) => (
@@ -41,10 +41,10 @@ const postpairs: Post[][] = pairArray(posts);
         </SwiperSlide>
       ))}
     </SwiperWrapper>
-    <div class="my-swiper-button-next absolute right-0 bottom-[50%] z-10 rounded-full bg-teal-200/50 hover:bg-teal-300/50 p-3 text-teal-600">
+    <div class="my-swiper-button-next absolute right-0 bottom-0 z-10 rounded-full bg-teal-200/50 hover:bg-teal-300/50 p-3 text-teal-600">
       <Icon name="tabler:chevron-right" class="size-6"/>
     </div>
-    <div class="my-swiper-button-prev absolute left-0 bottom-[50%] z-10 rounded-full bg-teal-200/50 hover:bg-teal-300/50 p-3 text-teal-600">
+    <div class="my-swiper-button-prev absolute left-0 bottom-0 z-10 rounded-full bg-teal-200/50 hover:bg-teal-300/50 p-3 text-teal-600">
       <Icon name="tabler:chevron-left" class="size-6"/>
     </div>
     <div class="mt-10">
