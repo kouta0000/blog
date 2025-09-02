@@ -35,16 +35,9 @@ const postpairs: Post[][] = pairArray(posts);
       spaceBetween: 20,
     }}>
     <SwiperWrapper>
-      {postpairs.map((post) => (
+      {posts.map((post) => (
         <SwiperSlide>
-          <div class="flex flex-col">
-            {post[0] && (
-              <Item post={post[0]} />
-            )}
-            {post[1] && (
-              <Item post={post[1]} />
-            )}
-          </div>
+          <Item post={post} />
         </SwiperSlide>
       ))}
     </SwiperWrapper>
