@@ -43,7 +43,7 @@ const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count }) : [];
         {title && (
           <div class="md:max-w-sm pt-7 pb-2">
             <h2
-              class="mb-10 text-center h-full text-xl font-bold tracking-tight sm:text-xl sm:leading-none group font-heading "
+              class="mb-5 text-center h-full text-2xl font-bold tracking-tight sm:text-xl sm:leading-none group font-heading "
               set:html={title}
             />
             {APP_BLOG.list.isEnabled && linkText && linkUrl && (
