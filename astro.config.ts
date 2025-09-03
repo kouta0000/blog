@@ -6,6 +6,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
+import lottie from "astro-integration-lottie";
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
@@ -30,7 +31,7 @@ export default defineConfig({
   output: 'server',
   integrations: [tailwind({
     applyBaseStyles: false,
-  }), sitemap(), mdx(), icon({
+  }), sitemap(), mdx(), lottie(), icon({
     include: {
       tabler: ['*'],
       'flat-color-icons': [
