@@ -36,7 +36,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
         <>
           <span class="text-xs bg-gray-100/90 text-muted text-left whitespace-nowrap py-1 px-2 rounded-full hover:text-blue-500/90">
           <Icon name="tabler:brand-telegram" class="w-3.5 h-3.5 inline-block -mt-0.5 text-white dark:text-gray-400 bg-gray-500 rounded-full p-[1px]" />
-          <a class="underline underline-offset-2 text-gray-600 hover:text-blue-500/90 pointer-events-auto" href={post.category.slug}>{post.category.title}</a>
+          <a class="underline underline-offset-2 text-gray-600 hover:text-blue-500/90 pointer-events-auto" href={getPermalink(post.category.slug, 'category')}>{post.category.title}</a>
           </span>
         </>
       )
