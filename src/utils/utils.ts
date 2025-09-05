@@ -1,4 +1,7 @@
 import { I18N } from 'astrowind:config';
+import { visit } from 'unist-util-visit';
+import {fromMarkdown} from 'mdast-util-from-markdown';
+import { getEntry } from 'astro:content';
 
 export const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat(I18N?.language, {
   year: 'numeric',
@@ -49,4 +52,16 @@ export const toUiAmount = (amount: number) => {
   }
 
   return value;
+};
+
+export const getExcerpt = async (Length: number, id: string): Promise<string> => {
+  const content = await getEntry('post', id);
+  const tree = content?.body? fromMarkdown(content?.body):fromMarkdown('');
+  let excerpt: string = '';
+  let currentLength = 0;
+  visit(tree, 'text', (node) => {
+    const word = node.value || '';
+    excerpt += word;
+  });
+  return excerpt.slice(0, Length)+'...';
 };

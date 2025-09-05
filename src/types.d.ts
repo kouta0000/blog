@@ -42,6 +42,8 @@ export interface Post {
 
   /**  */
   readingTime?: number;
+
+  subtitle?: string;
 }
 
 export interface Taxonomy {
