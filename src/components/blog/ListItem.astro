@@ -30,7 +30,7 @@ const excerpt = await getExcerpt(100, post.id);
 ---
 
 <article
-  class={`relative p-3 overflow-hidden w-full mx-auto md:max-w-xl  intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade grid grid-cols-3 gap-3 ${ !image? "grid-cols-1": ""}`}
+  class={`relative p-3 overflow-hidden w-full md:max-w-xl  intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade grid grid-cols-3 gap-3 ${ !image? "grid-cols-1": ""}`}
 > 
       
   {
@@ -73,7 +73,7 @@ const excerpt = await getExcerpt(100, post.id);
   }
   
     <header class="row-span-3 col-span-2 flex flex-col justify-between items-center relative">
-      <div class="w-full">
+      <div class="w-full mb-2">
         <p class="text-xs w-full text-muted text-right whitespace-nowrap">
           <Icon name="tabler:clock-filled" class="w-3 h-3 inline-block -mt-0.5 dark:text-gray-400" />
           <time datetime={String(post.publishDate)} class="inline-block">{post.publishDate.getFullYear()}年{post.publishDate.getMonth()+1}月{post.publishDate.getDate()}日</time>
@@ -111,5 +111,5 @@ const excerpt = await getExcerpt(100, post.id);
     
 </article>
 
-<hr class="w-[100vw] h-1 my-1 bg-teal-100 md:w-[70vw] md:my-3dark:bg-gray-700" />
+<hr class="w-[100vw] h-1 my-1 bg-teal-100 md:w-[70vw] mx-auto md:my-3 dark:bg-gray-700" />
 
