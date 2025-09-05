@@ -22,7 +22,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
 ---
 
 <article
-  class={`relative p-3 overflow-hidden w-full mx-auto md:max-w-xl  intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade grid grid-cols-5 gap-3 ${ !image? "grid-cols-1": ""}`}
+  class={`relative p-3 overflow-hidden w-full mx-auto md:max-w-xl  intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade grid grid-cols-4 gap-3 ${ !image? "grid-cols-1": ""}`}
 > 
       <div class=" w-full absolute top-0">
         <p class="text-xs w-full text-muted text-right whitespace-nowrap">
@@ -79,7 +79,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
       ))
   }
   
-    <header class="row-span-3 col-span-4 flex flex-col justify-center items-center relative">
+    <header class="row-span-3 col-span-3 flex flex-col justify-center items-center relative">
       
       <h2 class="text-start md:text-center text-xl md:text-2xl font-semibold leading-tight font-heading dark:text-slate-600">
         {
@@ -103,5 +103,5 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
     
 </article>
 
-<hr class="w-full h-1 my-1 bg-teal-100 md:my-10 dark:bg-gray-700" />
+<hr class="w-[100vw] h-1 my-1 bg-teal-100 md:my-10 dark:bg-gray-700" />
 
