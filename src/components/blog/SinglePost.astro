@@ -18,6 +18,7 @@ import { getFormattedDate } from '~/utils/utils';
 import { getPrevPost } from '~/utils/blog';
 import { getNextPost } from '~/utils/blog';
 import { getBlogPermalink } from '~/utils/permalinks';
+import { findImage } from '~/utils/images';
 
 import type { Post } from '~/types';
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
@@ -32,6 +33,7 @@ const {
   } = Astro.props;
 const prevpost= await getPrevPost(post);
 const nextpost = await getNextPost(post);
+const image = (await findImage(post.image)) || (await findImage('~/assets/images/desert.jpg'));
 ---
 
 <section class="px-2 py-8 sm:py-16 lg:py-20 mx-auto">
@@ -87,9 +89,9 @@ const nextpost = await getNextPost(post);
       </p>
 
       {
-        post.image ? (
+        image ? (
           <Image
-            src={post.image}
+            src={image}
             class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
             widths={[400, 900]}
             sizes="(max-width: 900px) 400px, 900px"
@@ -162,7 +164,7 @@ const nextpost = await getNextPost(post);
         <Icon name="tabler:chevron-right" class="w-5 h-5 mr-1 ml-1.5 " />
       </Button>
     </div>
-    <Advertisement size="m"/>
+    <Advertisement size="m" client:load/>
     <WidgetWrapper containerClass={'bg-white dark:bg-slate-900 max-w-3xl flex flex-col items-center'}>
     <CommentsForm post_id={post.id} client:load/>
     </WidgetWrapper>
