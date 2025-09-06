@@ -1,6 +1,6 @@
 <script lang='ts'>
     import { onMount } from "svelte";
-
+    
     interface Props {
         size?: string;
     }
@@ -11,14 +11,30 @@
         l: 'https://adm.shinobi.jp/s/a1cebbffb885b81982438fe98b956a05',
     };
 
-    let { size = 's' }: Props = $props();
+    export let size: Props['size'] = 's';
     let container: HTMLDivElement | undefined = $state();
 
     onMount(() => {
         if (container) {
             const script = document.createElement('script');
-            script.src = srcs[size as keyof typeof srcs] || srcs.s;
-            container.appendChild(script);
+            const scriptSrc = srcs[size as keyof typeof srcs] || srcs.s;
+            script.src = scriptSrc;
+            
+            // スクリプトのロードが完了したことを確認してから要素を挿入
+            // これにより、DOMが準備完了した状態でのみ実行される
+            script.onload = () => {
+                if(container) {
+                    container.appendChild(script);
+                }
+            };
+            
+            // script.onloadイベントをトリガーするために、DOMのどこかに仮でスクリプトを挿入
+            // ただし、これだと二重に挿入される可能性があるので、以下に別の方法を提案
+            const head = document.getElementsByTagName('head')[0];
+            head.appendChild(script);
+
+            // この方法がうまく行かない場合、直接 body に挿入する方法を試す
+            // document.body.appendChild(script);
         }
     });
 </script>
