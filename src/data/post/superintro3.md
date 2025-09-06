@@ -1,7 +1,7 @@
 ---
 publishDate: 2025-08-19
 title: "第3講　ことばの順番"
-image: '~/assets/images/presio.png'
+image: '~/assets/images/domino.png'
 category: "フランス語超入門"
 tags:
 - 語順

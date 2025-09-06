@@ -1,7 +1,7 @@
 ---
 publishDate: 2025-08-21
 title: "第5講　リエゾンその他"
-image: '~/assets/images/turtle.png'
+image: '~/assets/images/mountains.png'
 category: "フランス語超入門"
 tags:
 - フランス語
