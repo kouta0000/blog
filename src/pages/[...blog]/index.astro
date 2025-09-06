@@ -12,6 +12,7 @@ import { getStaticPathsBlogPost, blogPostRobots } from '~/utils/blog';
 import { findImage } from '~/utils/images';
 import type { MetaData } from '~/types';
 import RelatedPosts from '~/components/blog/RelatedPosts.astro';
+import Advertisement from '~/components/common/Advertisement.astro';
 
 export const prerender = true;
 
@@ -50,8 +51,6 @@ const metadata = merge(
   <SinglePost post={{ ...post, image: image }} url={url}>
     {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
   </SinglePost>
-  <div class="max-w-3xl w-full h-20 bg-gray-200">
-    <script src="https://adm.shinobi.jp/s/e1e5398aa8ca972b65698449d0da0cfb" async type="text/javascript" is:inline></script>
-  </div>
+  <Advertisement />
   <RelatedPosts post={post} />
 </Layout>
