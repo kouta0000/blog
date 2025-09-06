@@ -17,11 +17,11 @@ const { posts } = Astro.props;
       <li class="mb-1 md:mb-2">
         <Item post={post}  />
       </li>
-      <hr class="w-[100vw] h-1 my-1 bg-teal-100 md:w-[70vw] md:my-3 dark:bg-gray-700 md:hidden" />
+      <hr class="w-full h-1 my-1 bg-teal-100 md:w-[70vw] md:my-3 dark:bg-gray-700 md:hidden" />
       {
         (index % 5 == 4) && (
           <Advertisement size="m"/>
-          <hr class="w-[100vw] h-1 my-1 bg-teal-100 md:w-[70vw] md:my-3 dark:bg-gray-700 md:hidden" />
+          <hr class="w-full h-1 my-1 bg-teal-100 md:w-[70vw] md:my-3 dark:bg-gray-700 md:hidden" />
         )
       }
       </>
