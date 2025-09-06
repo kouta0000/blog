@@ -70,6 +70,9 @@ export default defineConfig({
   },
 
   markdown: {
+    shikiConfig: {
+      thime: 'dracula'
+    },
     remarkPlugins: [readingTimeRemarkPlugin],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
