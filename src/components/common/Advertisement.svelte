@@ -11,7 +11,7 @@
         l: 'https://adm.shinobi.jp/s/a1cebbffb885b81982438fe98b956a05',
     };
 
-    export let size: Props['size'] = 's';
+    let { size }:Props = $props();
     let container: HTMLDivElement | undefined = $state();
 
     onMount(() => {
