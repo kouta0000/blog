@@ -87,7 +87,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       >
         {
           links.map(({ text, href, links }) => (
-            <li class={links?.length ? 'dropdown border-b-4 border-teal-100/70 ' : ''}>
+            <li class={links?.length ? 'dropdown border-b-4 border-teal-100/70 mb-2' : ''}>
               {links?.length ? (
                 <>
                   <span class="inline-flex items-center mb-4 bg-teal-50/80 px-5 py-2 rounded-3xl md:bg-white md:mt-3">

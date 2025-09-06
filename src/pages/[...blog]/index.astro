@@ -47,10 +47,10 @@ const metadata = merge(
 ---
 
 <Layout metadata={metadata}>
-  <Advertisement />
+  <Advertisement size="m"/>
   <SinglePost post={{ ...post, image: image }} url={url}>
     {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
   </SinglePost>
-  <Advertisement />
+  <Advertisement size="m"/>
   <RelatedPosts post={post} />
 </Layout>
