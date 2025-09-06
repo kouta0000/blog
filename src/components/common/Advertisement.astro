@@ -2,21 +2,14 @@
 interface Props {
     size?: 's' | 'm' | 'l';
 }
-const {size='s'} = Astro.props;
 const srcs = {
-    s: 'https://adm.shinobi.jp/s/e1e5398aa8ca972b65698449d0da0cfb',
-    m: 'https://adm.shinobi.jp/s/95f151d5688017250c7c95003abbbbd9',
-    l: 'https://adm.shinobi.jp/s/a1cebbffb885b81982438fe98b956a05',
-};
-const scriptUrl = srcs[size];
+        s: 'https://adm.shinobi.jp/s/e1e5398aa8ca972b65698449d0da0cfb',
+        m: 'https://adm.shinobi.jp/s/95f151d5688017250c7c95003abbbbd9',
+        l: 'https://adm.shinobi.jp/s/a1cebbffb885b81982438fe98b956a05',
+    };
+const {size='s'} = Astro.props;
 ---
-
 <div class="w-full flex justify-center items-center">
-    <script is:inline>
-        document.addEventListener('astro:page-load', ()=>{
-            const script = document.createElement('script');
-            script.src = "{scriptUrl}";
-            document.currentScript.parentElement.appendChild(script);
-        });
+    <script src={srcs[size]} is:inline>
     </script>
 </div>
