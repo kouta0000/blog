@@ -32,7 +32,7 @@ export default defineConfig({
   output: 'server',
   integrations: [tailwind({
     applyBaseStyles: false,
-  }), sitemap(), mdx(), lottie(), embeds(),icon({
+  }), sitemap(), embeds(), mdx(), lottie(), icon({
     include: {
       tabler: ['*'],
       'flat-color-icons': [
