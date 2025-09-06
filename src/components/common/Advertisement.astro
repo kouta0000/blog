@@ -2,34 +2,28 @@
 interface Props {
     size?: 's' | 'm' | 'l';
 }
-
-const {size='s'} = Astro.props;
-const uniqueId = `admax-${Math.random().toString(36).slice(2,10)}`;
----
-<div id={uniqueId} class="w-full flex justify-center items-center">
-</div>
-<script define:vars={{size,uniqueId}}>
-    const srcs = {
+const srcs = {
         s: 'https://adm.shinobi.jp/s/e1e5398aa8ca972b65698449d0da0cfb',
         m: 'https://adm.shinobi.jp/s/95f151d5688017250c7c95003abbbbd9',
         l: 'https://adm.shinobi.jp/s/a1cebbffb885b81982438fe98b956a05',
     };
-    const loadAd = (id,adsrc)=>{
-        const container = document.getElementById(id);
-        if(!container) return;
-        container.innerHTML='';
+const {size='s'} = Astro.props;
+const src = srcs[size];
+---
 
-        const script = document.createElement('script');
-        script.src = adsrc;
-        script.type='text/javascript';
-        container.appendChild(script);
+<load-ad data-src={src} class="w-full flex justify-center items-center h-20">
+    <script src={src} is:inline></script>
+</load-ad>
+
+<script>
+    class loadAd extends HTMLElement {
+        connectedCallback() {
+            document.addEventListener('astro:after-swap',()=>{
+                const script = document.createElement('script');
+                script.src = this.dataset.src || 'https://adm.shinobi.jp/s/e1e5398aa8ca972b65698449d0da0cfb';
+                this.appendChild(script);
+            })
+        }
     }
-
-
-    const src = srcs[size];
-    loadAd(uniqueId, src);
-    document.addEventListener('astro:after-swap',()=>{
-        loadAd(uniqueId, src)
-    });
-    
+    customElements.define('load-ad', loadAd);
 </script>
