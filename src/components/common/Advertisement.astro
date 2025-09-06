@@ -15,10 +15,10 @@ const {size='s'} = Astro.props;
         document.addEventListener('astro:page-load', ()=>{
             const container = document.querySelector('[data-size]');
             if (container) {
-                const size = container.dataset.size;
+                const propsize = container.dataset.size;
                 const script = document.createElement('script');
                 // `srcs`がグローバルで利用可能であることを確認
-                script.src = srcs[size];
+                script.src = srcs[propsize];
                 container.appendChild(script);
             }
         });
