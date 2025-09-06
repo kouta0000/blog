@@ -4,14 +4,14 @@ import { twMerge } from 'tailwind-merge';
 import Button from './Button.astro';
 import { Icon } from 'astro-icon/components';
 
-const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props;
+const { items = [], columns, defaultIcon = 'tabler:clock-filled', classes = {} } = Astro.props;
 
 const {
   container: containerClass = '',
   panel: panelClass = '',
   title: titleClass = '',
   description: descriptionClass = '',
-  icon: defaultIconClass = 'text-primary',
+  icon: defaultIconClass = '',
   action: actionClass = '',
 } = classes;
 ---
@@ -32,18 +32,19 @@ const {
         containerClass
       )}
     >
-      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
+      {items.map(({ title, description, icon, callToAction, classes: itemClasses, date = {} }) => (
         <div class="intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-          <div class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
-            <div class="flex justify-center">
+          <div class={twMerge('flex flex-col max-w-md', panelClass, itemClasses?.panel)}>
+            <div class="flex items-center mb-1">
               {(icon || defaultIcon) && (
                 <Icon
                   name={icon || defaultIcon}
-                  class={twMerge('w-7 h-7 mr-2 rtl:mr-0 rtl:ml-2', defaultIconClass, itemClasses?.icon)}
+                  class='size-4 text-pink-500 mr-1'
                 />
               )}
+              <p class="text-sm text-muted">{date}</p>
             </div>
-            <div class="mt-0.5">
+            <div class="mt-0.5 pl-8">
               {title && <h3 class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</h3>}
               {description && (
                 <p

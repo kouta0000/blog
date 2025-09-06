@@ -12,13 +12,17 @@ const { posts } = Astro.props;
 
 <ul>
   {
-    posts.map((post) => (
+    posts.map((post, index) => (
+      <>
       <li class="mb-1 md:mb-2">
         <Item post={post}  />
       </li>
-      <li class="hidden nth-5:block">
-        <Advertisement />
-      </li>
+      {
+        (index % 4 == 3) && (
+          <Advertisement />
+        )
+      }
+      </>
     ))
   }
 </ul>

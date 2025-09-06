@@ -28,6 +28,7 @@ const metadata = {
 </Hero>
 <BlogLatestPosts title="最新記事" count={12} linkText="記事一覧へ" classes={{container:"pb-10 bg-white dark:bg-gray-950 snap-y snap-mandatory overflow-y-scroll"}}/>
 </div>
+<Advertisement />
 <WidgetWrapper isDark={false} containerClass={'bg-teal-50 dark:bg-gray-950'}>
 <Features
 id="features"
@@ -35,22 +36,23 @@ tagline="お知らせ"
 items={[
   {
     title: 'ブログ始まる',
+    date:'2025.08.01',
     description:
       'これから投稿を増やしていきます',
-    icon: 'tabler:brand-tailwind',
   },
   {
-    title: '実験です',
+    title: '開発録',
+    date: '2025.08.31',
     description:
-      '近況を随時更新',
-    icon: 'tabler:components',
+      'スライダー機能を付けました',
   },
 ]}
 />
 </WidgetWrapper>
 <BlogHighlightedPosts title="フランス語超入門" linkText='一覧へ' classes={{container:"pb-10 bg-white dark:bg-gray-950"}} category={'フランス語超入門'} />
-
+<Advertisement />
 <WidgetWrapper isDark={false} containerClass={'bg-slate-50'}>
+  
 <Features2
 id="features"
 tagline="便利グッズ"

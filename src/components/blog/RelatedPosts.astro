@@ -17,11 +17,7 @@ const relatedPosts = post.tags ? await getRelatedPosts(post, 12) : [];
 
 {
   APP_BLOG.isRelatedPostsEnabled ? (
-    <BlogHighlightedPosts
-      classes={{
-        container:
-          'pt-0 lg:pt-0 md:pt-0 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
-      }}
+    <BlogHighlightedPosts classes={{container:"pb-10 bg-white dark:bg-gray-950"}} 
       title="関連記事"
       linkText="一覧へ"
       linkUrl={getBlogPermalink()}
