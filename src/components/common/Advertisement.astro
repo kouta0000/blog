@@ -11,7 +11,7 @@ const {size='s'} = Astro.props;
 const src = srcs[size];
 ---
 
-<load-ad data-src={src} class="w-full flex justify-center items-center h-20">
+<load-ad data-src={src} class="w-full flex justify-center items-center">
     <script src={src} is:inline></script>
 </load-ad>
 
@@ -21,6 +21,7 @@ const src = srcs[size];
             document.addEventListener('astro:after-swap',()=>{
                 const script = document.createElement('script');
                 script.src = this.dataset.src || 'https://adm.shinobi.jp/s/e1e5398aa8ca972b65698449d0da0cfb';
+                this.innerHTML = '';
                 this.appendChild(script);
             })
         }
