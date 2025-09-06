@@ -11,9 +11,11 @@ const {size='s'} = Astro.props;
 ---
 <div class="w-full flex justify-center items-center">
     <script is:inline>
-        const currentscript = document.currentScript;
-        const script = document.createElement('script');
-        script.src = srcs[size];
-        currentScript.parentElement.appendChild(script);
+        document.addEventListener('astro:page-load', ()=>{
+            const currentscript = document.currentScript;
+            const script = document.createElement('script');
+            script.src = srcs[size];
+            currentScript.parentElement.appendChild(script);
+        })
     </script>   
 </div>
