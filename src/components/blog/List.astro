@@ -1,7 +1,7 @@
 ---
 import Item from '~/components/blog/ListItem.astro';
 import type { Post } from '~/types';
-import Advertisement from '../common/Advertisement.astro';
+import Advertisement from '../common/Advertisement.svlte';
 
 export interface Props {
   posts: Array<Post>;
@@ -20,7 +20,7 @@ const { posts } = Astro.props;
       <hr class="w-full h-1 my-1 bg-teal-100 md:w-[70vw] md:my-3 dark:bg-gray-700 md:hidden" />
       {
         (index % 5 == 4) && (
-          <Advertisement size="m"/>
+          <Advertisement size="m" client:load/>
           <hr class="w-full h-1 my-1 bg-teal-100 md:w-[70vw] md:my-3 dark:bg-gray-700 md:hidden" />
         )
       }

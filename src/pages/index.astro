@@ -14,7 +14,7 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Timeline from '~/components/ui/Timeline.astro';
 import LottieAnimation from "astro-integration-lottie/Lottie.astro";
-import Advertisement from '~/components/common/Advertisement.astro';
+import Advertisement from '~/components/common/Advertisement.svlte';
 const metadata = {
   title: '狐庵独語',
   ignoreTitleTemplate: true,
@@ -28,7 +28,7 @@ const metadata = {
 </Hero>
 <BlogLatestPosts title="最新記事" count={12} linkText="記事一覧へ" classes={{container:"pb-10 bg-white dark:bg-gray-950 snap-y snap-mandatory overflow-y-scroll"}}/>
 </div>
-<Advertisement size="s"/>
+<Advertisement size="s" client:load/>
 <WidgetWrapper isDark={false} containerClass={'bg-teal-50 dark:bg-gray-950'}>
 <Features
 id="features"
@@ -50,7 +50,7 @@ items={[
 />
 </WidgetWrapper>
 <BlogHighlightedPosts title="フランス語超入門" linkText='一覧へ' classes={{container:"pb-10 bg-white dark:bg-gray-950"}} category={'フランス語超入門'} />
-<Advertisement size="s"/>
+<Advertisement size="s" client:load/>
 <WidgetWrapper isDark={false} containerClass={'bg-slate-50'}>
   
 <Features2
