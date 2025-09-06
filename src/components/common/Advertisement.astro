@@ -12,14 +12,14 @@ const src = srcs[size];
 ---
 
 <load-ad data-src={src} class="w-full flex justify-center items-center">
-    <iframe src={src} ></iframe>
+    <script src={src} is:inline></script>
 </load-ad>
 
 <script>
     class loadAd extends HTMLElement {
         connectedCallback() {
             document.addEventListener('astro:page-load',()=>{
-                const script = document.createElement('iframe');
+                const script = document.createElement('script');
                 script.src = this.dataset.src || 'https://adm.shinobi.jp/s/e1e5398aa8ca972b65698449d0da0cfb';
                 this.innerHTML = '';
                 this.appendChild(script);
