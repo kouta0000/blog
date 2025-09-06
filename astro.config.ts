@@ -10,6 +10,7 @@ import lottie from "astro-integration-lottie";
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
+import embeds from 'astro-embed/integration';
 import type { AstroIntegration } from 'astro';
 
 
@@ -31,7 +32,7 @@ export default defineConfig({
   output: 'server',
   integrations: [tailwind({
     applyBaseStyles: false,
-  }), sitemap(), mdx(), lottie(), icon({
+  }), sitemap(), mdx(), lottie(), embeds(),icon({
     include: {
       tabler: ['*'],
       'flat-color-icons': [
