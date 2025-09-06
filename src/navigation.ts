@@ -28,6 +28,15 @@ export const headerData = {
         }
       ]
     },
+    {
+      text: 'その他',
+      links:[
+        {
+        text: 'チップを送る',
+        href: 'https://buymeacoffee.com/kotakotatako'
+      }
+    ]
+    }
   ],
   actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
 };
