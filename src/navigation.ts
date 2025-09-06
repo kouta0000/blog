@@ -3,21 +3,30 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: '記事',
+      text: '一般',
       links: [
         {
-          text: '一覧',
+          text: '記事一覧',
           href: getBlogPermalink(),
-        },
-        {
-          text: 'フランス語超入門',
-          href: getPermalink('furansu', 'category'),
         },
         {
           text: 'このサイトについて',
           href: getPermalink('about', 'post'),
         },
-      ],
+      ]
+    },
+    {
+      text:'シリーズ',
+      links:[
+        {
+          text: 'フランス語超入門',
+          href: getPermalink('furansu', 'category'),
+        },
+        {
+          text:'語源',
+          href: getPermalink('yu3-yuan2', 'category')
+        }
+      ]
     },
   ],
   actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
