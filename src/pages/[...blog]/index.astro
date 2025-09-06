@@ -12,6 +12,7 @@ import { getStaticPathsBlogPost, blogPostRobots } from '~/utils/blog';
 import { findImage } from '~/utils/images';
 import type { MetaData } from '~/types';
 import RelatedPosts from '~/components/blog/RelatedPosts.astro';
+import Advertisement from '~/components/common/Advertisement.astro';
 
 export const prerender = true;
 
@@ -46,8 +47,10 @@ const metadata = merge(
 ---
 
 <Layout metadata={metadata}>
+  <Advertisement />
   <SinglePost post={{ ...post, image: image }} url={url}>
     {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
   </SinglePost>
+  <Advertisement />
   <RelatedPosts post={post} />
 </Layout>
