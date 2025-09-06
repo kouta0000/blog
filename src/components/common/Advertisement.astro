@@ -7,12 +7,12 @@ const {size='s'} = Astro.props;
 
 <div data-size={size} class="w-full flex justify-center items-center">
     <script is:inline>
-        document.addEventListener('astro:page-load', ()=>{
-            const srcs = {
+        const srcs = {
                 s: 'https://adm.shinobi.jp/s/e1e5398aa8ca972b65698449d0da0cfb',
                 m: 'https://adm.shinobi.jp/s/95f151d5688017250c7c95003abbbbd9',
                 l: 'https://adm.shinobi.jp/s/a1cebbffb885b81982438fe98b956a05',
             };
+        document.addEventListener('astro:page-load', ()=>{
             const container = document.querySelector('[data-size]');
             if (container) {
                 const size = container.dataset.size;
