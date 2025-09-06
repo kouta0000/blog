@@ -11,6 +11,7 @@ import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
 import embeds from 'astro-embed/integration';
+import remarkGfm from 'remark-gfm';
 import type { AstroIntegration } from 'astro';
 
 
@@ -74,7 +75,7 @@ export default defineConfig({
     shikiConfig: {
       thime: 'dracula'
     },
-    remarkPlugins: [readingTimeRemarkPlugin],
+    remarkPlugins: [readingTimeRemarkPlugin, remarkGfm],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
 
