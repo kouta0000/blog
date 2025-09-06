@@ -4,23 +4,17 @@ interface Props {
 }
 const {size='s'} = Astro.props;
 ---
-<script>
-    // ここで変数を定義
-    const srcs = {
-        s: 'https://adm.shinobi.jp/s/e1e5398aa8ca972b65698449d0da0cfb',
-        m: 'https://adm.shinobi.jp/s/95f151d5688017250c7c95003abbbbd9',
-        l: 'https://adm.shinobi.jp/s/a1cebbffb885b81982438fe98b956a05',
-    };
-    const size = "{size}"; 
-</script>
-  
-  <div class="w-full flex justify-center items-center">
+<div data-size={size} class="w-full flex justify-center items-center">
     <script is:inline>
-      document.addEventListener('astro:page-load', ()=>{
-          const currentScript = document.currentScript;
-          const script = document.createElement('script');
-          script.src = srcs[size]; // 上で定義したグローバル変数を使用
-          currentScript.parentElement.appendChild(script);
-      });
+        document.addEventListener('astro:page-load', ()=>{
+            const container = document.querySelector('[data-size]');
+            if (container) {
+                const size = container.dataset.size;
+                const script = document.createElement('script');
+                // `srcs`がグローバルで利用可能であることを確認
+                script.src = srcs[size];
+                container.appendChild(script);
+            }
+        });
     </script>
-  </div>
+</div>
