@@ -12,6 +12,7 @@ import FireButton from '~/components/blog/FireButton.svelte';
 import SmileButton from '~/components/blog/SmileButton.svelte';
 import CommentsForm from '~/components/blog/CommentsForm.svelte';
 import TableofContents from './TableofContents.astro';
+import Advertisement from '../common/Advertisement.astro';
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
 import { getPrevPost } from '~/utils/blog';
@@ -166,7 +167,5 @@ const nextpost = await getNextPost(post);
     <CommentsForm post_id={post.id} client:load/>
     </WidgetWrapper>
   </article>
-  <!-- admax -->
-<script src="https://adm.shinobi.jp/s/e1e5398aa8ca972b65698449d0da0cfb"></script>
-<!-- admax -->
+  <Advertisement client:load/>
 </section>

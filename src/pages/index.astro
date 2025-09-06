@@ -14,6 +14,7 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Timeline from '~/components/ui/Timeline.astro';
 import LottieAnimation from "astro-integration-lottie/Lottie.astro";
+import Advertisement from '~/components/common/Advertisement.astro';
 const metadata = {
   title: '狐庵独語',
   ignoreTitleTemplate: true,
@@ -48,6 +49,7 @@ items={[
 />
 </WidgetWrapper>
 <BlogHighlightedPosts title="フランス語超入門" linkText='一覧へ' classes={{container:"pb-10 bg-white dark:bg-gray-950"}} category={'フランス語超入門'} />
+<Advertisement />
 <WidgetWrapper isDark={false} containerClass={'bg-slate-50'}>
 <Features2
 id="features"
