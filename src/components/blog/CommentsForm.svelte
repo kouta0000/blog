@@ -59,7 +59,7 @@
     <div class="collapse-title bg-teal-50/50 font-semibold dark:bg-slate-950 rounded-t-xl text-sm text-gray-700 dark:text-gray-100">
         コメント： {comments.length}
     </div>
-    <div class="collapse-content w-full bg-white dark:bg-slate-950 p-2 rounded-b-xl">
+    <div class="collapse-content w-full bg-teal-50/50 dark:bg-slate-950 p-2 rounded-b-xl">
         {#each comments as comment}
     <div class="chat chat-start">
         <div class="chat-image avatar flex flex-col text-[8px] md:text-xs mt-10 text-center max-w-10 break-words">
