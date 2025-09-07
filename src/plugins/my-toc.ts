@@ -14,7 +14,7 @@ export default function MyToc():Transformer<Root> {
         const data = tocNode.data || (tocNode.data = {});
         
         // MarkdownノードをAstroコンポーネントに変換するメタデータを追
-        data.hName = './src/components/blog/TOC.astro'
+        data.hName = 'TOC'
         data.hProperties = {id: file.basename?.split('.')[0] }
       }
   });
