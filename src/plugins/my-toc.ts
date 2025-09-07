@@ -1,6 +1,5 @@
 import { visit } from 'unist-util-visit';
 
-
 import type { Root } from 'mdast';
 import type { Heading } from 'mdast';
 import type { LeafDirective } from 'mdast-util-directive';
@@ -15,7 +14,7 @@ export default function MyToc():Transformer<Root> {
         const data = tocNode.data || (tocNode.data = {});
         
         // MarkdownノードをAstroコンポーネントに変換するメタデータを追
-        data.hName = 'TOC'
+        data.hName = './src/components/blog/TOC.astro'
         data.hProperties = {id: file.basename?.split('.')[0] }
       }
   });
