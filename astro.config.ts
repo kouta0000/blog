@@ -15,7 +15,6 @@ import remarkGfm from 'remark-gfm';
 import markedFootnote from 'marked-footnote';
 import type { AstroIntegration } from 'astro';
 import remarkDirective from 'remark-directive';
-import  MyToc  from './src/plugins/my-toc'
 import remarkToc from 'remark-toc';
 
 
@@ -79,7 +78,7 @@ export default defineConfig({
     shikiConfig: {
       theme: 'dracula'
     },
-    remarkPlugins: [readingTimeRemarkPlugin, remarkDirective, MyToc],
+    remarkPlugins: [readingTimeRemarkPlugin, remarkDirective],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
 

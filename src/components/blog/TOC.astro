@@ -15,15 +15,14 @@ const toc = headings.map((h,i) => {
     return {depth:h.depth, title:h.text, link:h.slug}
 })
 ---
-{'aaaaaaaaaaaa'}
 {headings[0] && (
-<div tabindex="0" class="collapse collapse-arrow bg-teal-50 rounded-3xl mx-auto">
+    <h1 class="text-xl">目次</h1>
+<div tabindex="0" class="collapse collapse-plus bg-slate-50 rounded-3xl mx-auto">
+    <div class="collapse-title"></div>
     <input type="checkbox" checked={true} />
-    <div class="collapse-title text-left pl-5 text-sm">
-      もくじ
-    </div>
+   
     <div class="collapse-content rounded-2xl">
-    <div class="rounded-2xl p-1 bg-white">
+    <div class="rounded-2xl bg-white">
         <ul class="list">
             {
                 toc && (
@@ -33,12 +32,12 @@ const toc = headings.map((h,i) => {
                             <a href={`#${t.link}`}>
                                 {(t.depth==2) ? (
                                     <li class="my-0 text-sm text-muted underline-none hover:underline hover:text-blue-400 list-row flex items-center">
-                                        <Icon name="tabler:brand-tinder" class="text-orange-300"/>
+                                        <Icon name="tabler:brand-tinder" class="text-orange-400"/>
                                         {t.title}    
                                     </li>
                                 ):(
                                     <li class="my-0 text-xs ml-3 text-muted underline-none hover:underline hover:text-blue-400 list-row flex items-center ">
-                                        <Icon name="tabler:brand-tinder-filled" class="text-orange-300"/>
+                                        <Icon name="tabler:brand-tinder-filled" class="text-orange-400"/>
                                             {t.title}
                                     </li>
                                 )}
