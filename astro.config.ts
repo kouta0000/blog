@@ -12,7 +12,11 @@ import icon from 'astro-icon';
 import compress from 'astro-compress';
 import embeds from 'astro-embed/integration';
 import remarkGfm from 'remark-gfm';
+import markedFootnote from 'marked-footnote';
 import type { AstroIntegration } from 'astro';
+import remarkDirective from 'remark-directive';
+import  MyToc  from './src/plugins/my-toc'
+import remarkToc from 'remark-toc';
 
 
 import astrowind from './vendor/integration';
@@ -73,9 +77,9 @@ export default defineConfig({
 
   markdown: {
     shikiConfig: {
-      thime: 'dracula'
+      theme: 'dracula'
     },
-    remarkPlugins: [readingTimeRemarkPlugin, remarkGfm],
+    remarkPlugins: [readingTimeRemarkPlugin, remarkDirective, MyToc],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
 

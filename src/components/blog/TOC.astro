@@ -1,0 +1,54 @@
+---
+import type { Post } from "~/types";
+import { Icon } from "astro-icon/components";
+import { getEntry, render } from "astro:content";
+interface Props {
+    id:string;
+}
+const { id } = Astro.props;
+const entry = await getEntry('post', id)
+if (!entry) {
+    throw new Error('Could not find blog post')
+}
+const {Content, headings, remarkPluginFrontmatter} = await render(entry);
+const toc = headings.map((h,i) => {
+    return {depth:h.depth, title:h.text, link:h.slug}
+})
+---
+{'aaaaaaaaaaaa'}
+{headings[0] && (
+<div tabindex="0" class="collapse collapse-arrow bg-teal-50 rounded-3xl mx-auto">
+    <input type="checkbox" checked={true} />
+    <div class="collapse-title text-left pl-5 text-sm">
+      もくじ
+    </div>
+    <div class="collapse-content rounded-2xl">
+    <div class="rounded-2xl p-1 bg-white">
+        <ul class="list">
+            {
+                toc && (
+                    toc.map((t)=>(
+                        <>
+                        {!(t.title === 'Footnotes') && (
+                            <a href={`#${t.link}`}>
+                                {(t.depth==2) ? (
+                                    <li class="my-0 text-sm text-muted underline-none hover:underline hover:text-blue-400 list-row flex items-center">
+                                        <Icon name="tabler:brand-tinder" class="text-orange-300"/>
+                                        {t.title}    
+                                    </li>
+                                ):(
+                                    <li class="my-0 text-xs ml-3 text-muted underline-none hover:underline hover:text-blue-400 list-row flex items-center ">
+                                        <Icon name="tabler:brand-tinder-filled" class="text-orange-300"/>
+                                            {t.title}
+                                    </li>
+                                )}
+                            </a>
+                        )}
+                        </>
+                    )
+            ))}
+        </ul>
+    </div>
+    </div>
+</div>
+) }

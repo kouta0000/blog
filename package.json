@@ -44,7 +44,10 @@
     "limax": "4.1.0",
     "lodash.merge": "^4.6.2",
     "lottie-web": "^5.13.0",
+    "marked-footnote": "^1.4.0",
+    "remark-directive": "^4.0.0",
     "remark-gfm": "^4.0.1",
+    "remark-toc": "^9.0.0",
     "svelte": "^5.38.2",
     "swiper": "^11.2.10",
     "unpic": "^4.1.2"
