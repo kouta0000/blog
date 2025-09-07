@@ -37,13 +37,13 @@ const image = (await findImage(post.image)) || (await findImage('~/assets/images
 ---
 
 <section class="sm:px-4 py-8 sm:py-16 lg:py-20 mx-auto bg-slate-100 ">
-  <article class="lg:flex lg:flex-row lg:flex-nowrap" >
+  <article >
     <header
       class={post.image
-        ? 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'
-        : 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'}
+        ? 'max-w-3xl mx-auto intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'
+        : 'max-w-3xl mx-auto intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'}
     >
-      <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center">
+      <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center lg:gap-4">
         <p>
           <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
           <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
@@ -92,7 +92,7 @@ const image = (await findImage(post.image)) || (await findImage('~/assets/images
         image ? (
           <Image
             src={image}
-            class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
+            class="max-w-full lg:hidden mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
             widths={[400, 900]}
             sizes="(max-width: 900px) 400px, 900px"
             alt={post?.excerpt || ''}
