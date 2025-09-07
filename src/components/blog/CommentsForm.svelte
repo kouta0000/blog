@@ -54,9 +54,9 @@
     }
   </script>
 
-  <div tabindex="0" class="collapse collapse-arrow realtive mx-auto w-full md:w-9/10 lg:w-4/5 rounded-t-xl p-5 bg-slate-50 dark:bg-slate-900 dark:text-slate-50">
+  <div tabindex="0" class="collapse collapse-arrow realtive mx-auto w-full  rounded-t-xl  dark:bg-slate-900 dark:text-slate-50">
     <input type="checkbox" />
-    <div class="collapse-title font-semibold bg-white dark:bg-slate-950 rounded-t-xl text-sm text-gray-700 dark:text-gray-100">
+    <div class="collapse-title bg-teal-50/50 font-semibold dark:bg-slate-950 rounded-t-xl text-sm text-gray-700 dark:text-gray-100">
         コメント： {comments.length}
     </div>
     <div class="collapse-content w-full bg-white dark:bg-slate-950 p-2 rounded-b-xl">
@@ -80,7 +80,7 @@
     
   </div>
   
-  <div class="rounded-b-xl relative mx-auto bg-slate-50 dark:bg-slate-900 w-full md:w-9/10 lg:w-4/5 p-5 flex flex-col items-center" >
+  <div class="rounded-b-xl relative mx-auto dark:bg-slate-900 w-full md:w-9/10 lg:w-4/5 p-5 flex flex-col items-center" >
     <input type="hidden" name="post_slug" bind:value={post_id} />
 
     <div class="mb-4 w-full">

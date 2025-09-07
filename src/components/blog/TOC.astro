@@ -16,13 +16,12 @@ const toc = headings.map((h,i) => {
 })
 ---
 {headings[0] && (
-    <h1 class="text-xl">目次</h1>
-<div tabindex="0" class="collapse collapse-plus bg-slate-50 rounded-3xl mx-auto">
+    <h2>目次</h2>
+<div tabindex="0" class="collapse collapse-plus bg-teal-50/50 rounded-3xl mx-auto">
     <div class="collapse-title"></div>
     <input type="checkbox" checked={true} />
    
     <div class="collapse-content rounded-2xl">
-    <div class="rounded-2xl bg-white">
         <ul class="list">
             {
                 toc && (
@@ -47,7 +46,6 @@ const toc = headings.map((h,i) => {
                     )
             ))}
         </ul>
-    </div>
     </div>
 </div>
 ) }
