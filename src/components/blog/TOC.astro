@@ -17,8 +17,10 @@ const toc = headings.map((h,i) => {
 ---
 {headings[0] && (
     <h2>目次</h2>
-<div tabindex="0" class="collapse collapse-plus bg-teal-50/50 rounded-3xl mx-auto">
-    <div class="collapse-title"></div>
+<div tabindex="0" class="collapse collapse-plus bg-teal-50/50 rounded-xl mx-auto">
+    <div class="collapse-title">
+        <p></p>
+    </div>
     <input type="checkbox" checked={true} />
    
     <div class="collapse-content rounded-2xl">
@@ -30,12 +32,12 @@ const toc = headings.map((h,i) => {
                         {!(t.title === 'Footnotes') && (
                             <a href={`#${t.link}`}>
                                 {(t.depth==2) ? (
-                                    <li class="my-0 text-sm text-muted underline-none hover:underline hover:text-blue-400 list-row flex items-center">
+                                    <li class="my-0 py-2 text-sm text-muted underline-none hover:underline hover:text-blue-400 list-row flex items-center">
                                         <Icon name="tabler:brand-tinder" class="text-orange-400"/>
                                         {t.title}    
                                     </li>
                                 ):(
-                                    <li class="my-0 text-xs ml-3 text-muted underline-none hover:underline hover:text-blue-400 list-row flex items-center ">
+                                    <li class="my-0 py-1 text-xs ml-3 text-muted underline-none hover:underline hover:text-blue-400 list-row flex items-center ">
                                         <Icon name="tabler:brand-tinder-filled" class="text-orange-400"/>
                                             {t.title}
                                     </li>
