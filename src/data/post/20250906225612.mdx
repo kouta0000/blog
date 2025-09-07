@@ -108,7 +108,7 @@ ViewTransitionをうまく制御すれば、もしかしたら、ページ遷移
 
 - data-astro-reload
 - data-astro-rerun
-- astro:page-load
+- `astro:page-load`
 
 ここまで生成AIさんの助けを多分にもらっている。1つ目のdata-astro-reloadは、やつの提案。ただ、こやつ間違っとる！``<script src='hgogehoge'></script``というcdnロード部分をdivでラップして、divにdata-astro-reloadをつけろという。ふむふむ、ページ遷移が起きた時に、目的通りにリロードが起きそうだ。
 
@@ -118,7 +118,7 @@ data-astro-rerun。ふむふむ、こいつも有望そうな見た目だ。Docs
 
 残念こいつもだめだった。外部cdnから読み込んだスクリプトは使えないとのこと。完全にインラインで書いたスクリプトは実効されるが、外部はだめ。死。
 
-astro:page-load。これは、ViewTransitionモードで画面遷移が起こり、遷移が完全に終了したときに、documentが吐き出すイベントのよう。最終的にはこれを使うのがまあいいよう。ここでは割愛するけれど（ただどこかでそれを1テーマに書いたほうがよさそう）、このあともかなり四苦八苦した。astroのフロントマッタ―とscriptで変数を共有する方法なのだけれど、かなりつまずいた。とりあえずそれはまたこんど（memo: define vars vs カスタムコンポーネント）。
+`astro:page-load`。これは、ViewTransitionモードで画面遷移が起こり、遷移が完全に終了したときに、documentが吐き出すイベントのよう。最終的にはこれを使うのがまあいいよう。ここでは割愛するけれど（ただどこかでそれを1テーマに書いたほうがよさそう）、このあともかなり四苦八苦した。astroのフロントマッタ―とscriptで変数を共有する方法なのだけれど、かなりつまずいた。とりあえずそれはまたこんど（memo: define vars vs カスタムコンポーネント）。
 
 ### 忍者Admaxさんdocument.wrire()使ってる問題
 
