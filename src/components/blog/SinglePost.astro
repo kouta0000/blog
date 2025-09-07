@@ -109,19 +109,37 @@ const image = (await findImage(post.image)) || (await findImage('~/assets/images
       }
     </header>
     
-    
+  <div class="lg:grid lg:grid-cols-3 w-full">
     <div
-      class="bg-white mt-10 px-4 py-10 pt-10 mx-auto lg:ms-40 text-gray-800 dark:text-gray-200 prose-headings:mb-7 prose-headings:-transform-x-5 prose-headings:w-2/3 prose-h2:text-2xl px-2 sm:px-4 max-w-3xl prose prose-md prose-zinc lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg prose-headings:scroll-mt-[80px] prose-li:my-2 prose-li:mx-2 prose-headings:underline prose-headings:decoration-gray-600 prose-headings:underline-offset-8"
+      class="bg-white lg:col-span-2 mt-10 px-4 lg:px-8 py-10 pt-10 mx-auto text-gray-800 dark:text-gray-200 prose-headings:mb-7 prose-headings:-transform-x-5 prose-headings:w-2/3 prose-h2:text-2xl px-2 sm:px-4 max-w-3xl prose prose-md prose-zinc lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg prose-headings:scroll-mt-[80px] prose-li:my-2 prose-li:mx-2 prose-headings:underline prose-headings:decoration-gray-600 prose-headings:underline-offset-8"
     >
       <slot />
     </div>
 
-
-    <div class="max-w-3xl mx-auto my-10">
+    <div class="max-w-3xl mx-auto my-10 lg:col-span-1 lg:bg-white lg:p-8 ">
+      {
+        image ? (
+          <Image
+            src={image}
+            class="max-w-full lg:block hidden mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
+            widths={[400, 900]}
+            sizes="(max-width: 900px) 400px, 900px"
+            alt={post?.excerpt || ''}
+            width={900}
+            height={400}
+            loading="eager"
+            decoding="async"
+          />
+        ) : (
+          <div class="max-w-sm md:max-w-2xl mx-auto px-4 sm:px-6">
+            <div class="border-t dark:border-slate-700" />
+          </div>
+        )
+      }
     {
       (prevpost || nextpost) && (
-        <div class="container flex flex-col items-center">
-          <div class="flex flex-row mx-auto container justify-between">
+        
+          <div class="flex flex-row mx-auto  justify-between px-3">
             <Button
               variant="secondary"
               class={`md:px-3 px-3 mr-2 ${!prevpost ? 'invisible' : ''}`}
@@ -136,10 +154,8 @@ const image = (await findImage(post.image)) || (await findImage('~/assets/images
               <Icon name="tabler:chevron-right" class="w-5 h-5 -mr-1 ml-1.5 rtl:-mr-1.5 rtl:ml-1" />
             </Button>
           </div>
-        </div>
       )
     }
-    </div>
     <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex gap-5 flex-col">
       <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
     </div>
@@ -167,9 +183,10 @@ const image = (await findImage(post.image)) || (await findImage('~/assets/images
       </Button>
     </div>
     <Advertisement size="m" />
-    <WidgetWrapper containerClass={'bg-white dark:bg-slate-900 max-w-3xl flex flex-col items-center'}>
+    <WidgetWrapper containerClass={'bg-white dark:bg-slate-900 max-w-3xl lg:w-full flex flex-col items-center'}>
     <CommentsForm post_id={post.id} client:load/>
     </WidgetWrapper>
-    
+    </div>
+  </div>
   </article>
 </section>
