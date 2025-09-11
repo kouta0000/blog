@@ -24,7 +24,7 @@ const toc = headings.map((h,i) => {
     <input type="checkbox" checked={true} />
    
     <div class="collapse-content rounded-2xl p-4">
-        <ul class="list">
+        <ul class="timeline timeline vertical">
             {
                 toc && (
                     toc.map((t)=>(
@@ -32,9 +32,10 @@ const toc = headings.map((h,i) => {
                         {!(t.title === 'Footnotes') && (
                             <a href={`#${t.link}`}>
                                 {(t.depth==2) ? (
+                                    <div>
                                     <li class="my-0 py-2 text-sm text-muted underline-none hover:underline hover:text-blue-400 list-row flex items-center">
-                                        <Icon name="tabler:brand-tinder-filled" class="text-orange-400 size-4"/>
-                                        {t.title}    
+                                        <div class="timeline-middle"><Icon name="tabler:brand-tinder-filled" class="text-orange-400 size-4"/></div>
+                                        <div class="timeline-end timeline-box">{t.title}</div>
                                     </li>
                                 ):(
                                     <li class="my-0 py-0.5 text-xs pl-5 text-muted underline-none hover:underline hover:text-blue-400 list-row flex items-center ">
