@@ -19,32 +19,36 @@ const toc = headings.map((h,i) => {
     <h2>目次</h2>
 <div tabindex="0" class="collapse collapse-plus bg-teal-50/50 dark:bg-gray-900 rounded-xl mx-auto">
     <div class="collapse-title">
-        <p></p>
     </div>
     <input type="checkbox" checked={true} />
    
     <div class="collapse-content rounded-2xl p-4">
-        <ul class="timeline timeline vertical">
+       
             {
                 toc && (
-                    toc.map((t)=>(
-                        <>
+                    toc.map((t, i)=>(
+                    <ul class="timeline timeline-vertical">
                         {!(t.title === 'Footnotes') && (
-                            <a href={`#${t.link}`}>
-                                {(t.depth==2) ? (
-                                    <div>
-                                    <li class="my-0 py-2 text-sm text-muted underline-none hover:underline hover:text-blue-400 list-row flex items-center">
-                                        <div class="timeline-middle"><Icon name="tabler:brand-tinder-filled" class="text-orange-400 size-4"/></div>
-                                        <div class="timeline-end timeline-box">{t.title}</div>
+                            
+                                (t.depth==2) ? (
+                                    
+                                    <li class="text-sm text-muted hover:underline hover:text-blue-400">
+                                         {(i!==0) && (<hr class="bg-indigo-400" />)}
+                                        <div class="timeline-middle"><Icon name="tabler:brand-tinder-filled" class="text-indigo-400 size-4 bg-indigo-100 rounded-full"/></div>
+                                        <div class="timeline-end timeline-box"><a href={`#${t.link}`}>{t.title}</a></div>
+                                        {(i!==(headings.length-2)) && (<hr class="bg-indigo-400 my-0" />)}
                                     </li>
                                 ):(
-                                    <li class="my-0 py-0.5 text-xs pl-5 text-muted underline-none hover:underline hover:text-blue-400 list-row flex items-center ">
-                                            {t.title}
+                                    <li class="text-xs text-muted hover:text-blue-400">
+                                        {(i!==0) && (<hr class="bg-teal-400" />)}
+                                        <div class="timeline-middle"><Icon name="tabler:brand-tinder-filled" class="text-teal-400 size-4 bg-teal-100 rounded-full"/></div>
+                                        <div class="timeline-end timeline-box"><a href={`#${t.link}`}>{t.title}</a></div>
+                                        {(i!==(headings.length-2)) && (<hr class="bg-teal-400 my-0" />)}
                                     </li>
-                                )}
-                            </a>
+                                )
+                        
                         )}
-                        </>
+                        </ul>
                     )
             ))}
         </ul>
