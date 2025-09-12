@@ -16,6 +16,7 @@ import Timeline from '~/components/ui/Timeline.astro';
 import LottieAnimation from "astro-integration-lottie/Lottie.astro";
 import Advertisement from '~/components/common/Advertisement.astro';
 import Conjugation from '~/components/common/Conjugation.svelte';
+import ConjugationD from  '~/components/common/ConjugationD.svelte';
 const metadata = {
   title: '狐庵独語',
   ignoreTitleTemplate: true,
@@ -79,8 +80,11 @@ items={[
 ]}
 />
 </WidgetWrapper>
-<WidgetWrapper>
+<WidgetWrapper containerClass='bg-teal-50 relative'>
   <Conjugation  client:load/>
+</WidgetWrapper>
+<WidgetWrapper containerClass='bg-teal-50 relative'>
+  <ConjugationD  client:load/>
 </WidgetWrapper>
 </Layout>
 <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
