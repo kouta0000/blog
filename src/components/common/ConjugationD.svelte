@@ -113,9 +113,9 @@
             <!-- head -->
             <thead class='bg-gray-100'>
               <tr class='flex'>
-                <th class='font-bold text-3xl text-black text-center h-[200px] flex-1 flex items-center justify-center'>{verbf}</th>
+                <th class='font-bold text-3xl text-black text-center h-[160px] flex-1 flex items-center justify-center'>{verbf}</th>
                 {#each modesf as m}
-                {#if m.show}<th class='border-x-2 text-3xl h-[200px] text-black border-gray-2 text-center flex-1 flex items-center justify-center'>{m.mode}</th>{/if}
+                {#if m.show}<th class='border-x-2 text-3xl h-[160px] text-black border-gray-2 text-center flex-1 flex items-center justify-center'>{m.mode}</th>{/if}
                 {/each}
               </tr>
             </thead>
@@ -130,10 +130,10 @@
               </tr>
               {/each}
               <tr class='flex'>
-                <th class='border-2 border-gray-200 h-[90px] flex-1 flex items-center justify-center text-3xl bg-gray-100'>現在分詞</th>
-                <th class='border-2 border-gray-200 h-[90px] flex-1 flex items-center justify-center'></th>
-                <th class='border-2 border-gray-200 h-[90px] flex-1 flex items-center justify-center text-3xl bg-gray-100'>過去分詞</th>
-                <th class='border-2 border-gray-200 h-[90px] flex-1 flex items-center justify-center'></th>
+                <th class='border-2 border-gray-200 h-[130px] flex-1 flex items-center justify-center text-3xl bg-gray-100'>現在分詞</th>
+                <th class='border-2 border-gray-200 h-[130px] flex-1 flex items-center justify-center'></th>
+                <th class='border-2 border-gray-200 h-[130px] flex-1 flex items-center justify-center text-3xl bg-gray-100'>過去分詞</th>
+                <th class='border-2 border-gray-200 h-[130px] flex-1 flex items-center justify-center'></th>
               </tr>
             </tbody>
           </table>
