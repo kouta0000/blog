@@ -113,7 +113,7 @@
             <!-- head -->
             <thead class='bg-gray-100'>
               <tr class='flex'>
-                <th class='font-bold text-3xl text-black text-center h-[160px] flex-1 flex items-center justify-center'>{verbf}</th>
+                <th class='font-bold text-5xl text-black text-center h-[160px] flex-1 flex items-center justify-center'>{verbf}</th>
                 {#each modesf as m}
                 {#if m.show}<th class='border-x-2 text-3xl h-[160px] text-black border-gray-2 text-center flex-1 flex items-center justify-center'>{m.mode}</th>{/if}
                 {/each}
