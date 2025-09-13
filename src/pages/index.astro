@@ -17,6 +17,7 @@ import LottieAnimation from "astro-integration-lottie/Lottie.astro";
 import Advertisement from '~/components/common/Advertisement.astro';
 import Conjugation from '~/components/common/Conjugation.svelte';
 import ConjugationD from  '~/components/common/ConjugationD.svelte';
+import { getPermalink } from '~/utils/permalinks';
 const metadata = {
   title: '狐庵独語',
   ignoreTitleTemplate: true,
@@ -58,13 +59,14 @@ items={[
 />
 </WidgetWrapper>
 <BlogHighlightedPosts title="フランス語超入門" linkText='一覧へ' classes={{container:"pb-10 bg-white dark:bg-gray-950"}} category={'フランス語超入門'} />
-<Advertisement size="s"/>
-<WidgetWrapper containerClass='bg-teal-50 relative overflow-clip'>
-  <Conjugation  client:load/>
-</WidgetWrapper>
+
 <Advertisement size="m"/>
-<WidgetWrapper containerClass='bg-white relative overflow-clip'>
-  <ConjugationD  client:load/>
+
+<WidgetWrapper containerClass='bg-teal-50'>
+  <a href={getPermalink('/conjugation_gen')} >
+  <Note title='活用表ジェネレータ' icon='tabler:chevron-right' />
+  </a>
 </WidgetWrapper>
+
 </Layout>
 <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>

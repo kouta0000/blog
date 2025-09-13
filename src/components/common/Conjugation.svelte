@@ -46,7 +46,7 @@
     }
   };
 </script>
-    <h1 class='text-center font-headings text-blue-800 font-bold text-lg my-6'>動詞活用テストジェネレーター（フランス語）</h1>
+   
     <div>
       <h2 class="font-headings my-4">動詞を入力してください</h2>
       <label class='input input-accent'>
