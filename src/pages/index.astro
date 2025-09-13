@@ -62,10 +62,14 @@ items={[
 
 <Advertisement size="m"/>
 
-<WidgetWrapper containerClass='bg-teal-50'>
+<WidgetWrapper containerClass='bg-teal-50 flex flex-col gap-10'>
   <a href={getPermalink('/conjugation_gen')} >
-  <Note title='活用表ジェネレータ' icon='tabler:chevron-right' />
+  <Note title='活用表ジェネレータ　　➤' icon='tabler:book'/>
   </a>
+  <a href={getPermalink('/dictionaries')} >
+    <Note title='オンライン仏々辞書まとめ　　➤' icon='tabler:book' />
+  </a>
+
 </WidgetWrapper>
 
 </Layout>
