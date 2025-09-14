@@ -40,9 +40,9 @@
     <textarea class='textarea bg-teal-50 w-full text-xl tracking-widest' bind:value={text} placeholder="キーボード入力も可能です" />
     <div>
     <div class='flex justify-center gap-2'>
-        <div class='flex flex-col justify-center gap-2 flex-wrap flex-1'>
+        <div class='flex flex-col justify-center gap-1 flex-wrap flex-1'>
         {#each consonants as cgroup}
-        <div class='flex gap-2 flex-wrap justify-start'>
+        <div class='flex gap-1 flex-wrap justify-start'>
         {#each cgroup as c}
         <span class='kbd size-10 cursor-pointer' onclick={()=>{inputToTextarea(c)}}>
             {c}
