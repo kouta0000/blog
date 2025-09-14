@@ -1,6 +1,6 @@
 site:
-  name: 狐庵独語
-  site: 'https://astrowind.vercel.app'
+  name: 古庵独語
+  site: 'https://kotablog.netlify.app'
   base: '/'
   trailingSlash: false
 
@@ -9,16 +9,16 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Kota's site
+    default: 古庵独語
     template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "個人ブログ。言語系の発信をします。特にフランス語。ときにドイツ語、英語"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Kota's site
+    site_name: 古庵独語
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/background1.jpg'
         width: 1200
         height: 628
     type: website
@@ -28,7 +28,7 @@ metadata:
     cardType: summary_large_image
 
 i18n:
-  language: en
+  language: jp
   textDirection: ltr
 
 apps:

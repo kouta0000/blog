@@ -40,17 +40,10 @@ const posts = APP_BLOG.isEnabled ? ( postIds.length > 0 ? await findPostsByIds(p
         {title && (
           <div class="md:max-w-sm">
             <h2
-              class="text-center text-xl font-bold tracking-tight sm:leading-none group font-heading mb-5"
+              class="text-center text-xl font-bold tracking-tight sm:leading-none group font-heading my-5"
               set:html={title}
             />
-            {APP_BLOG.list.isEnabled && linkText && linkUrl && (
-              <a
-                class="mt-5 text-muted dark:text-slate-400 hover:text-primary transition ease-in duration-200 block mb-6 lg:mb-0"
-                href={linkUrl}
-              >
-                {linkText}
-              </a>
-            )}
+            
           </div>
         )}
 

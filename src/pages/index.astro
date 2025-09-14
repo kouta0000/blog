@@ -17,7 +17,9 @@ import LottieAnimation from "astro-integration-lottie/Lottie.astro";
 import Advertisement from '~/components/common/Advertisement.astro';
 import Conjugation from '~/components/common/Conjugation.svelte';
 import ConjugationD from  '~/components/common/ConjugationD.svelte';
+import Features3 from '~/components/widgets/Features3.astro';
 import { getPermalink } from '~/utils/permalinks';
+import Hero2 from '~/components/widgets/Hero2.astro';
 const metadata = {
   title: '狐庵独語',
   ignoreTitleTemplate: true,
@@ -25,11 +27,8 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero
-  image={{alt: 'AstroWind Hero Image' }}
->
-</Hero>
-<BlogLatestPosts title="最新記事" count={12} linkText="記事一覧へ" classes={{container:"pb-10 bg-white dark:bg-gray-950 snap-y snap-mandatory overflow-y-scroll"}}/>
+  <Hero2 subtitle='フランス語　日本語　その他の言語　プログラミング　雑文' />
+<BlogLatestPosts title="最新記事" count={12} linkText="記事一覧へ" classes={{container:"pb-10 bg-white/80 dark:bg-gray-950 snap-y snap-mandatory overflow-y-scroll"}}/>
 </div>
 <Advertisement size="s" />
 <WidgetWrapper isDark={false} containerClass={'bg-teal-50 dark:bg-gray-950'}>
@@ -58,24 +57,26 @@ items={[
 ]}
 />
 </WidgetWrapper>
-<BlogHighlightedPosts title="フランス語超入門" linkText='一覧へ' classes={{container:"pb-10 bg-white dark:bg-gray-950"}} category={'フランス語超入門'} />
 
+<BlogHighlightedPosts title="フランス語超入門" linkText='一覧へ' classes={{container:'bg-white/80'}} category={'フランス語超入門'} />
 <Advertisement size="m"/>
 
-<WidgetWrapper containerClass='bg-teal-50 flex flex-col gap-10'>
-  <a href={getPermalink('/kbdF')} >
-    <Note title='IPAキーボード（フランス語）　　➤' icon='tabler:keyboard' />
-  </a>
-  <a href={getPermalink('/kbdE')} >
-    <Note title='IPAキーボード（英語）　　➤' icon='tabler:keyboard' />
-  </a>
-  <a href={getPermalink('/conjugation_gen')} >
-  <Note title='活用表ジェネレータ　　➤' icon='tabler:book'/>
-  </a>
-  <a href={getPermalink('/dictionaries')} >
-    <Note title='オンライン仏々辞書まとめ　　➤' icon='tabler:book' />
-  </a>
-
+<WidgetWrapper containerClass='bg-teal-50'>
+  <Features2 classes={{panel:'bg-pink-300'}} tagline='道具箱' items={[
+    {title:'IPAキーボード（フランス語）', icon:'tabler:keyboard',
+    description:'発音記号のオンラインキーボードです。入力した内容をコピー＆ペーストで利用できます。', 
+    callToAction:{href:getPermalink('/kbdF'),icon:'tabler:chevron-right'}},
+    {title:'IPAキーボード（英語）', icon:'tabler:keyboard', 
+    description:'英語バージョンです。',
+    callToAction:{href:getPermalink('/kbdE'),icon:'tabler:chevron-right'}},
+    {title:'活用表ジェネレータ', icon:'tabler:table-spark', 
+    description:'動詞活用表の穴埋めテストを生成します。動詞と含めたい法・時制を指定して、pdfでダウンロードできます。',
+    callToAction:{href:getPermalink('/conjugation_gen'),icon:'tabler:chevron-right'}},
+    {title:'オンライン仏々辞書まとめ', icon:'tabler:books', 
+    description:'インターネットにある仏々辞書をまとめています。日仏の辞書はネットにはあまり無いですが、仏々の辞書は無料で使えるものがたくさんあります。上級者向けですが、参考にしてください。',
+    callToAction:{href:getPermalink('/dictionaries'),icon:'tabler:chevron-right'}},
+  ]
+  } />
 </WidgetWrapper>
 
 </Layout>
