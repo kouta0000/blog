@@ -1,5 +1,5 @@
 ---
-publishDate: 2025-08-19
+publishDate: 2025-09-10
 title: "第3講　ことばの順番"
 image: '~/assets/images/domino.png'
 category: "フランス語超入門"
