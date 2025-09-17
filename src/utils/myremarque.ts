@@ -7,7 +7,7 @@ import type { Transformer } from 'unified';
 export default function myremarque(): Transformer<Root> {
   return (tree: Root) => {
     visit(tree,'containerDirective', (node) => {
-      if (node.name !== 'remarque') return;
+      if (node.name === 'remarque') {
 
       const title = node.attributes?.title || 'Remarque';
       const titleNode = h('h4', { class: 'text-sm' }, title);
@@ -24,6 +24,7 @@ export default function myremarque(): Transformer<Root> {
         },
         hChildren: [chatbubbleNode],
       };
+    }
     });
   };
 }
