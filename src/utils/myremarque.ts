@@ -11,7 +11,7 @@ export default function myremarque(): Transformer<Root> {
 
       const title = node.attributes?.title || 'Remarque';
       const titleNode = h('h4', { class: 'text-sm' }, title);
-      const contentNodes = h('div',{class:''}, node.data?.hChildren);
+      const contentNodes = h('div',{class:''}, node.children[0].data?.hChildren);
 
       const chatbubbleNode = h('div', {
         class: 'chat-bubble bg-teal-50 p-4 text-sm',
