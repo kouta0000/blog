@@ -18,7 +18,7 @@ export default function myremarque(): Transformer<Root> {
         hProperties: {
           class: 'chat chat-end w-full p-10',
         },
-        hChildren: [chatbubbleNode],
+        hChildren: node.data?.hChildren,
       };
     });
   };
