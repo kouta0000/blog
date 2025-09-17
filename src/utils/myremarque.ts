@@ -13,7 +13,7 @@ export default function myremarque(): Transformer<Root> {
       const chatbubbleNode = h('div', {
         class: 'chat-bubble bg-teal-50 p-4 text-sm',
       }, [titleNode]);
-      const children = node.data?.hChildren || [];
+      const children = node.data?.hChildren ?? [];
       node.data = {
         hName: 'div',
         hProperties: {
