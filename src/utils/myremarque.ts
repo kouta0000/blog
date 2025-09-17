@@ -1,19 +1,18 @@
-import { h } from 'hastscript';
+
+import { h,s } from 'hastscript';
 import { visit } from 'unist-util-visit';
 import type { Root } from 'mdast';
 import type { Transformer } from 'unified';
-
 export default function myremarque(): Transformer<Root> {
   return (tree: Root) => {
-    visit(tree, 'containerDirective', (node) => {
+    visit(tree,'containerDirective', (node) => {
       if (node.name !== 'remarque') return;
-      const children = node.data?.hChildren ?? [];
+
       const title = node.attributes?.title || 'Remarque';
-      const titleNode = h('h4', { class: 'text-sm' }, title);
       const chatbubbleNode = h('div', {
         class: 'chat-bubble bg-teal-50 p-4 text-sm',
-      }, [titleNode,...children]);
-      
+      });
+
       node.data = {
         hName: 'div',
         hProperties: {
