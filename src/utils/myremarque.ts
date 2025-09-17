@@ -17,7 +17,7 @@ export default function myremarque(): Transformer<Root> {
       node.data = {
         hName: 'div',
         hProperties: {
-          class: 'chat chat-start w-full p-10',
+          class: 'chat chat-end w-full p-10',
         },
         hChildren: [chatbubbleNode, ...children],
       };
