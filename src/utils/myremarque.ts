@@ -1,22 +1,26 @@
-import {h} from 'hastscript';
+import { h } from 'hastscript';
 import { visit } from 'unist-util-visit';
 import type { Root } from 'mdast';
-import type {Transformer} from 'unified';
+import type { Transformer } from 'unified';
 
-export default function myremarque():Transformer<Root> {
-  return (tree:Root) => {
+export default function myremarque(): Transformer<Root> {
+  return (tree: Root) => {
     visit(tree, 'containerDirective', (node) => {
       if (node.name !== 'remarque') return;
 
-      const data = node.data || {};
-      
       const title = node.attributes?.title || 'Remarque';
-      const titleNode = h('h2', { class: 'text-sm' }, title);
+      const titleNode = h('h4', { class: 'text-sm' }, title);
       const chatbubbleNode = h('div', {
-        class: 'chat-bubble bg-teal-100 p-4 text-sm',
+        class: 'chat-bubble bg-teal-50 p-4 text-sm',
       }, [titleNode]);
-      data.hChildren=[chatbubbleNode];
-      data.hProperties={class:'chat chat-start w-full'};
-  })
-}
+      const children = node.data?.hChildren || [];
+      node.data = {
+        hName: 'div',
+        hProperties: {
+          class: 'chat chat-start w-full p-10',
+        },
+        hChildren: [chatbubbleNode, ...children],
+      };
+    });
+  };
 }
