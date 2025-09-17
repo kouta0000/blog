@@ -9,7 +9,7 @@ export default function myremarque(): Transformer<Root> {
     visit(tree,'containerDirective', (node) => {
       if (node.name === 'remarque') {
 
-      const title = node.attributes?.title || 'Remarque';
+      const title = node.attributes?.title || 'Remarq';
       const titleNode = h('h4', { class: 'text-sm' }, title);
       const contentNodes = h('h4',{class:''},'aaaaaaaaaaaaaaaaaaa');
 
