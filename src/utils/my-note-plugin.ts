@@ -28,7 +28,7 @@ const MyNote:Plugin<[],Root> = () =>  {
         type:'leafDirective',
         name:'title-header',
         data: {
-            hName: 'h4',
+            hName: 'h3',
             hProperties: {
                 class: headerClass
             }
