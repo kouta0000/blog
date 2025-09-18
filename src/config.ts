@@ -173,7 +173,7 @@ export const navBarConfig: NavBarConfig = {
 				},
 			],
 		},
-		/*{
+		{
 			name: "My",
 			url: "/content/",
 			icon: "material-symbols:person",
@@ -214,7 +214,7 @@ export const navBarConfig: NavBarConfig = {
 					icon: "material-symbols:timeline",
 				},
 			],
-		},*/
+		},
 	],
 };
 
