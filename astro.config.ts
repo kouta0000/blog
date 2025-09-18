@@ -77,7 +77,7 @@ export default defineConfig({
 
   markdown: {
     shikiConfig: {
-      theme: 'dracula'
+      theme: 'catppuccin-latte'
     },
     remarkPlugins: [readingTimeRemarkPlugin, remarkDirective,MyNote],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
