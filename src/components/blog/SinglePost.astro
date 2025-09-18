@@ -38,28 +38,10 @@ const image = (await findImage(post.image)) || (await findImage('~/assets/images
 
 <section class="px-2 sm:px-4 py-8 sm:py-16 lg:py-20 mx-auto">
   <article >
-    {
-      image ? (
-        <Image
-          src={image}
-          class="max-w-full md:hidden mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
-          widths={[400, 900]}
-          sizes="(max-width: 900px) 400px, 900px"
-          alt={post?.excerpt || ''}
-          width={900}
-          height={400}
-          loading="eager"
-          decoding="async"
-        />
-      ) : (
-        <div class="max-w-sm md:max-w-2xl mx-auto px-4 sm:px-6">
-          <div class="border-t dark:border-slate-700" />
-        </div>
-      )
-    }
+
     
     
-  <div class="w-full bg-white/90 rounded-xl pt-20">
+  <div class="w-full bg-white/90 md:max-w-3xl rounded-xl pt-20 mx-auto">
     <header
       class={post.image
         ? 'max-w-3xl mx-auto intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'
@@ -113,7 +95,7 @@ const image = (await findImage(post.image)) || (await findImage('~/assets/images
       
     </header>
     <div
-      class="prose-ul:my-10  prose-headings:border-b-2 prose-headings:border-teal-100 prose-ol:my-10 dark:bg-gray-950 px-4 lg:px-8 py-10 pt-15 lg:pt-25 mx-auto text-gray-800 dark:text-gray-200 prose-headings:mb-7 prose-headings:-transform-x-5 prose-headings:pb-2 prose-h2:text-2xl px-2 sm:px-4 max-w-3xl prose prose-md prose-zinc lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg prose-headings:scroll-mt-[80px] prose-li:scroll-mt-[80px] prose-p:scroll-mt-[80px] prose-li:my-4 prose-li:mx-2"
+      class="prose-ul:my-10   prose-headings:border-b-2 prose-headings:border-teal-100 prose-ol:my-10 dark:bg-gray-950 px-4 lg:px-8 py-10 pt-15 lg:pt-25 mx-auto text-gray-800 dark:text-gray-200 prose-headings:mb-7 prose-headings:-transform-x-5 prose-headings:pb-2 prose-h2:text-2xl px-2 sm:px-4 max-w-3xl prose prose-md prose-zinc lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg prose-headings:scroll-mt-[80px] prose-li:scroll-mt-[80px] prose-p:scroll-mt-[80px] prose-li:my-4 prose-li:mx-8"
     >
       <slot />
     </div>

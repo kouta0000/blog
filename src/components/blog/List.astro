@@ -10,12 +10,12 @@ export interface Props {
 const { posts } = Astro.props;
 ---
 
-<ul class="bg-white rounded-xl dark:bg-gray-950">
+<ul class="bg-white rounded-xl dark:bg-gray-950 ">
   {
     posts.map((post, index) => (
       <>
       <li class="mb-1 md:mb-2">
-        <Item post={post}  />
+        <Item post={post} index={index} />
       </li>
       <hr class="w-full h-1 my-1 bg-teal-100 md:w-[70vw] md:my-3 dark:bg-gray-700 md:hidden" />
       {

@@ -36,11 +36,11 @@ const postpairs: Post[][] = pairArray(posts);
         prevEl: ".my-swiper-button-prev",
       },
       slidesPerView: 2,
-      spaceBetween: 0,
+      spaceBetween: 5,
     }}>
     <SwiperWrapper>
       {posts.map((post) => (
-        <SwiperSlide>
+        <SwiperSlide >
           <Item post={post} />
         </SwiperSlide>
       ))}
@@ -72,7 +72,7 @@ const postpairs: Post[][] = pairArray(posts);
         prevEl: ".my-swiper-button-prev",
       },
       slidesPerView: 3,
-      spaceBetween: 0,
+      spaceBetween: 5,
     }}>
     <SwiperWrapper>
       {posts.map((post) => (
