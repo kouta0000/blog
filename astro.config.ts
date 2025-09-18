@@ -16,7 +16,7 @@ import markedFootnote from 'marked-footnote';
 import type { AstroIntegration } from 'astro';
 import remarkDirective from 'remark-directive';
 import remarkToc from 'remark-toc';
-import myremarque from './src/utils/myremarque'
+import MyNote from './src/utils/my-note-plugin';
 
 
 import astrowind from './vendor/integration';
@@ -79,7 +79,7 @@ export default defineConfig({
     shikiConfig: {
       theme: 'dracula'
     },
-    remarkPlugins: [readingTimeRemarkPlugin, remarkDirective, myremarque],
+    remarkPlugins: [readingTimeRemarkPlugin, remarkDirective, MyNote],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
 
