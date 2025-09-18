@@ -28,10 +28,12 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <Hero2 subtitle='フランス語　日本語　その他の言語　プログラミング　雑文' />
-<BlogLatestPosts title="最新記事" count={12} linkText="記事一覧へ" classes={{container:"pb-10 bg-white/80 dark:bg-gray-950 snap-y snap-mandatory overflow-y-scroll"}}/>
+<BlogLatestPosts title="最新記事" count={4} linkText="記事一覧へ" classes={{container:"pb-10 bg-white dark:bg-gray-950 snap-y snap-mandatory overflow-y-scroll"}}/>
 </div>
-
-<BlogHighlightedPosts title="フランス語超入門" linkText='一覧へ' classes={{container:'bg-white/80'}} category={'フランス語超入門'} />
+<div class="sm:grid grid-cols-2">
+<BlogHighlightedPosts title="フランス語超入門"  linkText='一覧へ' classes={{container:'bg-white/80'}} category={'フランス語超入門'} />
+<BlogHighlightedPosts title="日本語"  linkText='一覧へ' classes={{container:'bg-white/80'}} category={'日本語'} />
+</div>
 <Advertisement size="m"/>
 
 <WidgetWrapper containerClass='bg-teal-50'>

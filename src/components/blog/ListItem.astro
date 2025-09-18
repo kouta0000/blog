@@ -21,13 +21,14 @@ import { prototypejs } from 'globals';
 export interface Props {
   post: Post;
   index:number;
+  excerptnumber?:number;
 }
 
-const { post,index }:Props = Astro.props;
+const { post,index,excerptnumber }:Props = Astro.props;
 const image = ((await findImage(post.image)) || (await findImage('~/assets/images/desert.jpg'))) as ImageMetadata | undefined;
 
 const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
-const excerpt = await getExcerpt(150, post.id);
+const excerpt = await getExcerpt(excerptnumber ?? 0, post.id);
 const icons = ['tabler:flame','tabler:droplet','tabler:droplets','tabler:fountain','tabler:feather-filled','tabler:filters-filled',
 'tabler:temperature-sun','tabler:battery-3','tabler:campfire-filled','tabler:directions']
 const random = Math.floor(Math.random()*10);
@@ -73,7 +74,7 @@ const random = Math.floor(Math.random()*10);
      
     </header>
     <footer class=" dark:text-slate-400 text-xs sm:text-sm md:text-md text-gray-500">
-      <a href={link} class="">{excerpt}{excerpt==='...'? '執筆中です':''}</a>
+      <a href={link} class="">{excerpt!=='...' ? excerpt:''}</a>
     </footer>
     
 </article>

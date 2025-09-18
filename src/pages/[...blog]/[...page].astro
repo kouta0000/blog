@@ -41,7 +41,7 @@ const metadata = {
     >
       記事一覧
     </Headline>
-    <BlogList posts={page.data} />
+    <BlogList posts={page.data} excerptnumber={100}/>
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
     <!--
       <PostTags tags={allCategories} class="mb-2" title="Search by Categories:" isCategory />

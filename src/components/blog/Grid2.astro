@@ -19,7 +19,7 @@ function pairArray(arr: Array<Post>) {
 const { posts } = Astro.props;
 const postpairs: Post[][] = pairArray(posts);
 ---
-<div class="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-3 px-5 sm:px-0">
+<div class="grid grid-cols-1  lg:grid-cols-2 gap-3 px-5 sm:px-0">
   {
     posts.map((post)=>(
       <>

@@ -5,9 +5,10 @@ import Advertisement from '~/components/common/Advertisement.astro';
 
 export interface Props {
   posts: Array<Post>;
+  excerptnumber?:number;
 }
 
-const { posts } = Astro.props;
+const { posts, excerptnumber } = Astro.props;
 ---
 
 <ul class="bg-white rounded-xl dark:bg-gray-950 ">
@@ -15,7 +16,7 @@ const { posts } = Astro.props;
     posts.map((post, index) => (
       <>
       <li class="mb-1 md:mb-2">
-        <Item post={post} index={index} />
+        <Item post={post} index={index} excerptnumber={excerptnumber} />
       </li>
       <hr class="w-full h-1 my-1 bg-teal-100 md:w-[70vw] md:my-3 dark:bg-gray-700 md:hidden" />
       {

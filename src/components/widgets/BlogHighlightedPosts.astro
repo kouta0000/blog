@@ -1,12 +1,13 @@
 ---
 import { APP_BLOG } from 'astrowind:config';
 
-import Grid from '~/components/blog/Grid.astro';
+import Grid from '~/components/blog/Grid2.astro';
 
-import { getBlogPermalink } from '~/utils/permalinks';
+import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 import { findPostsByIds, findPostsByCategory } from '~/utils/blog';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Widget } from '~/types';
+import Button from '../ui/Button.astro';
 
 export interface Props extends Widget {
   title?: string;
@@ -48,9 +49,15 @@ const posts = APP_BLOG.isEnabled ? ( postIds.length > 0 ? await findPostsByIds(p
         )}
 
         {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
+        {APP_BLOG.list.isEnabled && linkText && linkUrl && (
+              <Button variant="link" href={getPermalink(posts[0].category?.slug, 'category')}>
+                {' '}
+                {linkText} »
+              </Button>
+            )}
       </div>
 
-      <Grid posts={posts} />
+      <Grid posts={posts.slice(0,4)} />
     </WidgetWrapper>
   ) : (
     <Fragment />
