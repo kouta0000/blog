@@ -42,8 +42,8 @@ const MyNote:Plugin<[],Root> = () =>  {
       }
       
 
-      const contentContainer:ContainerDirective = {
-        type:'containerDirective',
+      const contentContainer:LeafDirective = {
+        type:'leafDirective',
         name:'content-container',
         data:{
             hName: 'div',
@@ -51,7 +51,7 @@ const MyNote:Plugin<[],Root> = () =>  {
                 class: 'text-sm'
             }
         },
-        children:[...node.children]
+        children:[...node.children.values[0]]
       }
       const chatBubble:ContainerDirective = {
         type:'containerDirective',
