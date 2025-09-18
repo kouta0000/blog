@@ -30,7 +30,7 @@ const MyNote:Plugin<[],Root> = () =>  {
         data: {
             hName: 'h3',
             hProperties: {
-                class: headerClass
+                class: ''
             }
         },
         children: [
@@ -59,7 +59,7 @@ const MyNote:Plugin<[],Root> = () =>  {
         data: {
             hName:'div',
             hProperties: {
-                class:chatBubbleClass,
+                class:'chat-bubble w-full bg-teal-50 p-5'
             }
         },
         children:[titleHeader,contentContainer]
