@@ -6,7 +6,7 @@ import type { Root, PhrasingContent } from 'mdast'; /***ノード自体の型 **
 import type { Transformer, Plugin } from 'unified';/*** ノードを走査する系の関数の型***/
 
 export const noteClass = 'chat chat-end w-full';
-export const headerClass = 'text-sm';
+export const headerClass = '';
 export const chatBubbleClass = 'chat-bubble w-full bg-teal-50 p-5'
 const MyNote:Plugin<[],Root> = () =>  {
   return (tree) => {
@@ -24,14 +24,39 @@ const MyNote:Plugin<[],Root> = () =>  {
       } 
       /*子要素の作成*/
       const title = node.attributes?.title || 'Remarque';
-      const titleHeader: PhrasingContent = {
-        type:'text',
-        value:title,
+      const titleHeader: LeafDirective = {
+        type:'leafDirective',
+        name:'title-header',
+        data: {
+            hName: 'h4',
+            hProperties: {
+                class: headerClass
+            }
+        },
+        children: [
+            {
+                type:'text',
+                value:title,
+            }
+        ]
       }
       const firstChild = node.children[0];
+      
       if(firstChild.type!=='paragraph') return;
-      const chatBubble:LeafDirective = {
+
+      const contentContainer:LeafDirective = {
         type:'leafDirective',
+        name:'content-container',
+        data:{
+            hName: 'div',
+            hProperties: {
+                class: 'text-sm'
+            }
+        },
+        children:[...firstChild.children]
+      }
+      const chatBubble:ContainerDirective = {
+        type:'containerDirective',
         name:'chat-bubble',
         data: {
             hName:'div',
@@ -39,7 +64,7 @@ const MyNote:Plugin<[],Root> = () =>  {
                 class:chatBubbleClass,
             }
         },
-        children:[titleHeader,...firstChild.children]
+        children:[titleHeader,contentContainer]
       }
       node.children = [chatBubble]
 

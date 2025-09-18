@@ -79,7 +79,7 @@ export default defineConfig({
     shikiConfig: {
       theme: 'dracula'
     },
-    remarkPlugins: [readingTimeRemarkPlugin, remarkDirective, MyNote],
+    remarkPlugins: [readingTimeRemarkPlugin, remarkDirective,MyNote],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
 
