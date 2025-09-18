@@ -1,54 +1,39 @@
-# About This Site
-
-This website is built with the **Astro** framework using the [Mizuki](https://github.com/matsuzaka-yuki/mizuki) theme.
-
-::github{repo="matsuzaka-yuki/Mizuki"}
-
-## 🌟 Theme Features
-
-### 🎨 Design & User Experience
-- **Modern & Elegant Design** - Clean, minimalist interface with beautiful typography
-- **Fully Responsive** - Optimized for all devices from mobile to desktop
-- **Dark/Light Mode** - Automatic theme switching with smooth transitions
-- **Beautiful Typography** - Enhanced readability with JetBrains Mono font
-- **Smooth Animations** - Fluid page transitions and interactive elements
-
-### 🔍 Content & Search
-- **Advanced Search** - Powered by [Pagefind](https://pagefind.app/) for fast, accurate results
-- **Enhanced Markdown** - Extended syntax with code highlighting and math support
-- **Interactive Table of Contents** - Auto-scroll navigation for long articles
-- **RSS Feed Generation** - Stay updated with automatic feed generation
-- **Reading Time Estimation** - Know how long articles take to read
-- **Post Categorization** - Organize content with tags and categories
-
-### 🌐 Internationalization
-- **Multi-language Support** - Real-time translation capabilities
-- **Auto Language Detection** - Detects user preferences automatically
-- **Client-side Translation** - Powered by Edge Translate technology
-- **10+ Languages Supported** - EN, ZH-CN, ZH-TW, JA, KO, ES, TH, VI, ID, TR
-
-### 📱 Special Pages
-- **Anime Tracking Page** - Track your anime watching progress with ratings
-- **Friends Links Page** - Showcase friend websites with beautiful cards
-- **Diary/Moments Page** - Share life moments like social media posts
-- **Archive Page** - Organized timeline view of all posts
-- **About Page** - Customizable personal introduction (this page!)
-
-### 🛠 Technical Features
-- **Enhanced Code Blocks** - Powered by [Expressive Code](https://expressive-code.com/)
-- **Math Support** - LaTeX rendering with KaTeX for mathematical expressions
-- **Image Optimization** - PhotoSwipe gallery with lazy loading
-- **SEO Optimized** - Built-in sitemap and meta tags for better search visibility
-- **Performance Optimized** - Fast loading with caching and optimization
-- **Comment System Ready** - Integration support for Twikoo comments
-
-### 🎯 Advanced Markdown Features
-- **Callouts & Admonitions** - Beautiful info boxes with `> [!NOTE]`, `> [!TIP]`, `> [!WARNING]`
-- **Mathematical Equations** - Write LaTeX math with `$inline$` and `$$block$$` syntax
-- **GitHub Cards** - Embed repository cards with `::github{repo="user/repo"}`
-- **Syntax Highlighting** - Advanced code highlighting with line numbers
-- **Copy Code Buttons** - Easy code copying functionality
-
+---
+title: "このサイトについて" 
+description: "サイト概要"
+published: 2025-01-01
 ---
 
-*Built with ❤️ using Astro and inspired by modern web design principles.*
+#### 本サイトの目的
+
+目的と書いておきながら、それほど明確な目的があるわけではありません。
+
+何かじぶんの考えたこととか、感じたことをブログにしてみたいと、かねてから思っていたのですが、やる気の面や技術の面がついてこず、なかなか始めることができませんでした。
+
+はてなブログやNoteもあるのですが、だれかが作ったアプリケーションでは、なんというのか、じぶんのものでないような感覚があって、投稿がつづきそうもなく、はじめることもしませんでした。
+
+今は、技術面がともなってきましたし、ある程度書く習慣や方法論も身に付いてきたので、良い機会と思い、このサイトを開きました。
+
+あとは、文章を書く習慣を付けたかったというのもあります。論文を書いたり、本を読んだりするのが、ほとんど仕事とも言っていいタスクですので、その質や生産性を上げるのに役立つかなという思いもあります。
+
+#### サイトに用いている技術
+
+大もとはAstroで、一部の動的ロジックにはSvelteを用いています。データベースにはsupabase、ホスティングサービスはNetlifyを使っています。CSSはTailwindを使い、さらにDaisyUIというTailwindライブラリも使用してます。
+
+Astrowindという、AstroとTailwindを軸にしたサイトテンプレートを、じぶんなりにカスタマイズして作っています。デザインセンスというか視覚的才能が本当に皆無なので、見た目に気になるところがあるかもしれませんが、ご容赦ください。
+
+画像系のほとんどは、Geminiに作ってもらってます。
+
+どこから来るのか知りませんが要望でもあれば、プログラミング系のはなしもするかもしれませんが、そんなにやる気はありません。
+
+#### 軽く自己紹介
+
+フランス語が専門の大学院生です。いちおうの研究対象は18世紀フランスの科学、特に光学思想ということになっています。基本的には、フランス語や英語の文献をひたすら読んでいます。
+
+専門に関わらず、哲学、文学、言語学にも幅広く興味があります。が、すべて中途半端で、よく言えば幅広い、悪く言えばミーハーということでしょうか。
+
+多言語学習が一つの趣味です。軽く勉強しただけを含めれば、イタリア語、スペイン語、ドイツ語、ロシア語、ギリシャ語、ラテン語、サンスクリット語、アイヌ語、古典日本語などをやりました。が、どれもほんとうに中途半端です。強いてできる順を挙げれば、フランス語>英語>ドイツ語>ロシア語>その他ウゾウムゾウ、です。それぞれの言語で単語をどれくらい知っているかも把握しているつもりですが、フランス語１万強、英語１万弱、ドイツ語1,500程度、ロシア語500程度、その他数十語なので、このように可視化すると、どれも大したことないのがわかります。
+
+世に言うポリグロットなる生物が、どの程度真面目にそれぞれの言語を勉強しているのか。本当によくできるのは、２，３個ではないかと、はなはだ疑いを持っています。だいたいある言語を、ある程度「できる」レベルまでもっていくには、少なくとも2000~3000単語くらいは暗記が必要ですし、その変化系やコロケーションなどを含めたら覚える事項は膨大。人間に到底そんなことができるとは思えません。
+
+脱線しました。以上です。あとは、あまり共感されませんが、詩が好きですので、フランス詩や日本の詩の紹介などもするかもしれません。

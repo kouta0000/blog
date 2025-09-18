@@ -10,7 +10,7 @@
 
 /* 导入 ZenMaruGothic-Medium 字体 */
 @font-face {
-  font-family: 'ZenMaruGothic-Medium';
+  font-family: 'Hiragino Sans','ヒラギノ角ゴ ProN W3', 'Yu Gothic', 'Meiryo', 'Helvetica Neue','Arial' sans-serif;
   src: url('/assets/font/ZenMaruGothic-Medium.ttf') format('truetype');
   font-weight: 500;
   font-display: swap;

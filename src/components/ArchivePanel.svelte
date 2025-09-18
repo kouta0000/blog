@@ -34,7 +34,7 @@ let groups: Group[] = [];
 function formatDate(date: Date) {
 	const month = (date.getMonth() + 1).toString().padStart(2, "0");
 	const day = date.getDate().toString().padStart(2, "0");
-	return `${month}-${day}`;
+	return `${month}月${day}日`;
 }
 
 function formatTag(tagList: string[]) {
@@ -84,7 +84,9 @@ onMount(async () => {
 	groups = groupedPostsArray;
 });
 </script>
-
+<h1 class='text-center text-90 my-5 font-bold'>
+    {categories[0]}
+</h1>
 <div class="card-base px-8 py-6">
     {#each groups as group}
         <div>
@@ -131,7 +133,7 @@ onMount(async () => {
                         <div
                                 class="w-[70%] md:max-w-[65%] md:w-[65%] text-left font-bold
                      group-hover:translate-x-1 transition-all group-hover:text-[var(--primary)]
-                     text-75 pr-8 whitespace-nowrap overflow-ellipsis overflow-hidden"
+                     text-90 pr-8 whitespace-nowrap overflow-ellipsis overflow-hidden"
                         >
                             {post.data.title}
                         </div>
