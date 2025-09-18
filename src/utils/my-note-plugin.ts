@@ -11,7 +11,7 @@ export const chatBubbleClass = 'chat-bubble w-full bg-teal-50 p-5'
 const MyNote:Plugin<[],Root> = () =>  {
   return (tree) => {
     visit(tree,'containerDirective', (node) => {
-      if (node.name === 'node') return;
+      if (node.name === 'note') return;
       if(node.children.length===0) return;
       /*noteコンテナーの作成 */
       node.data = {
@@ -40,12 +40,10 @@ const MyNote:Plugin<[],Root> = () =>  {
             }
         ]
       }
-      const firstChild = node.children[0];
       
-      if(firstChild.type!=='paragraph') return;
 
-      const contentContainer:LeafDirective = {
-        type:'leafDirective',
+      const contentContainer:ContainerDirective = {
+        type:'containerDirective',
         name:'content-container',
         data:{
             hName: 'div',
@@ -53,7 +51,7 @@ const MyNote:Plugin<[],Root> = () =>  {
                 class: 'text-sm'
             }
         },
-        children:[...firstChild.children]
+        children:[...node.children]
       }
       const chatBubble:ContainerDirective = {
         type:'containerDirective',
