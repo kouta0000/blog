@@ -1,303 +1,312 @@
-# 🚀 AstroWind
+# 🌸 Mizuki  
+![Node.js >= 20](https://img.shields.io/badge/node.js-%3E%3D20-brightgreen) 
+![pnpm >= 9](https://img.shields.io/badge/pnpm-%3E%3D9-blue) 
+![Astro](https://img.shields.io/badge/Astro-5.12.8-orange)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<img src="https://raw.githubusercontent.com/onwidget/.github/main/resources/astrowind/lighthouse-score.png" align="right"
-     alt="AstroWind Lighthouse Score" width="100" height="358">
+![Mizuki Preview](./README.png)
 
-🌟 _Most *starred* & *forked* Astro theme in 2022, 2023 & 2024_. 🌟
-
-**AstroWind** is a free and open-source template to make your website using **[Astro 5.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)**. Ready to start a new project and designed taking into account web best practices.
-
-- ✅ **Production-ready** scores in **PageSpeed Insights** reports.
-- ✅ Integration with **Tailwind CSS** supporting **Dark mode** and **_RTL_**.
-- ✅ **Fast and SEO friendly blog** with automatic **RSS feed**, **MDX** support, **Categories & Tags**, **Social Share**, ...
-- ✅ **Image Optimization** (using new **Astro Assets** and **Unpic** for Universal image CDN).
-- ✅ Generation of **project sitemap** based on your routes.
-- ✅ **Open Graph tags** for social media sharing.
-- ✅ **Analytics** built-in Google Analytics, and Splitbee integration.
-
-<br>
-
-![AstroWind Theme Screenshot](https://raw.githubusercontent.com/onwidget/.github/main/resources/astrowind/screenshot-astrowind-1.0.png)
-
-[![onWidget](https://custom-icon-badges.demolab.com/badge/made%20by%20-onWidget-556bf2?style=flat-square&logo=onwidget&logoColor=white&labelColor=101827)](https://onwidget.com)
-[![License](https://img.shields.io/github/license/onwidget/astrowind?style=flat-square&color=dddddd&labelColor=000000)](https://github.com/onwidget/astrowind/blob/main/LICENSE.md)
-[![Maintained](https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg?style=flat-square)](https://github.com/onwidget)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/onwidget/astrowind#contributing)
-[![Known Vulnerabilities](https://snyk.io/test/github/onwidget/astrowind/badge.svg?style=flat-square)](https://snyk.io/test/github/onwidget/astrowind)
-[![Stars](https://img.shields.io/github/stars/onwidget/astrowind.svg?style=social&label=stars&maxAge=86400&color=ff69b4)](https://github.com/onwidget/astrowind)
-[![Forks](https://img.shields.io/github/forks/onwidget/astrowind.svg?style=social&label=forks&maxAge=86400&color=ff69b4)](https://github.com/onwidget/astrowind)
-
-<br>
-
-<details open>
-<summary>Table of Contents</summary>
-
-- [Demo](#demo)
-- [Upcoming: AstroWind 2.0 – We Need Your Vision!](#-upcoming-astrowind-20--we-need-your-vision)
-- [TL;DR](#tldr)
-- [Getting started](#getting-started)
-  - [Project structure](#project-structure)
-  - [Commands](#commands)
-  - [Configuration](#configuration)
-  - [Deploy](#deploy)
-- [Frequently Asked Questions](#frequently-asked-questions)
-- [Related Projects](#related-projects)
-- [Contributing](#contributing)
-- [Acknowledgements](#acknowledgements)
-- [License](#license)
-
-</details>
-
-<br>
-
-## Demo
-
-📌 [https://astrowind.vercel.app/](https://astrowind.vercel.app/)
-
-<br>
-
-## 🔔 Upcoming: AstroWind 2.0 – We Need Your Vision!
-
-We're embarking on an exciting journey with **AstroWind 2.0**, and we want you to be a part of it! We're currently taking the first steps in developing this new version and your insights are invaluable. Join the discussion and share your feedback, ideas, and suggestions to help shape the future of **AstroWind**. Let's make **AstroWind 2.0** even better, together!
-
-[Share Your Feedback in Our Discussion!](https://github.com/onwidget/astrowind/discussions/392)
-
-<br>
+<table>
+  <tr>
+    <td><img alt="" src="docs/image/1.png"></td>
+    <td><img alt="" src="docs/image/2.png"></td>
+    <td><img alt="" src="docs/image/3.png"></td>
+  <tr>
+  <tr>
+    <td><img alt="" src="docs/image/4.png"></td>
+    <td><img alt="" src="docs/image/5.png"></td>
+    <td><img alt="" src="docs/image/6.png"></td>
+  <tr>
+</table>
 
 
-## TL;DR
+A modern, feature-rich static blog template built with [Astro](https://astro.build), featuring advanced functionality and beautiful design.
 
-```shell
-npm create astro@latest -- --template onwidget/astrowind
-```
+[**🖥️ Live Demo**](https://mizuki.mysqil.com/)
+[**📝 Documentation**](https://docs.mizuki.mysqil.com/)
 
-## Getting started
+🌏 README Languages
+[**English**](./README.md) /
+[**中文**](./README.zh.md) /
+[**日本語**](./docs/README.ja.md) /
+[**中文繁体**](./docs/README.tw.md) /
 
-**AstroWind** tries to give you quick access to creating a website using [Astro 5.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/). It's a free theme which focuses on simplicity, good practices and high performance.
+## 🆕 v4.9 Update
+- **Pio Live2D Integration**: Added Pio Live2D character, providing a cute interactive companion to enhance user engagement.
+- **Highly Configurable**: Supports detailed configuration in `src/config.ts`, including model path, position, size, dialogue content, etc., to meet personalized needs.
+- **Seamless Navigation**: The "Back to Home" feature now uses the theme's built-in Swup for smooth, no-refresh page transitions.
 
-Very little vanilla javascript is used only to provide basic functionality so that each developer decides which framework (React, Vue, Svelte, Solid JS...) to use and how to approach their goals.
+## 🆕 v4.3 Update
+- **Anime Page:** Redesigned a cuter and more attractive anime page, including anime list, details, and timeline.
+- **Album Page:** Restructured the album page using pagination + folder data indexing solution.
 
-In this version the template supports all the options in the `output` configuration, `static`, `hybrid` and `server`, but the blog only works with `prerender = true`. We are working on the next version and aim to make it fully compatible with SSR.
+## 🆕 v3.4 Update
+- **New Pages:** Added project showcase, skills showcase, and timeline pages to display your work, professional skills, and growth journey.
+- **Dropdown Menu Fix:** Resolved the issue of border outlines appearing when clicking dropdown menus, improving interface consistency.
+- **Search Optimization:** Enhanced search functionality performance and accuracy.
+- **Footer HTML Injection:** Introduced a new feature allowing custom HTML content injection at the bottom of pages, providing greater flexibility.
 
-### Project structure
+## 🆕 v3.3 Update
+- **Mermaid Syntax Support:** Added support for Mermaid chart syntax, now you can embed flowcharts, sequence diagrams, Gantt charts, etc. directly in Markdown.
+- **Umami Analytics:** Added support for Umami analytics, making it easy to integrate website visit data analysis.
 
-Inside **AstroWind** template, you'll see the following folders and files:
+![Configuration](configuration.svg)
 
-```
-/
-├── public/
-│   ├── _headers
-│   └── robots.txt
-├── src/
-│   ├── assets/
-│   │   ├── favicons/
-│   │   ├── images/
-│   │   └── styles/
-│   │       └── tailwind.css
-│   ├── components/
-│   │   ├── blog/
-│   │   ├── common/
-│   │   ├── ui/
-│   │   ├── widgets/
-│   │   │   ├── Header.astro
-│   │   │   └── ...
-│   │   ├── CustomStyles.astro
-│   │   ├── Favicons.astro
-│   │   └── Logo.astro
-│   ├── content/
-│   │   ├── post/
-│   │   │   ├── post-slug-1.md
-│   │   │   ├── post-slug-2.mdx
-│   │   │   └── ...
-│   │   └-- config.ts
-│   ├── layouts/
-│   │   ├── Layout.astro
-│   │   ├── MarkdownLayout.astro
-│   │   └── PageLayout.astro
-│   ├── pages/
-│   │   ├── [...blog]/
-│   │   │   ├── [category]/
-│   │   │   ├── [tag]/
-│   │   │   ├── [...page].astro
-│   │   │   └── index.astro
-│   │   ├── index.astro
-│   │   ├── 404.astro
-│   │   ├-- rss.xml.ts
-│   │   └── ...
-│   ├── utils/
-│   ├── config.yaml
-│   └── navigation.js
-├── package.json
-├── astro.config.ts
-└── ...
-```
+### 🔧 Component Configuration System Restructuring
+- **Unified Configuration Architecture:** Brand new modular component configuration system, supporting dynamic component management and order configuration
+- **Configuration-Driven Component Loading:** Restructured SideBar component, implementing fully configuration-based component loading mechanism
+- **Unified Control Switches:** Removed independent enable switches for music player and announcement components, unified control through sidebarLayoutConfig
+- **Responsive Layout Adaptation:** Components support responsive layouts, automatically adjusting display based on device type
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### 📐 Layout System Optimization
+- **Dynamic Sidebar Position Adjustment:** Support for left/right sidebar switching, with automatic layout adaptation
+- **Intelligent Article Directory Positioning:** When sidebar is on the right, article navigation automatically moves to the left, providing a better reading experience
+- **Grid Layout Improvements:** Optimized CSS Grid layout, resolving container width anomaly issues
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### 🎛️ Configuration File Format Standardization
+- **Standardized Configuration Format:** Created unified component configuration file format specifications
+- **Type Safety:** Comprehensive TypeScript type definitions ensuring configuration type safety
+- **Extensibility:** Support for custom component types and configuration options
 
-Any static assets, like images, can be placed in the `public/` directory if they do not require any transformation or in the `assets/` directory if they are imported directly.
+### 🧹 Code Optimization
+- **Test File Cleanup:** Removed unused test configurations and dependencies, reducing project size
+- **Code Structure Optimization:** Improved component architecture, enhancing code maintainability
+- **Performance Improvement:** Optimized component loading logic, improving page rendering performance
 
-[![Edit AstroWind on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/onwidget/astrowind/tree/main) [![Open in Gitpod](https://svgshare.com/i/xdi.svg)](https://gitpod.io/?on=gitpod#https://github.com/onwidget/astrowind) [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/onwidget/astrowind)
+---
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file `README.md`. Update `src/config.yaml` and contents. Have fun!
+## ✨ Features
 
-<br>
+### 🎨 Design & Interface
+- [x] Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com)
+- [x] Smooth animations and page transitions using [Swup](https://swup.js.org/)
+- [x] Light/dark theme switching with system preference detection
+- [x] Customizable theme colors and dynamic banner carousel
+- [x] Fullscreen background images with carousel, opacity, and blur effects
+- [x] Fully responsive design for all devices
+- [x] Beautiful typography with JetBrains Mono font
 
-### Commands
+### 🔍 Content & Search
+- [x] Advanced search functionality based on [Pagefind](https://pagefind.app/)
+- [x] [Enhanced Markdown features](#-markdown-extensions) with syntax highlighting
+- [x] Interactive table of contents with auto-scrolling
+- [x] RSS feed generation
+- [x] Reading time estimation
+- [x] Article categorization and tagging system
 
-All commands are run from the root of the project, from a terminal:
+### 🌐 Internationalization
+- [x] **Multi-language support** with real-time translation
+- [x] **Automatic language detection** based on user preferences
+- [x] **Client-side translation** powered by Edge Translate
+- [x] Support for 10+ languages (Chinese, English, Japanese, Korean, Spanish, etc.)
 
-| Command             | Action                                             |
-| :------------------ | :------------------------------------------------- |
-| `npm install`       | Installs dependencies                              |
-| `npm run dev`       | Starts local dev server at `localhost:4321`        |
-| `npm run build`     | Build your production site to `./dist/`            |
-| `npm run preview`   | Preview your build locally, before deploying       |
-| `npm run check`     | Check your project for errors                      |
-| `npm run fix`       | Run Eslint and format codes with Prettier          |
-| `npm run astro ...` | Run CLI commands like `astro add`, `astro preview` |
+### 📱 Special Pages
+- [x] **Anime Tracking Page** - Track anime watching progress and ratings
+- [x] **Friends Page** - Beautiful cards showcasing friend websites
+- [x] **Diary Page** - Share life moments, similar to social media
+- [x] **Archive Page** - Organized timeline view of articles
+- [x] **About Page** - Customizable personal introduction
 
-<br>
+### 🛠 Technical Features
+- [x] **Enhanced code blocks** based on [Expressive Code](https://expressive-code.com/)
+- [x] **Math formula support** with KaTeX rendering
+- [x] **Image optimization** with PhotoSwipe gallery integration
+- [x] **SEO optimization** including sitemaps and meta tags
+- [x] **Performance optimization** with lazy loading and caching
+- [x] **Comment system** with Twikoo integration
 
-### Configuration
+## 🚀 Quick Start
 
-Basic configuration file: `./src/config.yaml`
+### 📦 Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/matsuzaka-yuki/mizuki.git
+   cd mizuki
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   # Install pnpm if not already installed
+   npm install -g pnpm
+   
+   # Install project dependencies
+   pnpm install
+   ```
+
+3. **Configure your blog:**
+   - Edit `src/config.ts` to customize blog settings
+   - Update site information, theme colors, banner images, and social links
+   - Configure translation settings and feature page functionality
+
+4. **Start the development server:**
+   ```bash
+   pnpm dev
+   ```
+   Your blog will be available at `http://localhost:4321`
+
+### 📝 Content Management
+
+- **Create new posts:** `pnpm new-post <filename>`
+- **Edit posts:** Modify files in `src/content/posts/`
+- **Customize special pages:** Edit files in `src/content/spec/`
+- **Add images:** Place images in `src/assets/` or `public/`
+
+### 🚀 Deployment
+
+Deploy your blog to any static hosting platform:
+
+- **Vercel:** Connect your GitHub repository to Vercel
+- **Netlify:** Deploy directly from GitHub
+- **GitHub Pages:** Use the included GitHub Actions workflow
+- **Cloudflare Pages:** Connect your repository
+
+Before deployment, update the `site` URL in `astro.config.mjs`.
+
+## 📝 Post Frontmatter Format
 
 ```yaml
-site:
-  name: 'Example'
-  site: 'https://example.com'
-  base: '/' # Change this if you need to deploy to Github Pages, for example
-  trailingSlash: false # Generate permalinks with or without "/" at the end
-
-  googleSiteVerificationId: false # Or some value,
-
-# Default SEO metadata
-metadata:
-  title:
-    default: 'Example'
-    template: '%s — Example'
-  description: 'This is the default meta description of Example website'
-  robots:
-    index: true
-    follow: true
-  openGraph:
-    site_name: 'Example'
-    images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
-    type: website
-  twitter:
-    handle: '@twitter_user'
-    site: '@twitter_user'
-    cardType: summary_large_image
-
-i18n:
-  language: en
-  textDirection: ltr
-
-apps:
-  blog:
-    isEnabled: true # If the blog will be enabled
-    postsPerPage: 6 # Number of posts per page
-
-    post:
-      isEnabled: true
-      permalink: '/blog/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
-      robots:
-        index: true
-
-    list:
-      isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
-      robots:
-        index: true
-
-    category:
-      isEnabled: true
-      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
-      robots:
-        index: true
-
-    tag:
-      isEnabled: true
-      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
-      robots:
-        index: false
-
-    isRelatedPostsEnabled: true # If a widget with related posts is to be displayed below each post
-    relatedPostsCount: 4 # Number of related posts to display
-
-analytics:
-  vendors:
-    googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
-
-ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+---
+title: My First Blog Post
+published: 2023-09-09
+description: This is the first post of my new blog.
+image: ./cover.jpg
+tags: [tag1, tag2]
+category: Frontend
+draft: false
+pinned: false
+lang: en      # Only set when article language differs from site language in config.ts
+---
 ```
 
-<br>
+### Frontmatter Field Descriptions
 
-#### Customize Design
+- **title**: Article title (required)
+- **published**: Publication date (required)
+- **description**: Article description for SEO and previews
+- **image**: Cover image path (relative to article file)
+- **tags**: Array of tags for categorization
+- **category**: Article category
+- **draft**: Set to `true` to hide article in production
+- **pinned**: Set to `true` to pin article to top
+- **lang**: Article language (only set when different from site default)
 
-To customize Font families, Colors or more Elements refer to the following files:
+### Pinned Articles Feature
 
-- `src/components/CustomStyles.astro`
-- `src/assets/styles/tailwind.css`
+The `pinned` field allows you to pin important articles to the top of your blog list. Pinned articles will always appear before regular articles regardless of their publication date.
 
-### Deploy
-
-#### Deploy to production (manual)
-
-You can create an optimized production build with:
-
-```shell
-npm run build
+**Usage:**
+```yaml
+pinned: true  # Pin this article to the top
+pinned: false # Regular article (default)
 ```
 
-Now, your website is ready to be deployed. All generated files are located at
-`dist` folder, which you can deploy the folder to any hosting service you
-prefer.
+**Sorting Rules:**
+1. Pinned articles appear first, sorted by publication date (newest first)
+2. Regular articles follow, sorted by publication date (newest first)
 
-#### Deploy to Netlify
+## 🧩 Markdown Extensions
 
-Clone this repository on your own GitHub account and deploy it to Netlify:
+Mizuki supports enhanced features beyond standard GitHub Flavored Markdown:
 
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/onwidget/astrowind)
+### 📝 Enhanced Writing
+- **Callouts:** Create beautiful annotation boxes using `> [!NOTE]`, `> [!TIP]`, `> [!WARNING]`, etc.
+- **Math Formulas:** Write LaTeX math formulas using `$inline$` and `$$block$$` syntax
+- **Code Highlighting:** Advanced syntax highlighting with line numbers and copy buttons
+- **GitHub Cards:** Embed repository cards using `::github{repo="user/repo"}`
 
-#### Deploy to Vercel
+### 🎨 Visual Elements
+- **Image Gallery:** Automatic PhotoSwipe integration for image viewing
+- **Collapsible Sections:** Create expandable content blocks
+- **Custom Components:** Enhance content with special directives
 
-Clone this repository on your own GitHub account and deploy to Vercel:
+### 📊 Content Organization
+- **Table of Contents:** Automatically generated from headings with smooth scrolling
+- **Reading Time:** Automatically calculated and displayed
+- **Article Metadata:** Rich frontmatter support with categories and tags
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonwidget%2Fastrowind)
+## ⚡ Commands
 
-<br>
+All commands are run from the project root:
 
-## Frequently Asked Questions
+| Command                    | Action                                   |
+|:---------------------------|:-----------------------------------------|
+| `pnpm install`             | Install dependencies                     |
+| `pnpm dev`                 | Start local dev server at `localhost:4321` |
+| `pnpm build`               | Build production site to `./dist/`       |
+| `pnpm preview`             | Preview build locally before deployment  |
+| `pnpm check`               | Run Astro error checking                 |
+| `pnpm format`              | Format code with Biome                   |
+| `pnpm lint`                | Check and fix code issues                |
+| `pnpm new-post <filename>` | Create a new blog post                   |
+| `pnpm astro ...`           | Run Astro CLI commands                   |
 
-- Why?
--
--
+## 🎯 Configuration Guide
 
-<br>
+### 🔧 Basic Configuration
 
-## Related projects
+Edit `src/config.ts` to customize your blog:
 
-- [TailNext](https://tailnext.vercel.app/) - Free template using Next.js 14 and Tailwind CSS with the new App Router.
-- [Qwind](https://qwind.pages.dev/) - Free template to make your website using Qwik + Tailwind CSS.
+```typescript
+export const siteConfig: SiteConfig = {
+  title: "Your Blog Name",
+  subtitle: "Your Blog Description",
+  lang: "en", // or "zh-CN", "ja", etc.
+  themeColor: {
+    hue: 210, // 0-360, theme hue
+    fixed: false, // Hide theme color picker
+  },
+  translate: {
+    enable: true, // Enable translation
+    service: "client.edge", // Translation service
+    defaultLanguage: "english",
+  },
+  banner: {
+    enable: true,
+    src: ["assets/banner/1.webp"], // Banner images
+    carousel: {
+      enable: true,
+      interval: 0.8, // seconds
+    },
+  },
+};
+```
 
-## Contributing
+### 📱 Feature Page Configuration
 
-If you have any ideas, suggestions or find any bugs, feel free to open a discussion, an issue or create a pull request.
-That would be very useful for all of us and we would be happy to listen and take action.
+- **Anime Page:** Edit anime list in `src/pages/anime.astro`
+- **Friends Page:** Edit friend data in `src/content/spec/friends.md`
+- **Diary Page:** Edit moments in `src/pages/diary.astro`
+- **About Page:** Edit content in `src/content/spec/about.md`
 
-## Acknowledgements
+## ✏️ Contributing
 
-Initially created by [onWidget](https://onwidget.com) and maintained by a community of [contributors](https://github.com/onwidget/astrowind/graphs/contributors).
+Contributions are welcome! Feel free to submit issues and pull requests.
 
-## License
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-**AstroWind** is licensed under the MIT license — see the [LICENSE](./LICENSE.md) file for details.
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgements
+
+- Based on the original [Fuwari](https://github.com/saicaca/fuwari) template
+- Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com)
+- Inspired by [Yukina](https://github.com/WhitePaper233/yukina) - a beautiful and elegant blog template
+- Translation functionality powered by [translate](https://gitee.com/mail_osc/translate) - AI i18n automatic HTML translation solution
+- Icons from [Iconify](https://iconify.design/)
+
+### Special Thanks
+
+- **[Yukina](https://github.com/WhitePaper233/yukina)** - Thanks for providing design inspiration and creativity that helped shape this project. Yukina is an elegant blog template that demonstrates excellent design principles and user experience.
+- **[translate](https://gitee.com/mail_osc/translate)** - Thanks for providing an innovative AI-driven i18n solution that enables automatic HTML translation with just two lines of JavaScript code. This open-source tool makes multilingual support extremely simple and efficient.
+
+---
+
+⭐ If you find this project helpful, please consider giving it a star!
