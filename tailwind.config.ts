@@ -124,14 +124,15 @@ export default {
             },
             blockquote: {
               // "@apply !px-4 md:!px-6 !py-2 !border-s-[0.625rem] rounded-lg border-color-100 bg-color-75": "",
-              "@apply font-normal text-quote border-l-0 px-4 [&>p:first-of-type]:mt-0 [&>p:last-of-type]:mb-0":
+              fontStyle:'normal',
+              "@apply font-normal text-quote px-8 ml-4 [&>p:first-of-type]:mt-0 [&>p:last-of-type]:mb-0":
                 "",
               "p::before": {
-                "@apply leading-none font-serif font-medium relative content-['“'] text-2xl text-lightest top-[0.31125rem] md:top-[0.31125rem] -ms-4 me-0.5":
+                "@apply leading-none font-serif font-medium relative content-[''] text-2xl text-lightest top-[0.31125rem] md:top-[0.31125rem] -ms-4 me-0.5":
                   "",
               },
               "p::after": {
-                "@apply leading-none font-serif font-medium relative content-['”'] text-2xl text-lightest top-[0.31125rem] md:top-[0.31125rem] ms-0":
+                "@apply leading-none font-serif font-medium relative content-[''] text-2xl text-lightest top-[0.31125rem] md:top-[0.31125rem] ms-0":
                   "",
               },
             },
