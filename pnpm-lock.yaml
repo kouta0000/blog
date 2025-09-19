@@ -20,6 +20,9 @@ importers:
       '@astrojs/tailwind':
         specifier: 5.1.4
         version: 5.1.4(astro@5.1.2(@types/node@22.13.10)(jiti@1.21.7)(rollup@4.35.0)(typescript@5.8.2)(yaml@2.7.0))(tailwindcss@3.4.17)
+      '@iconify-json/mingcute':
+        specifier: ^1.2.5
+        version: 1.2.5
       '@shikijs/transformers':
         specifier: ^1.25.1
         version: 1.29.2
@@ -588,6 +591,9 @@ packages:
 
   '@iconify-json/mdi@1.2.3':
     resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
+
+  '@iconify-json/mingcute@1.2.5':
+    resolution: {integrity: sha512-LKlW4wahStprbfJcpzUnuayObOVAuztgYSy3v5oTke6cBJNfqEeE/mtMhHgpoSgGJvo5hhde2Q0+DoxKEldY2A==}
 
   '@iconify-json/solar@1.2.2':
     resolution: {integrity: sha512-lcTb6DWL4HZObiY1W3fHfuxxuQHUc6CFHFeywKEx7Ry0k+dU6POZCMC7oVLr0F8vuf+KgaQ3oOoGO/yFzOwrNg==}
@@ -3907,6 +3913,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/mdi@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/mingcute@1.2.5':
     dependencies:
       '@iconify/types': 2.0.0
 

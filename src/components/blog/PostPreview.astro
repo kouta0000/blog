@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "@/components/FormattedDate.astro";
 import type { HTMLTag, Polymorphic } from "astro/types";
+import { Icon } from "astro-icon/components";
 
 type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
 	post: CollectionEntry<"post">;
@@ -25,11 +26,14 @@ const { as: Tag = "div", post, withDesc = false } = Astro.props;
 					day: "2-digit",
 				}}
 			/>
-			<Tag class="citrus-link font-medium text-accent-base sm:order-1 sm:flex-gro md:line-clamp-1">
-				<a data-astro-prefetch href={`/posts/${post.id}/`}>
+			<Tag class="citrus-link font-medium text-accent-base text-lg py-1 sm:order-1 sm:flex-gro md:line-clamp-1">
+				<a data-astro-prefetch href={`/posts/${post.id}/`} class="inline-flex items-center gap-3">
+					<Icon name="mingcute:arrows-right-line" class="size-5 text-textColor" />
 					{post.data.draft && <span class="text-red-500">(Draft) </span>}
 					{post.data.title}
+					
 				</a>
+				
 			</Tag>
 		</>
 	) : (
@@ -45,12 +49,13 @@ const { as: Tag = "div", post, withDesc = false } = Astro.props;
 					day: "2-digit",
 				}}
 			/>
-			<Tag class="citrus-link font-medium text-accent-base mt-2.5">
+			<Tag class="citrus-link font-medium text-accent-base mt-2.5 pl-3 text-lg font-bold">
 				<a data-astro-prefetch href={`/posts/${post.id}/`}>
 					{post.data.title}
 				</a>
+				
 			</Tag>
-			<p class="mt-0.5 line-clamp-2">{post.data.description}</p>
+			<p class="mt-0.5 line-clamp-2 pl-5">{post.data.description}</p>
 		</>
 	)}
 </div>

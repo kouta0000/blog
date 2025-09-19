@@ -1,6 +1,7 @@
 {
   "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
+    "moduleResolution": "node",
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "strictNullChecks": true,
