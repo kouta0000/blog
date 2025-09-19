@@ -27,9 +27,8 @@ import {
 
 // https://astro.build/config
 export default defineConfig({
-  adapter: netlify({
-    edgeMiddleware:true,
-  }),
+  output: 'server',
+  adapter: netlify(),
   image: {
     domains: ["webmention.io"],
   },
