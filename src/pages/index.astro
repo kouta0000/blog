@@ -45,7 +45,12 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 
 				<a href="/notes/wake-up/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
 					<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
-						Wake up
+						朝に...
+					</span>
+				</a>
+				<a href="/notes/autumn/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
+					<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
+						秋に...
 					</span>
 				</a>
 			</div>
@@ -60,7 +65,7 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 		<ul class="space-y-4 md:space-y-2" role="list">
 			{
 				allPostsByDate.map((p) => (
-					<li class="gap-2 sm:grid-cols-[auto_1fr] pl-7">
+					<li class="gap-2 sm:grid-cols-[auto_1fr] pl-3">
 						<PostPreview post={p} />
 						<hr class="h-1 w-full rounded-3xl bg-bgColor"/>
 					</li>

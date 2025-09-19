@@ -99,6 +99,16 @@ export default {
         // Add any custom fonts here
         sans: ["SFProRounded", ...fontFamily.sans],
         serif: ["CascadiaCode", ...fontFamily.serif],
+        jp: [
+          "Helvetica Neue", 
+          "Arial",
+          "SFProRounded",
+          "Noto Sans JP",
+          "游ゴシック体",
+          "YuGothic",
+          "メイリオ",
+          "sans-serif"
+        ]
       },
       transitionProperty: {
         height: "height",

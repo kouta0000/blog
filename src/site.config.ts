@@ -29,7 +29,7 @@ export const menuLinks: { path: string; title: string }[] = [
 		title: "ホーム",
 	},
 	{
-		path: "/about/",
+		path: "/posts/about",
 		title: "サイトについて",
 	},
 	{
