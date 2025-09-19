@@ -15,7 +15,7 @@ updateDate: "1998-02-19T14:32:00Z"
 
 > [...]\
 > Every night and every morn,\
-> Some to misery are born; \
+> Some to misery are born;\
 > Every morn and every night,\ 
 > Some are born to sweet delight.\ 
 > Some are born to sweet delight,\
