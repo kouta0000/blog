@@ -7,6 +7,7 @@ import robotsTxt from "astro-robots-txt";
 import webmanifest from "astro-webmanifest";
 import { defineConfig, envField } from "astro/config";
 import { siteConfig } from "./src/site.config";
+import svelte from '@astrojs/svelte';
 
 // Remark plugins
 import remarkDirective from "remark-directive"; /* handle ::: directives as nodes */
@@ -30,10 +31,12 @@ export default defineConfig({
   },
   integrations: [
     icon(),
+    svelte(),
     tailwind({
       applyBaseStyles: false,
       nesting: true,
     }),
+    
     sitemap(),
     mdx(),
     robotsTxt(),

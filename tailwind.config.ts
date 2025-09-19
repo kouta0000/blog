@@ -21,6 +21,7 @@ export default {
   plugins: [
     require('tailwindcss-intersect'),
     require("@tailwindcss/typography"),
+    require('daisyui'),
     plugin(({ addComponents }) => {
       addComponents({
         ".citrus-link": {
