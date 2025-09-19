@@ -8,6 +8,7 @@ import webmanifest from "astro-webmanifest";
 import { defineConfig, envField } from "astro/config";
 import { siteConfig } from "./src/site.config";
 import svelte from '@astrojs/svelte';
+import netlify from '@astrojs/netlify';
 
 // Remark plugins
 import remarkDirective from "remark-directive"; /* handle ::: directives as nodes */
@@ -26,6 +27,9 @@ import {
 
 // https://astro.build/config
 export default defineConfig({
+  adapter: netlify({
+    edgeMiddleware:true,
+  }),
   image: {
     domains: ["webmention.io"],
   },
