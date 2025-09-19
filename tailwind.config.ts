@@ -19,6 +19,7 @@ export default {
   },
   darkMode: ["class", '[data-theme="dark"]'],
   plugins: [
+    require('tailwindcss-intersect'),
     require("@tailwindcss/typography"),
     plugin(({ addComponents }) => {
       addComponents({

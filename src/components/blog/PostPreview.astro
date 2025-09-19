@@ -12,7 +12,7 @@ type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
 const { as: Tag = "div", post, withDesc = false } = Astro.props;
 ---
 
-<div class={withDesc ? "flex flex-col" : "flex flex-col grow sm:flex-row sm:items-center sm:justify-between"}>
+<div class={withDesc ? "flex flex-col transition-all duration-1000 opacity-0 translate-x-10 intersect:translate-x-0  intersect:opacity-100 intersect-once" : "flex flex-col grow sm:flex-row sm:items-center sm:justify-between transition-all duration-700 opacity-0 translate-x-4 translate-y-6 intersect:translate-x-0 intersect:translate-y-0  intersect:opacity-100 intersect-once"}>
 	{!withDesc ? (
 		<>
 			<FormattedDate
@@ -26,9 +26,9 @@ const { as: Tag = "div", post, withDesc = false } = Astro.props;
 					day: "2-digit",
 				}}
 			/>
-			<Tag class="citrus-link font-bold text-accent-base text-xl py-1 sm:order-1 sm:flex-gro md:line-clamp-1">
-				<a data-astro-prefetch href={`/posts/${post.id}/`} class="inline-flex items-center gap-3">
-					<Icon name="mingcute:arrows-right-line" class="size-5 text-textColor" />
+			<Tag class="citrus-link font-bold text-accent-base text-xl py-2 sm:order-1 sm:flex-gro md:line-clamp-1 ">
+				<a data-astro-prefetch href={`/posts/${post.id}/`} class="inline-flex items-center gap-6">
+					<Icon name="mingcute:clock-line" class="size-6 text-textColor opacity-50" />
 					{post.data.draft && <span class="text-red-500">(Draft) </span>}
 					{post.data.title}
 					
@@ -49,7 +49,7 @@ const { as: Tag = "div", post, withDesc = false } = Astro.props;
 					day: "2-digit",
 				}}
 			/>
-			<Tag class="citrus-link  text-accent-base mt-2.5 pl-3 text-xl font-bold">
+			<Tag class="citrus-link text-accent-base mt-2.5 pl-3 text-xl font-bold ">
 				<a data-astro-prefetch href={`/posts/${post.id}/`}>
 					{post.data.title}
 				</a>
@@ -59,3 +59,7 @@ const { as: Tag = "div", post, withDesc = false } = Astro.props;
 		</>
 	)}
 </div>
+<script>
+	import { Observer } from 'tailwindcss-intersect';
+	Observer.start();
+</script>
