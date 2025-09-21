@@ -8,23 +8,24 @@ import ColorPalet from '../blog/ColorPalet.svelte'
 
 <header
 	id="main-header"
-	class="fixed px-4 md:px-0 left-0 z-20 flex items-center md:relative top-0 h-16 bg-bgColor md:bg-transparent w-full"
+	class="fixed px-4 md:px-0 inset-x-0 z-20 flex items-center md:relative top-0 h-16 bg-bgColor md:bg-transparent w-full"
 >	
 	
 	
-	<div class="w-full justify-between sm:flex-col">
-		<div class="flex items-center gap-x-2 justify-between">
+	<div class="w-full sm:flex-col">
+		<div class="flex items-center justify-between">
 			<a
 				aria-label={siteConfig.title}
 				aria-current={Astro.url.pathname === "/" ? "page" : false}
 				class="group flex h-8 items-center hover:filter-none sm:relative"
 				href="/"
 			>	
+				
 				<div title={siteConfig.title}>
 					<Icon name="mingcute:fish-line" class="text-accent-one size-6" />
 				</div>
 				
-				<strong class="'max-[320px]:hidden' bg-clip-text text-transparent bg-gradient-to-r from-accent-base/80 to-accent-one hidden xs:block z-10 mb-0.5 ms-2 text-2xl group-hover:text-accent-one">
+				<strong class="'max-[320px]:hidden' bg-clip-text text-transparent bg-gradient-to-r from-accent-base/80 to-accent-one hidden xs:block z-10 mb-0.5 ml-1 text-2xl group-hover:text-accent-one">
 					{siteConfig.title}
 				</strong>
 			</a>
@@ -32,7 +33,7 @@ import ColorPalet from '../blog/ColorPalet.svelte'
 				aria-label="Main menu"
 				class="top-20 text-sm mx-auto ml-4 ml-auto hidden flex-col items-end justify-center gap-x-4 rounded-md bg-bgColor font-medium text-accent-two shadow backdrop-blur group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:flex-row sm:items-center sm:rounded-none sm:bg-transparent sm:shadow-none sm:backdrop-blur-none md:flex"
 				id="main-navigation-menu"
-			>
+			>	
 				
 
 				<!-- Ссылки меню -->
@@ -63,33 +64,33 @@ import ColorPalet from '../blog/ColorPalet.svelte'
 					<a class="link" href="/admin/index.html">
 					<Icon  name="ri:admin-line" class="h-7 w-7 rounded-lg drop-shadow-[0px_1.5px_1.5px_rgba(0,0,0,0.175)] hover:text-accent-two" />
 					</a>
-					<mobile-button
-				aria-expanded="false"
-				aria-haspopup="menu"
-				aria-label="Open main menu"
-				class="ml-3 group h-8 w-8 rounded-lg bg-color-100 hover:bg-accent-base/10 text-accent-base md:invisible md:hidden relative"
-				id="toggle-nav-menu-mobile"
-				type="button"
-			>
-				<Icon
-					id="open-nav-menu-icon"
-					aria-hidden="true"
-					class="absolute start-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 scale-100 opacity-100 transition-all"
-					focusable="false"
-					name="hugeicons:menu-01"
-				/>
-				<Icon
-					id="close-nav-menu-icon"
-					aria-hidden="true"
-					class="absolute start-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all"
-					focusable="false"
-					name="hugeicons:cancel-01"
-				/>
-			</mobile-button>
+					
 				</div>
 				
 			</div>	
-			
+			<mobile-button
+			aria-expanded="false"
+			aria-haspopup="menu"
+			aria-label="Open main menu"
+			class="ml-3 group h-8 w-8 rounded-lg bg-color-100 hover:bg-accent-base/10 text-accent-base md:invisible md:hidden relative"
+			id="toggle-nav-menu-mobile"
+			type="button"
+		>
+			<Icon
+				id="open-nav-menu-icon"
+				aria-hidden="true"
+				class="absolute start-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 scale-100 opacity-100 transition-all"
+				focusable="false"
+				name="hugeicons:menu-01"
+			/>
+			<Icon
+				id="close-nav-menu-icon"
+				aria-hidden="true"
+				class="absolute start-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all"
+				focusable="false"
+				name="hugeicons:cancel-01"
+			/>
+		</mobile-button>	
 			
 		</div>
 	</div>

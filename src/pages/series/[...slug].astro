@@ -27,14 +27,15 @@ const posts = allPosts.filter((p)=>{if(!p.data.seriesId) return;if(p.data.series
 <SeriesLayout series={series}>
 	<Content />
 	<section aria-label="Blog post list">
-		<ul class="md:space-y-2" role="list">
+		<ul class="space-y-4 list-none ml-0 pl-0">
 			{
 				posts.map((p) => (
-					<li class="gap-2 sm:grid-cols-[auto_1fr] pl-3 text-bold">
+					<li class="grid-cols-[auto_1fr] ml-0 pl-0 text-link">
 						<PostPreview post={p} />
 					</li>
 				))
 			}
 		</ul>
+		
 	</section>
 </SeriesLayout>
