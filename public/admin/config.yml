@@ -34,7 +34,7 @@ collections:
         widget: "datetime"
         required: true
       - label: "UpdateDate"
-        name: "updateDate"
+        name: "updatedDate"
         widget: "datetime"
         required: false
       - label: "Description"
