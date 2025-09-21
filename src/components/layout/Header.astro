@@ -8,75 +8,49 @@ import ColorPalet from '../blog/ColorPalet.svelte'
 
 <header
 	id="main-header"
-	class="fixed px-4 md:px-0 inset-x-0 z-20 flex items-center md:relative top-0 h-16 bg-bgColor md:bg-transparent w-full"
->	
-	
-	
-	<div class="w-full sm:flex-col">
-		<div class="flex items-center justify-between">
-			<a
-				aria-label={siteConfig.title}
-				aria-current={Astro.url.pathname === "/" ? "page" : false}
-				class="group flex h-8 items-center hover:filter-none sm:relative"
-				href="/"
-			>	
-				
-				<div title={siteConfig.title}>
-					<Icon name="mingcute:fish-line" class="text-accent-one size-6" />
-				</div>
-				
-				<strong class="'max-[320px]:hidden' bg-clip-text text-transparent bg-gradient-to-r from-accent-base/80 to-accent-one hidden xs:block z-10 mb-0.5 ml-1 text-2xl group-hover:text-accent-one">
-					{siteConfig.title}
-				</strong>
-			</a>
-			<nav
-				aria-label="Main menu"
-				class="top-20 text-sm mx-auto ml-4 ml-auto hidden flex-col items-end justify-center gap-x-4 rounded-md bg-bgColor font-medium text-accent-two shadow backdrop-blur group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:flex-row sm:items-center sm:rounded-none sm:bg-transparent sm:shadow-none sm:backdrop-blur-none md:flex"
-				id="main-navigation-menu"
-			>	
-				
+	class="fixed inset-x-0 top-0 z-20 h-16 w-full bg-bgColor px-4 md:relative md:bg-transparent"
+>
+	<div class="mx-auto flex h-full max-w-6xl items-center justify-between">
+		<a
+			aria-label={siteConfig.title}
+			href="/"
+			class="group flex h-8 items-center hover:filter-none"
+		>
+			<div title={siteConfig.title}>
+				<Icon name="mingcute:fish-line" class="size-6 text-accent-one" />
+			</div>
+			<strong class="mb-0.5 ml-1 hidden text-2xl group-hover:text-accent-one xs:block">
+				{siteConfig.title}
+			</strong>
+		</a>
 
-				<!-- Ссылки меню -->
-				{
-					menuLinks.map((link) => (
-						<a
-							aria-current={Astro.url.pathname === link.path ? "page" : false}
-							class="underline-offset-2 hover:underline"
-							data-astro-prefetch
-							href={link.path}
-						>
-							{link.title}
-						</a>
-					))
-				}
-				
-				
-				
-				
-			</nav>
-			
-			
-			<div class="flex">
-				<div id="buttons-panel" class="top-4 md:top-8 flex">
-					<Search />
-					<ColorPalet client:only/>
-					<ThemeToggle />
-					<a class="link" href="/admin/index.html">
-					<Icon  name="ri:admin-line" class="h-7 w-7 rounded-lg drop-shadow-[0px_1.5px_1.5px_rgba(0,0,0,0.175)] hover:text-accent-two" />
+		<nav
+			aria-label="Main menu"
+			class="hidden md:flex md:items-center md:gap-x-4 text-sm font-medium"
+		>
+			{
+				menuLinks.map((link) => (
+					<a
+						aria-current={Astro.url.pathname === link.path ? "page" : false}
+						class="underline-offset-2 hover:underline"
+						href={link.path}
+					>
+						{link.title}
 					</a>
-					
-				</div>
-				
-			</div>	
-			
-			
+				))
+			}
+		</nav>
+
+		<div id="buttons-panel" class="flex items-center gap-x-2">
+			<Search />
+			<ColorPalet client:only />
+			<ThemeToggle />
+			<a class="link" href="/admin/index.html">
+				<Icon
+					name="ri:admin-line"
+					class="h-7 w-7 rounded-lg drop-shadow-[0px_1.5px_1.5px_rgba(0,0,0,0.175)] hover:text-accent-two"
+				/>
+			</a>
 		</div>
 	</div>
 </header>
-
-
-		
-		
-		
-</div>
-
