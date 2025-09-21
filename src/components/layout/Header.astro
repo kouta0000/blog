@@ -3,11 +3,12 @@ import Search from "@/components/Search.astro";
 import ThemeToggle from "@/components/ThemeToggle.astro";
 import { siteConfig, menuLinks } from "@/site.config";
 import { Icon } from "astro-icon/components";
+import ColorPalet from '../blog/ColorPalet.svelte'
 ---
 
 <header
 	id="main-header"
-	class="fixed px-4 md:px-0 left-0 z-20 flex items-center md:relative top-0 h-16 w-full bg-bgColor md:bg-transparent overflow-hidden"
+	class="fixed px-4 md:px-0 left-0 z-20 flex items-center md:relative top-0 h-16 w-full bg-bgColor md:bg-transparent"
 >	
 	<!-- Background 
 			TODO: This approach is not optimal and requires improvements. 
@@ -34,10 +35,10 @@ import { Icon } from "astro-icon/components";
 				</div>
 				-->
 				<div title={siteConfig.title}>
-					<Icon name="mingcute:fish-line" class="text-accent-two size-6" />
+					<Icon name="mingcute:fish-line" class="text-accent-one size-6" />
 				</div>
 				
-				<strong class="'max-[320px]:hidden' bg-clip-text text-transparent bg-gradient-to-r from-accent-one to-accent-two hidden xs:block z-10 mb-0.5 ms-2 text-2xl group-hover:text-accent-one">
+				<strong class="'max-[320px]:hidden' bg-clip-text text-transparent bg-gradient-to-r from-accent-base/80 to-accent-one hidden xs:block z-10 mb-0.5 ms-2 text-2xl group-hover:text-accent-one">
 					{siteConfig.title}
 				</strong>
 			</a>
@@ -139,8 +140,9 @@ import { Icon } from "astro-icon/components";
 			-->
 
 			<div class="ml-auto w-fit">
-				<div id="buttons-panel" class="top-4 md:top-8 -ml-[4.5rem] flex space-x-2">
+				<div id="buttons-panel" class="top-4 md:top-8 -ml-[4.5rem] flex">
 					<Search />
+					<ColorPalet client:only/>
 					<ThemeToggle />
 				</div>
 			</div>	
