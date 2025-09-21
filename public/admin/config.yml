@@ -1,0 +1,90 @@
+backend:
+  name: github
+  repo: kouta0000/blog
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "src/content/post"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+      - label: "SeriesId"
+        name: "seriesId"
+        widget: "string"
+      - label: "SeriesNumber"
+        name: "orderInSeries"
+        widget: "number"
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+      - label: "PublishDate"
+        name: "publishDate"
+        widget: "datetime"
+        required: true
+      - label: "UpdateDate"
+        name: "updateDate"
+        widget: "datetime"
+      - label: "Description"
+        name: "description"
+        widget: "string"
+        required: true
+      - label: "Draft"
+        name: "draft"
+        widget: "boolean"
+      - label: "CoverImage"
+        name: "coverImage"
+        widget: "image"
+      - label: "OgImage"
+        name: "ogImage"
+        widget: "image"
+
+  - name: "notes"
+    label: "Notes"
+    folder: "src/content/note"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+      - label: "Description"
+        name: "description"
+        widget: "string"
+        required: true
+      - label: "PublishDate"
+        name: "publishDate"
+        widget: "datetime"
+        required: true
+
+  - name: "series"
+    label: "Series"
+    folder: "src/content/series"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: "SeriesId"
+        name: "id"
+        widget: "string"
+        required: true
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+      - label: "Description"
+        name: "description"
+        widget: "string"
+        required: true
+      - label: "Featured"
+        name: "featured"
+        widget: "boolean"
+        required: true
