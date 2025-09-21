@@ -30,7 +30,8 @@ const post = defineCollection({
 			updatedDate: z
 				.union([z.string(), z.date()])
 				.transform((val) =>
-					typeof val === "string" ? new Date(val) : val),
+					typeof val === "string" ? new Date(val) : val)
+				.optional(),
 			// Series
 			seriesId: z.string().optional(), // Поле для связи с серией
       		orderInSeries: z.number().optional(), // Опционально: для сортировки в серии
