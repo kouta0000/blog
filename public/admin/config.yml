@@ -45,6 +45,9 @@ collections:
         name: "draft"
         widget: "boolean"
         required: false
+      - label: "Text"
+        name: "body"
+        widget: "markdown"
       - label: "CoverImage"
         name: "coverImage"
         widget: "image"
@@ -72,6 +75,9 @@ collections:
         name: "publishDate"
         widget: "datetime"
         required: true
+      - label: "Text"
+        name: "body"
+        widget: "markdown"
 
   - name: "series"
     label: "Series"
@@ -95,3 +101,6 @@ collections:
         name: "featured"
         widget: "boolean"
         required: true
+      - label: "Text"
+        name: "body"
+        widget: "markdown"
