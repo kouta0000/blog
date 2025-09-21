@@ -20,12 +20,15 @@ collections:
       - label: "SeriesId"
         name: "seriesId"
         widget: "string"
+        required: false
       - label: "SeriesNumber"
         name: "orderInSeries"
         widget: "number"
+        required: false
       - label: "Tags"
         name: "tags"
         widget: "list"
+        required: false
       - label: "PublishDate"
         name: "publishDate"
         widget: "datetime"
@@ -33,6 +36,7 @@ collections:
       - label: "UpdateDate"
         name: "updateDate"
         widget: "datetime"
+        required: false
       - label: "Description"
         name: "description"
         widget: "string"
@@ -40,12 +44,15 @@ collections:
       - label: "Draft"
         name: "draft"
         widget: "boolean"
+        required: false
       - label: "CoverImage"
         name: "coverImage"
         widget: "image"
+        required: false
       - label: "OgImage"
         name: "ogImage"
         widget: "image"
+        required: false
 
   - name: "notes"
     label: "Notes"
