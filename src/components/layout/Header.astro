@@ -8,18 +8,12 @@ import ColorPalet from '../blog/ColorPalet.svelte'
 
 <header
 	id="main-header"
-	class="fixed px-4 md:px-0 left-0 z-20 flex items-center md:relative top-0 h-16 w-full bg-bgColor md:bg-transparent"
+	class="fixed px-4 md:px-0 left-0 z-20 flex items-center md:relative top-0 h-16 bg-bgColor md:bg-transparent w-[100vw] md:w-full"
 >	
-	<!-- Background 
-			TODO: This approach is not optimal and requires improvements. 
-  			- Too many absolutely positioned elements can affect performance. 
-  		-->	
-	<div class="md:hidden absolute top-0 left-1/2 -ml-[50vw] w-screen min-h-screen pointer-events-none blur-2xl">
-		
-	</div>
+	
 	
 	<div class="w-full justify-between sm:flex-col">
-		<div class="flex items-center gap-x-2">
+		<div class="flex items-center gap-x-2 justify-between">
 			<a
 				aria-label={siteConfig.title}
 				aria-current={Astro.url.pathname === "/" ? "page" : false}
@@ -88,70 +82,23 @@ import ColorPalet from '../blog/ColorPalet.svelte'
 				
 				
 				
-				<!-- Dropdown menu button for large screens. Needs improvement. -->
-				<!--
-				<button
-					aria-expanded="false"
-					aria-haspopup="menu"
-					aria-label="Open main menu"
-					class="hidden md:flex group text-sm relative h-8 w-16 font-medium items-center justify-center px-4 rounded-lg bg-accent-base/5 text-accent-base hover:bg-accent-base/10"
-					id="toggle-navigation-menu"
-					type="button"
-				>
-					Menu
-				</button>
-				-->
+				
 			</nav>
 			
-			<!-- Dropdown menu for large screens. Needs improvement. -->
-			<!--
-			<div id="menu" class="absolute left-0 right-0 w-fit ml-auto top-16 z-10 hidden" aria-hidden="true">
-				<div
-					id="menu-body"
-					class="fixed bg-bgColor rounded-lg -ml-56 w-56"
-				>
-					<nav
-						aria-label="Main menu"
-						class="px-4 py-4 rounded-lg border border-special-lighter bg-special-light shadow-[0px_10px_25px_rgba(0,0,0,0.15)] text-sm flex flex-col gap-y-2 font-medium"
-						id="main-navigation-menu"
-					>
-						{
-							menuLinks.map((link) => (
-								<a
-									aria-current={Astro.url.pathname === link.path ? "page" : false}
-									class="text-accent-two underline-offset-2 hover:underline rounded-lg h-8 gap-x-1 px-2 flex justify-center items-center"
-									data-astro-prefetch
-									href={link.path}
-								>
-									{link.title}
-								</a>
-							))
-						}
-						<a
-							class="flex h-8 items-center justify-center rounded-lg bg-accent-base/5 hover:bg-accent-base/10 px-4 text-accent-base"
-							data-astro-prefetch
-							href="/posts/citrus-docs/intro/"
-						>
-							Docs
-						</a>
-					</nav>
-				</div>
-			</div>
-			-->
-
-			<div class="ml-auto">
-				<div id="buttons-panel" class="top-4 md:top-8 -ml-[4.5rem] flex">
+			
+			<div class="flex">
+				<div id="buttons-panel" class="top-4 md:top-8 flex">
 					<Search />
 					<ColorPalet client:only/>
 					<ThemeToggle />
-				</div>
-			</div>	
-			
-			<mobile-button
+					<a class="link" href="/admin/index.html">
+					<Icon  name="ri:admin-line" class="h-7 w-7 rounded-lg drop-shadow-[0px_1.5px_1.5px_rgba(0,0,0,0.175)] hover:text-accent-two" />
+					</a>
+					<mobile-button
 				aria-expanded="false"
 				aria-haspopup="menu"
 				aria-label="Open main menu"
-				class="group relative h-8 w-8 rounded-lg bg-color-100 hover:bg-accent-base/10 text-accent-base md:invisible md:hidden"
+				class="ml-3 group h-8 w-8 rounded-lg bg-color-100 hover:bg-accent-base/10 text-accent-base md:invisible md:hidden relative"
 				id="toggle-nav-menu-mobile"
 				type="button"
 			>
@@ -170,6 +117,11 @@ import ColorPalet from '../blog/ColorPalet.svelte'
 					name="hugeicons:cancel-01"
 				/>
 			</mobile-button>
+				</div>
+				
+			</div>	
+			
+			
 		</div>
 	</div>
 </header>

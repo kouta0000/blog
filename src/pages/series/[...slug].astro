@@ -1,6 +1,8 @@
 ---
 export const prerender = true;
 import { getCollection, type CollectionEntry, render } from "astro:content";
+import { getAllPosts } from "@/data/post";
+import PostPreview from "@/components/blog/PostPreview.astro";
 
 import SeriesLayout from "@/layouts/Series.astro";
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
@@ -18,8 +20,21 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { series } = Astro.props;
 const { Content } = await render(series);
+const allPosts = await getAllPosts();
+const posts = allPosts.filter((p)=>{if(!p.data.seriesId) return;if(p.data.seriesId === series.data.title) {return p} else {return}})
 ---
 
 <SeriesLayout series={series}>
 	<Content />
+	<section aria-label="Blog post list">
+		<ul class="md:space-y-2" role="list">
+			{
+				posts.map((p) => (
+					<li class="gap-2 sm:grid-cols-[auto_1fr] pl-3 text-bold">
+						<PostPreview post={p} />
+					</li>
+				))
+			}
+		</ul>
+	</section>
 </SeriesLayout>

@@ -9,7 +9,6 @@ publishDate: 2025-09-15
 updateDate: 2025-09-21T21:13:00
 description: 人称変化を実際に覚える
 draft: false
-coverImage: /images/Gemini_Generated_Image_vxjvz6vxjvz6vxjv.png
 ---
 ## 基本パターンは3種類
 ### 語感が大事

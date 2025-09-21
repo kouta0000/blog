@@ -36,7 +36,7 @@ const { headings } = await render(series);
 	<!-- SeriesPanel вставляется в именованный слот "sidebar" -->
 	{series.id && (<SeriesPanel slot="sidebar" seriesId={series.id} />)}
 
-	<div class="md:sticky md:top-8 md:z-20 flex items-end">
+	<div class="md:sticky md:top-8 md:z-20 flex items-center">
 		<button
 			id="toggle-panel"
 			class="hidden md:flex z-30 mr-2 h-8 w-8 items-center bg-accent-base/10 flex-shrink-0 justify-center rounded-lg text-accent-base hover:text-accent-base/90"
@@ -57,7 +57,7 @@ const { headings } = await render(series);
 		</button>
 
 		<h1 class="title md:sticky md:top-4 md:z-20 line-clamp-none md:line-clamp-1 md:max-w-lg lg:max-w-xl">
-			{title}
+			<span class="text-3xl">{title}</span>
 		</h1>
 	</div>
 	<p class="prose prose-citrus max-w-none mt-[1.125rem]">
@@ -66,7 +66,7 @@ const { headings } = await render(series);
 
 	<div class="mt-6 flex sm:grid-cols-[auto_1fr] md:items-start gap-x-8">
 		<article class="grid flex-grow grid-cols-1 break-words pt-4" data-pagefind-body>
-			<div class="prose prose-citrus max-w-none flex-grow prose-headings:font-semibold prose-headings:text-accent-base prose-headings:before:text-accent-two sm:prose-headings:before:content-['#'] sm:prose-th:before:content-none">
+			<div class="prose-h2:border-b-2 prose-h2:border-textColor/50 prose-h2:py-2 prose prose-citrus max-w-none flex-grow prose-headings:font-semibold prose-headings:text-accent-base">
 				<slot />
 			</div>
 		</article>
