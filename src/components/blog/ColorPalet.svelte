@@ -1,7 +1,6 @@
 <script lang='ts'>
     import { onMount } from "svelte";
-    const initialValue = 220;
-    let hue = $state(initialValue);
+    let hue = $state(220);
     let show:boolean = $state(false);
     onMount(()=>{
         const saved = localStorage.getItem('hue');
