@@ -29,7 +29,7 @@
     <div class='dropdown-content mt-3 bg-bgColor shadow-lg  rounded-xl  flex p-5 gap-3 w-60 mr-5'>
         
         <input class="range [--range-fill:0] [--range-bg:white/0] bg-gradient-to-r from-amber-700 via-cyan-600/80 to-amber-700"  type="range" min="0" max="360" bind:value={hue} oninput={updatehue} />
-        <button class='btn btn-active btn-base btn-xs ' onclick={initialize}>戻す</button>
+        <button class='btn btn-ghost btn-base btn-xs ' onclick={initialize}>戻す</button>
         
     </div>
 </div>
