@@ -16,8 +16,7 @@ const { headings } = await render(series);
 ---
 
 <BaseLayout meta={{ description, title }}>
-	<div class="fixed left-0 top-0 z-10 flex h-16 md:h-20 w-full bg-bgColor overflow-hidden">
-		
+	
 
 	<!-- SeriesPanel вставляется в именованный слот "sidebar" -->
 	{series.id && (<SeriesPanel slot="sidebar" seriesId={series.id} />)}
@@ -68,6 +67,28 @@ const { headings } = await render(series);
 		}
 	</div>
 
+	<div class="left-0 right-12 z-50 ml-auto w-fit md:absolute">
+		<button
+			id="to-top-button"
+			class="fixed bottom-14 flex h-12 w-12 text-light translate-y-28 items-center justify-center rounded-full border-2 border-special-lighter bg-bgColor text-3xl drop-shadow-xl transition-all duration-300 hover:text-accent-two data-[show=true]:translate-y-0 data-[show=true]:opacity-100"
+			aria-label="Back to Top"
+			data-show="false"
+		>	
+			<span class="absolute inset-0 rounded-full bg-special-light flex items-center justify-center" aria-hidden="true">
+				<svg
+					class="h-6 w-6"
+					fill="none"
+					focusable="false"
+					stroke="currentColor"
+					stroke-width="2"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path d="M4.5 15.75l7.5-7.5 7.5 7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+				</svg>
+			</span>
+		</button>
+	</div>
 
 	<!-- Кнопка серий для мобильных экранов -->
 	<mobile-button
@@ -217,6 +238,35 @@ const { headings } = await render(series);
 	}
 </script>
 
+<script>
+  // Ждем загрузки контента
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttonsPanel = document.getElementById("buttons-panel");
+    
+    if (buttonsPanel) {
+      buttonsPanel.classList.add("fixed");
+      console.log("Класс 'fixed' добавлен к элементу buttons-panel.");
+    } else {
+      console.error("Элемент с ID 'buttons-panel' не найден.");
+    }
+  });
+</script>
 
+<script>
+	const scrollBtn = document.getElementById("to-top-button") as HTMLButtonElement;
+	const targetHeader = document.querySelector("header") as HTMLElement;
 
+	function callback(entries: IntersectionObserverEntry[]) {
+		entries.forEach((entry) => {
+			// Show the scroll to top button when the <header> is out of view
+			scrollBtn.dataset.show = (!entry.isIntersecting).toString();
+		});
+	}
 
+	scrollBtn.addEventListener("click", () => {
+		document.documentElement.scrollTo({ behavior: "smooth", top: 0 });
+	});
+
+	const observer = new IntersectionObserver(callback);
+	observer.observe(targetHeader);
+</script>
