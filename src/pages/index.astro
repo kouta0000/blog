@@ -102,20 +102,22 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 <div class="fab">
 	<!-- a focusable div with tabindex is necessary to work on all browsers. role="button" is necessary for accessibility -->
 	<div tabindex="0" role="button" class="">
-		<Icon name="solar:widget-add-linear" class="size-full text-base/30 size-10 p-2 bg-accent-base/10 rounded-full" />
+		<Icon name="mingcute:settings-6-fill" class="size-full text-base/10 size-14 p-4 bg-accent-base/10 rounded-full" />
 	</div>
   
 	<!-- buttons that show up when FAB is open -->
-	<div class="bg-accent-base/10 rounded-full">
-	<ThemeToggle />
-	</div>
-	<div class="bg-accent-base/10 rounded-full">
-	<ColorPalet />
-	</div>
+	
+	
 	<div class="bg-accent-base/10 rounded-full">
 	<a href="/admin/index.html">
-		<Icon name="ri:admin-line"  class="size-8 p-1"/>
+		<Icon name="ri:admin-line"  class="size-14 p-4"/>
 	</a>
+	</div>
+	<div class="bg-accent-base/10 rounded-full p-3">
+	<ColorPalet />
+	</div>
+	<div class="bg-accent-base/10 rounded-full p-3">
+		<ThemeToggle />
 	</div>
   </div>
 </PageLayout>
