@@ -20,13 +20,13 @@ const {
 ---
 
 <html
-	class="overflow-x-hidden grid font-jp text-textColor antialiased p-0"
+	class="overflow-x-hidden grid font-jp text-textColor antialiased p-0 w-[100vw] relative"
 	lang={siteConfig.lang}
 >
 	<head>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 	</head>
-	<body class="min-w-4xl m-auto min-h-screen w-full max-w-6xl grow bg-bgColor m-0 relative">
+	<body class="min-w-4xl m-auto min-h-screen w-full max-w-6xl grow bg-bgColor m-0">
 		<ThemeProvider />
 		<SkipLink />
 		{ title == "Home" && (
