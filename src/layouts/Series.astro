@@ -239,35 +239,6 @@ const { headings } = await render(series);
 	}
 </script>
 
-<script>
-  // Ждем загрузки контента
-  document.addEventListener("DOMContentLoaded", () => {
-    const buttonsPanel = document.getElementById("buttons-panel");
-    
-    if (buttonsPanel) {
-      buttonsPanel.classList.add("fixed");
-      console.log("Класс 'fixed' добавлен к элементу buttons-panel.");
-    } else {
-      console.error("Элемент с ID 'buttons-panel' не найден.");
-    }
-  });
-</script>
 
-<script>
-	const scrollBtn = document.getElementById("to-top-button") as HTMLButtonElement;
-	const targetHeader = document.querySelector("header") as HTMLElement;
 
-	function callback(entries: IntersectionObserverEntry[]) {
-		entries.forEach((entry) => {
-			// Show the scroll to top button when the <header> is out of view
-			scrollBtn.dataset.show = (!entry.isIntersecting).toString();
-		});
-	}
 
-	scrollBtn.addEventListener("click", () => {
-		document.documentElement.scrollTo({ behavior: "smooth", top: 0 });
-	});
-
-	const observer = new IntersectionObserver(callback);
-	observer.observe(targetHeader);
-</script>

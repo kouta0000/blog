@@ -5,7 +5,7 @@ import { siteConfig, menuLinks } from "@/site.config";
 import { Icon } from "astro-icon/components";
 import ColorPalet from '../blog/ColorPalet.svelte'
 ---
-<div class="navbar bg-bgColor/90 shadow-sm fixed top-0 inset-x-0">
+<div class="navbar bg-bgColor/90 shadow-sm fixed top-0 inset-x-0 z-20">
   <div class="navbar-start">
     <a
 		aria-label={siteConfig.title}
@@ -39,12 +39,12 @@ import ColorPalet from '../blog/ColorPalet.svelte'
 
   <div class="navbar-end">
     <div class="dropdown dropdown-end z-20 relative md:hidden">
-		<div tabindex="0" role="button" class="btn btn-ghost rounded-field">
+		<div tabindex="0" role="button" class="btn btn-ghost rounded-field pointer-events-auto">
 		  <Icon name="mingcute:menu-fill" class="p-1 size-8" />
 		</div>
 		<ul
 		  tabindex="0"
-		  class="menu dropdown-content bg-bgColor/90 rounded-box z-1 mt-4 w-52 p-2 shadow-sm">
+		  class="menu dropdown-content bg-bgColor/90 rounded-box z-1 mt-4 w-52 p-2 shadow-lg">
 		  {
 			  menuLinks.map((link) => (
 				  <li><a
