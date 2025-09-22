@@ -26,17 +26,16 @@ const {
 	<head>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 	</head>
-	<body class="min-w-4xl m-auto min-h-screen w-full max-w-6xl grow bg-bgColor m-0 relative">
+	<body class="m-auto min-h-screen w-full grow bg-bgColor m-0 relative">
 		<ThemeProvider />
 		<SkipLink />
 		{ title == "Home" && (
 		<div class="fab">
-			<!-- a focusable div with tabindex is necessary to work on all browsers. role="button" is necessary for accessibility -->
 			<div tabindex="0" role="button" class="">
 				<Icon name="mingcute:settings-6-fill" class="size-full text-base/10 size-14 p-4 bg-accent-base/10 rounded-full" />
 			</div>
 		  
-			<!-- buttons that show up when FAB is open -->
+			
 			
 			
 			<div class="bg-accent-base/10 rounded-full">
