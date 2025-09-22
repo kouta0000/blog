@@ -20,38 +20,16 @@ const {
 ---
 
 <html
-	class="overflow-x-hidden grid font-jp text-textColor antialiased p-0 w-[100vw] relative"
+	class="overflow-x-hidden grid font-jp text-textColor antialiased"
 	lang={siteConfig.lang}
 >
 	<head>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 	</head>
-	<body class="min-w-4xl m-auto min-h-screen w-full max-w-6xl grow bg-bgColor m-0">
+	<body class="min-w-4xl m-auto min-h-screen w-full max-w-6xl grow bg-bgColor">
 		<ThemeProvider />
 		<SkipLink />
-		{ title == "Home" && (
-		<div class="fab">
-			<div tabindex="0" role="button" class="">
-				<Icon name="mingcute:settings-6-fill" class="size-full text-base/10 size-14 p-4 bg-accent-base/10 rounded-full" />
-			</div>
-		  
-			
-			
-			
-			<div class="bg-accent-base/10 rounded-full">
-			<a href="/admin/index.html">
-				<Icon name="ri:admin-line"  class="size-14 p-4"/>
-			</a>
-			</div>
-			<div class="bg-accent-base/10 rounded-full p-3">
-			<ColorPalet />
-			</div>
-			<div class="bg-accent-base/10 rounded-full p-3">
-				<ThemeToggle />
-			</div>
-		  </div>
-		  )
-		}
+		
 		<div class="flex min-h-screen w-full">
 			<!-- Sidebar for Docs Series -->
 			<slot name="sidebar" />

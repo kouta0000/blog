@@ -38,6 +38,17 @@ import ColorPalet from '../blog/ColorPalet.svelte'
   </div>
 
   <div class="navbar-end">
+	<div class="bg-accent-base/10 rounded-full">
+		<a href="/admin/index.html">
+			<Icon name="ri:admin-line"  class="size-10 p-2"/>
+		</a>
+		</div>
+		<div class="bg-accent-base/10 rounded-full size-10">
+		<ColorPalet />
+		</div>
+		<div class="bg-accent-base/10 rounded-full p-1">
+			<ThemeToggle />
+		</div>
     <div class="dropdown dropdown-end z-20 relative md:hidden">
 		<div tabindex="0" role="button" class="btn btn-ghost rounded-field pointer-events-auto">
 		  <Icon name="mingcute:menu-fill" class="p-1 size-8" />
