@@ -17,8 +17,8 @@
         localStorage.setItem('hue', `${hue}`);
     }
     const initialize = () => {
-        document.documentElement.style.setProperty('--hue', `${initialValue}`);
-        localStorage.setItem('hue',`${initialValue}`);
+        document.documentElement.style.setProperty('--hue', `${220}`);
+        localStorage.setItem('hue',`${220}`);
     }
 </script>
 
