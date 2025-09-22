@@ -5,12 +5,12 @@ import { siteConfig, menuLinks } from "@/site.config";
 import { Icon } from "astro-icon/components";
 import ColorPalet from '../blog/ColorPalet.svelte'
 ---
-<header class="navbar bg-bgColor">
-	<div class="ps-4">
-		<a
+<div class="navbar bg-bgColor/90 shadow-sm fixed top-0 inset-x-0">
+  <div class="navbar-start">
+    <a
 		aria-label={siteConfig.title}
 		aria-current={Astro.url.pathname === "/" ? "page" : false}
-		class="group flex h-8 items-center hover:filter-none sm:relative"
+		class="group flex h-8 items-center hover:filter-none sm:relative px-5"
 		href="/"
 	>
 		
@@ -19,50 +19,44 @@ import ColorPalet from '../blog/ColorPalet.svelte'
 			{siteConfig.title}
 		</strong>
 	</a>
-	</div>
-	<nav
-			aria-label="Main menu"
-			class="text-sm ml-16 hidden flex-col items-end justify-center gap-x-4 rounded-md bg-bgColor font-medium text-accent-two shadow backdrop-blur group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:flex-row sm:items-center sm:rounded-none sm:bg-transparent sm:shadow-none sm:backdrop-blur-none md:flex"
-			id="main-navigation-menu"
-		>
-			{
-				menuLinks.map((link) => (
-					<a
-						aria-current={Astro.url.pathname === link.path ? "page" : false}
-						class="underline-offset-2 hover:underline"
-						data-astro-prefetch
-						href={link.path}
-					>
-						{link.title}
-					</a>
-				))
-			}
-		</nav>
-	<div class="flex grow justify-end md:hidden">
-	  <div class="flex items-stretch">
-
-		<div class="dropdown dropdown-end">
-		  <div tabindex="0" role="button" class="btn btn-ghost rounded-field">
-			<Icon name="mingcute:menu-fill" class="p-1 size-8" />
-		  </div>
-		  <ul
-			tabindex="0"
-			class="menu dropdown-content bg-accent-one/10 rounded-box z-1 mt-4 w-52 p-2 shadow-sm">
-			{
-				menuLinks.map((link) => (
-					<li><a
-						aria-current={Astro.url.pathname === link.path ? "page" : false}
-						class="underline-offset-2 hover:underline"
-						data-astro-prefetch
-						href={link.path}
-					>
-						{link.title}
-					</a></li>
-				))
-			}
-		  </ul>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1" aria-label="Main menu">
+		{
+			menuLinks.map((link) => (
+				<li><a
+					aria-current={Astro.url.pathname === link.path ? "page" : false}
+					class="underline-offset-2 hover:underline"
+					data-astro-prefetch
+					href={link.path}
+				>
+					{link.title}
+				</a></li>
+			))
+		}
+    </ul>
+  </div>
+  <div class="navbar-end ">
+    <div class="dropdown dropdown-end z-20 relative md:hidden">
+		<div tabindex="0" role="button" class="btn btn-ghost rounded-field">
+		  <Icon name="mingcute:menu-fill" class="p-1 size-8" />
 		</div>
-		
-	</div>
-</header>
-
+		<ul
+		  tabindex="0"
+		  class="menu dropdown-content bg-accent-one/10 rounded-box z-1 mt-4 w-52 p-2 shadow-sm">
+		  {
+			  menuLinks.map((link) => (
+				  <li><a
+					  aria-current={Astro.url.pathname === link.path ? "page" : false}
+					  class="underline-offset-2 hover:underline"
+					  data-astro-prefetch
+					  href={link.path}
+				  >
+					  {link.title}
+				  </a></li>
+			  ))
+		  }
+		</ul>
+	  </div>
+  </div>
+</div>
