@@ -67,7 +67,7 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 		<ul class="space-y-4 md:space-y-2" role="list">
 			{
 				allPostsByDate.map((p) => (
-					<li class="gap-2 sm:grid-cols-[auto_1fr] pl-3">
+					<li class="gap-2 sm:grid-cols-[auto_1fr]">
 						<PostPreview post={p} />
 						<hr class="h-1 w-full rounded-3xl bg-bgColor"/>
 					</li>
