@@ -29,6 +29,10 @@ collections:
         name: "tags"
         widget: "list"
         required: false
+      - label: "Icon"
+        name: "icon"
+        widget: "select"
+        options: ["french", "german", "japanese1", "japanese2", "english1", "english2", "russian"]
       - label: "PublishDate"
         name: "publishDate"
         widget: "datetime"
@@ -48,10 +52,6 @@ collections:
       - label: "Text"
         name: "body"
         widget: "markdown"
-      - label: "Icon"
-        name: "icon"
-        widget: "select"
-        options: ["french", "german", "japanese1", "japanese2", "english1", "english2", "russian"]
       - label: "CoverImage"
         name: "coverImage"
         widget: "image"
