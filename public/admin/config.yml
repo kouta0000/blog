@@ -21,10 +21,6 @@ collections:
         name: "seriesId"
         widget: "string"
         required: false
-      - label: "SeriesNumber"
-        name: "orderInSeries"
-        widget: "number"
-        required: false
       - label: "Tags"
         name: "tags"
         widget: "list"
@@ -32,15 +28,12 @@ collections:
       - label: "Icon"
         name: "icon"
         widget: "select"
-        options: ["french", "german", "japanese1", "japanese2", "english1", "english2", "russian"]
+        options: ["french", "german", "japanese1", "japanese2", "english1", "english2", "russian", program]
+        required: false
       - label: "PublishDate"
         name: "publishDate"
         widget: "datetime"
         required: true
-      - label: "UpdateDate"
-        name: "updatedDate"
-        widget: "datetime"
-        required: false
       - label: "Description"
         name: "description"
         widget: "string"
