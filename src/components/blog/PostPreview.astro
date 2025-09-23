@@ -16,7 +16,7 @@ const icons: { [key: string]: string } = {
 const { as: Tag = "div", post, withDesc = false, progress } = Astro.props;
 ---
 
-<div class={withDesc ? "flex flex-col transition-all duration-1000 opacity-0 translate-x-10 intersect:translate-x-0  intersect:opacity-100 intersect-once" : "flex flex-col grow sm:flex-row sm:items-center sm:justify-between transition-all duration-700 opacity-0 translate-x-4 translate-y-6 intersect:translate-x-0 intersect:translate-y-0  intersect:opacity-100 intersect-once"}>
+<div class={withDesc ? "flex flex-col transition-all duration-1000 opacity-0 translate-y-10 intersect:translate-y-0  intersect:opacity-100 intersect-once" : "flex flex-col grow sm:flex-row sm:items-center sm:justify-between transition-all duration-700 opacity-0 translate-x-4 translate-y-6 intersect:translate-x-0 intersect:translate-y-0  intersect:opacity-100 intersect-once"}>
 	{!withDesc ? (
 		<>
 			<FormattedDate
