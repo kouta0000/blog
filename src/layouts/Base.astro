@@ -27,6 +27,25 @@ const {
 		<ThemeProvider />
 		<SkipLink />
 		<Header />
+		<div class="fab">
+	<!-- a focusable div with tabindex is necessary to work on all browsers. role="button" is necessary for accessibility -->
+	<div tabindex="0" role="button" class="rounded-full size-14 p-2 bg-accent-base/10">
+		<Icon name="mingcute:settings-6-fill" class="size-full p-2" />
+	</div>
+  
+	<div class="bg-accent-base/10 rounded-full">
+		<a href="/admin/index.html">
+			<Icon name="ri:admin-line"  class="size-14 p-4"/>
+		</a>
+		</div>
+		<div class="bg-accent-base/10 rounded-full size-14">
+		<ColorPalet client:only />
+		</div>
+		<div class="bg-accent-base/10 rounded-full size-14">
+			<ThemeToggle />
+		</div>
+	</div>
+  </div>
 		<div class="flex w-full md:px-10 md:pt-16">
 			<!-- Sidebar for Docs Series -->
 			<slot name="sidebar" />
