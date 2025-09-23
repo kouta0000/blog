@@ -7,6 +7,9 @@ import Note from "@/components/note/Note.astro";
 import { getAllPosts } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
 import { collectionDateSort } from "@/utils/date";
+import { Icon } from "astro-icon/components";
+import ColorPalet from '@/components/blog/ColorPalet.svelte';
+import ThemeToggle from "@/components/ThemeToggle.astro";
 
 
 // Posts
@@ -96,7 +99,25 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 			</section>
 		)
 	}
-
+<div class="fab">
+	<!-- a focusable div with tabindex is necessary to work on all browsers. role="button" is necessary for accessibility -->
+	<div tabindex="0" role="button" class="rounded-full size-16 p-2 bg-accent-base/10">
+		<Icon name="mingcute:settings-6-fill" class="size-full p-2" />
+	</div>
+  
+	<div class="bg-accent-base/10 rounded-full">
+		<a href="/admin/index.html">
+			<Icon name="ri:admin-line"  class="size-16 p-4"/>
+		</a>
+		</div>
+		<div class="bg-accent-base/10 rounded-full size-16">
+		<ColorPalet client:only />
+		</div>
+		<div class="bg-accent-base/10 rounded-full size-16">
+			<ThemeToggle />
+		</div>
+	</div>
+  </div>
 
 </PageLayout>
 

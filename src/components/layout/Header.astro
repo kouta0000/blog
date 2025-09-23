@@ -3,9 +3,9 @@ import Search from "@/components/Search.astro";
 import ThemeToggle from "@/components/ThemeToggle.astro";
 import { siteConfig, menuLinks } from "@/site.config";
 import { Icon } from "astro-icon/components";
-import ColorPalet from '../blog/ColorPalet.svelte'
+
 ---
-<div class="navbar bg-bgColor shadow-sm fixed top-0 w-full mx-3 z-20 h-16 sm:px-20 md:px-40">
+<div class="navbar bg-bgColor shadow-sm fixed top-0 w-full z-20 h-16 sm:px-20 md:px-40">
   <div class="navbar-start">
     <a
 		aria-label={siteConfig.title}
@@ -39,16 +39,7 @@ import ColorPalet from '../blog/ColorPalet.svelte'
 
   <div class="navbar-end">
 	<div class="flex gap-3 ">
-	<div class="bg-accent-base/10 rounded-full">
-		<a href="/admin/index.html">
-			<Icon name="ri:admin-line"  class="size-10 p-2"/>
-		</a>
-		</div>
-		<div class="bg-accent-base/10 rounded-full size-10">
-		<ColorPalet client:only />
-		</div>
-		
-		</div>
+	
     <div class="dropdown dropdown-end z-20 relative md:hidden">
 		<div tabindex="0" role="button" class="btn btn-ghost rounded-field pointer-events-auto">
 		  <Icon name="mingcute:menu-fill" class="p-1 size-8" />
