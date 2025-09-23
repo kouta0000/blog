@@ -22,6 +22,7 @@
     "@astrojs/tailwind": "5.1.4",
     "@iconify-json/mingcute": "^1.2.5",
     "@iconify-json/ri": "^1.2.5",
+    "@iconify-json/twemoji": "^1.2.4",
     "@shikijs/transformers": "^1.25.1",
     "@supabase/supabase-js": "^2.57.4",
     "astro": "5.1.2",
