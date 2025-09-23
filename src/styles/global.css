@@ -85,11 +85,11 @@
 		
 		/*** ОСНОВНЫЕ ЦВЕТА (Базовый, фон, акценты, текст) ***/
 		/* Базовый цвет-оттенок темы */
-		--hue: 220;            /* ベースの色相（数値） */
+		--hue: 235;            /* ベースの色相（数値） */
 		--saturation: 60%;
 		
 		--hue-deg: calc(var(--hue) * 1deg);
-		--accent-hue-deg: calc(var(--hue-deg) + 180deg);
+		--accent-hue-deg: calc(var(--hue-deg) + 230deg);
 
 		/* Фон (background) */
 		--bg-hue: var(--accent-hue-deg); /* Цвет-оттенок фона */

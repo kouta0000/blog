@@ -3,16 +3,17 @@ import type { CollectionEntry } from "astro:content";
 import FormattedDate from "@/components/FormattedDate.astro";
 import type { HTMLTag, Polymorphic } from "astro/types";
 import { Icon } from "astro-icon/components";
-
+import Badge from "../Badge.astro";
 type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
 	post: CollectionEntry<"post">;
 	withDesc?: boolean;
+	progress?:number
 };
 const icons: { [key: string]: string } = {
 	french:'flag-france', german:'flag-germany', japanese1:'flag-japan', english1:'flag-united-kingdom', english2:'flag-united-states', russian:'flag-russia', japanese2:'japanese-dolls' 
 }
 
-const { as: Tag = "div", post, withDesc = false } = Astro.props;
+const { as: Tag = "div", post, withDesc = false, progress } = Astro.props;
 ---
 
 <div class={withDesc ? "flex flex-col transition-all duration-1000 opacity-0 translate-x-10 intersect:translate-x-0  intersect:opacity-100 intersect-once" : "flex flex-col grow sm:flex-row sm:items-center sm:justify-between transition-all duration-700 opacity-0 translate-x-4 translate-y-6 intersect:translate-x-0 intersect:translate-y-0  intersect:opacity-100 intersect-once"}>
@@ -31,10 +32,11 @@ const { as: Tag = "div", post, withDesc = false } = Astro.props;
 			/>
 			<Tag class="citrus-link font-bold  text-xl py-2 sm:order-1 sm:flex-gro md:line-clamp-1 ">
 				<a data-astro-prefetch href={`/posts/${post.id}/`} class="inline-flex items-center gap-6">
-					<Icon name="mingcute:clock-line" class="size-6 text-accent-base/60" />
+					
+						<Icon name="solar:alarm-broken" class="size-6 text-accent-base/60" />
+					
 					{post.data.draft && <span class="text-red-500">(Draft) </span>}
 					{post.data.title}
-					
 				</a>
 				
 			</Tag>
@@ -60,6 +62,23 @@ const { as: Tag = "div", post, withDesc = false } = Astro.props;
 				
 			</Tag>
 			<p class="mt-0.5 line-clamp-2 pl-5">{post.data.description}</p>
+			<div class="py-4 flex px-5 flex gap-3 flex-wrap">
+				{
+					post.data.tags?.length ? (
+						
+						<>
+						{post.data.tags.map((tag) => (
+							<a aria-label={`View all posts with the tag: ${tag}`} href={`/tags/${tag}`} class="opacity-70 whitespace-nowrap">
+								<Badge variant="outline"  title={tag} />
+							</a>
+						))}
+						</>
+						) : (
+							<Icon aria-hidden="true" class="flex-shrink-0 inline-block h-5 w-5 text-lightest" focusable="false" name="mingcute:hashtag-fill" />
+							<span class="text-sm text-lightest">No tags</span>
+							)
+						}
+			</div>
 		</>
 	)}
 </div>

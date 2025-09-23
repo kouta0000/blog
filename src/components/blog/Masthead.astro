@@ -119,16 +119,16 @@ const postSeries = content.data.seriesId
 	{/* Tags */}
 	{
 		content.data.tags?.length ? (
-			<Icon aria-hidden="true" class="flex-shrink-0 inline-block h-6 w-6 text-accent-base" focusable="false" name="solar:tag-line-duotone" />	
+			<Icon aria-hidden="true" class="flex-shrink-0 inline-block h-6 w-6 text-accent-two" focusable="false" name="mingcute:location-line" />	
 			<>
 				{content.data.tags.map((tag) => (
 					<a aria-label={`View all posts with the tag: ${tag}`} href={`/tags/${tag}`}>
-						<Badge variant="accent-two" title={tag} />
+						<Badge variant="outline" title={tag} />
 					</a>
 				))}
 			</>
 		) : (
-			<Icon aria-hidden="true" class="flex-shrink-0 inline-block h-6 w-6 text-lightest" focusable="false" name="solar:tag-line-duotone" />
+			<Icon aria-hidden="true" class="flex-shrink-0 inline-block h-6 w-6 text-lightest" focusable="false" name="mingcute:location-line" />
 			<span class="text-sm text-lightest">No tags</span>
 		)
 	}
