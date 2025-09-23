@@ -48,9 +48,9 @@ collections:
       - label: "Text"
         name: "body"
         widget: "markdown"
-      - label: "Icon",
-        name: "icon",
-        widget: "select",
+      - label: "Icon"
+        name: "icon"
+        widget: "select"
         options: ["french", "german", "japanese1", "japanese2", "english1", "english2", "russian"]
       - label: "CoverImage"
         name: "coverImage"
