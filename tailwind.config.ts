@@ -102,9 +102,9 @@ export default {
         sans: ["SFProRounded", ...fontFamily.sans],
         serif: ["CascadiaCode", ...fontFamily.serif],
         jp: [
+          "SFProRounded",
           "Helvetica Neue", 
           "Arial",
-          "SFProRounded",
           "Noto Sans JP",
           "游ゴシック体",
           "YuGothic",
