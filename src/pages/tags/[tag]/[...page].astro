@@ -61,7 +61,7 @@ const paginationProps = {
 			{
 				page.data.map((p) => (
 					<li class="grid-cols-[auto_1fr]">
-						<PostPreview post={p} />
+						<PostPreview post={p} withDesc={true}/>
 					</li>
 				))
 			}

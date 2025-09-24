@@ -25,7 +25,7 @@ const allNotes = await getCollection("note");
 const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 ---
 
-<PageLayout meta={{ title: "Home" }}>
+<PageLayout meta={{ title: "Home", ogImage:'/assets/images/generalog.jpg' }}>
 	<!-- Hero section -->
 	<!-- Background blur -->
 
@@ -64,8 +64,11 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 
 	<!-- Posts Section -->
 	<section aria-label="Blog post list" >
-		<h2 class="title mb-6 text-xl text-accent-two">
-			<a href="/posts/">さいきんの記事</a>
+		<h2 class="title mb-6 text-xl text-accent-two flex items-center gap-3">
+			<Icon name="mdi:event-note" class="size-7 opacity-80"/>
+			<a href="/posts/">
+				さいきんの記事
+			</a>
 		</h2>
 		<ul class="space-y-4 md:space-y-2" role="list">
 			{
@@ -88,7 +91,8 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 	{
 		latestNotes.length > 0 && (
 			<section class="mt-12">
-				<h2 class="title mb-6 text-accent-two">
+				<h2 class="title mb-6 text-accent-two flex items-center gap-3">
+					<Icon name="mdi:comment-text-outline" class="size-7 opacity-80"/>
 					<a href="/notes/">メモ</a>
 				</h2>
 				<div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
