@@ -25,7 +25,7 @@ const isNew = (jstDate.getDate() - post.data.publishDate.getDate()) <= 7;
 			<div class="flex items-center gap-2">
 				<Icon name="solar:alarm-broken" class="size-5 text-accent-base/60" />
 				<FormattedDate
-					class="shrink-0 text-light text-sm sm:order-2 sm:text-right"
+					class="shrink-0 text-light text-sm sm:order-2 "
 					date={post.data.updatedDate ? post.data.updatedDate: post.data.publishDate}
 					dateTimeOptions={{
 						// hour: "2-digit",
@@ -42,7 +42,7 @@ const isNew = (jstDate.getDate() - post.data.publishDate.getDate()) <= 7;
 						<span class="rounded-full border border-teal-400 text-teal-400 bg-teal-200/10 px-2 py-0.5 text-xs">Updated</span>
 						)}
 				</div>
-			<Tag class="citrus-link font-bold  text-xl py-4 pl-7 sm:order-1 sm:flex-gro md:line-clamp-1 ">
+			<Tag class="citrus-link font-bold  text-xl py-4 pl-7 md:line-clamp-1 ">
 				<a data-astro-prefetch href={`/posts/${post.id}/`} class="inline-flex items-center gap-6">
 					
 						
