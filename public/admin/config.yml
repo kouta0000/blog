@@ -34,6 +34,10 @@ collections:
         name: "publishDate"
         widget: "datetime"
         required: true
+      - label: "UpdatedDate"
+        name: "updatedDate"
+        widget: "datetime"
+        required: false
       - label: "Description"
         name: "description"
         widget: "string"
