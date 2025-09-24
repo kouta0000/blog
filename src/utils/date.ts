@@ -13,7 +13,7 @@ export function getFormattedDate(
 
 	if(date.getFullYear() === jstDate.getFullYear() && jstDate.getMonth() === jstDate.getMonth() && (jstDate.getDate() - date.getDate()) <= 7) {
 		const days = jstDate.getDate() - date.getDate();
-		return days === 0 ? 'きょう': days.toString() + '日前';
+		return days === 0 ? '今日': days.toString() + '日前';
 	}
 	return new Intl.DateTimeFormat(siteConfig.date.locale, {
 		...(siteConfig.date.options as Intl.DateTimeFormatOptions),
