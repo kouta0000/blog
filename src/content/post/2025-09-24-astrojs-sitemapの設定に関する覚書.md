@@ -27,9 +27,12 @@ pnpm astro add sitemap
 
 ### 通常インストールの場合（Manual Install）
 
+- pnpm
+
 ```bash
 pnpm add @astrojs/sitemap
 ```
+- nm
 
 ```bash
 npm install @astrojs/sitemap
