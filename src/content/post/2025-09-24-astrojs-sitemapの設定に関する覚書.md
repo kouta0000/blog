@@ -35,7 +35,7 @@ pnpm add @astrojs/sitemap
 npm install @astrojs/sitemap
 ```
 
-:::tip npmとpnpmの違い
+:::tip 
 npmをあらゆる面で改善したのがpnpm。node-modulesの重複を無くしたり、読み込みやインストールを速くしたりといいことづくし。インストールしたデフォルトのnodeサーバーはnpmしか持っていないので、`npm install -g pnpm@latest-10`でインストールしましょう。
 :::
 
