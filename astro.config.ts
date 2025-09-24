@@ -108,7 +108,7 @@ export default defineConfig({
         rehypePrettyCode,
         {
           theme: {
-            light: "rose-pine-dawn", // after changing the theme, the server needs to be restarted
+            light: "catppuccin-latte", // after changing the theme, the server needs to be restarted
             dark: "rose-pine", // after changing the theme, the server needs to be restarted
           },
 
