@@ -121,7 +121,7 @@ export default defineConfig({
   // https://docs.astro.build/en/guides/prefetch/
   prefetch: true,
   // ! Please remember to replace the following site property with your own domain
-  site: "http://astrocitrus.artemkutsan.pp.ua/",
+  site: 'https://kotablog.netlify.app',
   vite: {
     build: {
       sourcemap: true, // Source maps generation
