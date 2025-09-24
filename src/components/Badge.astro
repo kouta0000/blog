@@ -5,13 +5,13 @@ const { variant = "default", showHash = true, title } = Astro.props;
 const badgeClasses = {
 	base: "flex items-baseline pt-[0.075rem] drop-shadow-lg active:drop-shadow-none rounded-lg h-6 px-2 text-sm font-medium transition-colors",
 	variants: {
-		default: "bg-textColor text-bgColor hover:brightness-105",
-		accent: "border border-textColor text-textColor drop-shadow-nonehover:brightness-105",
+		default: "bg-textColor text-bgColor brightness-75 hover:brightness-105",
+		accent: "border border-textColor text-textColor brightness-75 hover:brightness-105",
 		"accent-base": "border border-accent-base text-accent-base hover:brightness-105 font-bold",
 		"accent-one": "bg-accent-one text-bgColor hover:brightness-105",
 		"accent-two": "bg-accent-two text-bgColor hover:brightness-105",
 		muted: "bg-color-100 text-textColor hover:bg-accent-two hover:text-bgColor drop-shadow-none hover:drop-shadow-lg",
-		outline: "border border-accent-two text-accent-two drop-shadow-none hover:brightness-105 font-bold",
+		outline: "border border-accent-two text-accent-two drop-shadow-none brightness-75 hover:brightness-105 font-bold",
 		inactive: "text-lighter bg-color-100 drop-shadow-none",
 	},
 };

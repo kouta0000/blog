@@ -4,7 +4,7 @@ import FormattedDate from "@/components/FormattedDate.astro";
 import type { HTMLTag, Polymorphic } from "astro/types";
 import { Icon } from "astro-icon/components";
 import Badge from "../Badge.astro";
-type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
+type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{ as: Tag }> & {
 	post: CollectionEntry<"post">;
 	withDesc?: boolean;
 	progress?:number
@@ -14,26 +14,38 @@ const icons: { [key: string]: string } = {
 }
 
 const { as: Tag = "div", post, withDesc = false, progress } = Astro.props;
+const today = new Date();
+const jstDate = new Date(today.getTime() + 9 * 60 * 60 * 1000);
+const isNew = (jstDate.getDate() - post.data.publishDate.getDate()) <= 7;
 ---
 
 <div class={withDesc ? "flex flex-col transition-all duration-1000 opacity-0 translate-y-10 intersect:translate-y-0  intersect:opacity-100 intersect-once" : "flex flex-col grow sm:flex-row sm:items-center sm:justify-between transition-all duration-700 opacity-0 translate-x-4 translate-y-6 intersect:translate-x-0 intersect:translate-y-0  intersect:opacity-100 intersect-once"}>
 	{!withDesc ? (
 		<>
-			<FormattedDate
-				class="shrink-0 text-lighter text-sm sm:order-2 sm:text-right"
-				date={post.data.publishDate}
-				dateTimeOptions={{
-					// hour: "2-digit",
-					// minute: "2-digit",
-					year: "numeric",
-					month: "long",
-					day: "2-digit",
-				}}
-			/>
-			<Tag class="citrus-link font-bold  text-xl py-2 sm:order-1 sm:flex-gro md:line-clamp-1 ">
+			<div class="flex items-center gap-2">
+				<Icon name="solar:alarm-broken" class="size-5 text-accent-base/60" />
+				<FormattedDate
+					class="shrink-0 text-light text-sm sm:order-2 sm:text-right"
+					date={post.data.updatedDate ? post.data.updatedDate: post.data.publishDate}
+					dateTimeOptions={{
+						// hour: "2-digit",
+						// minute: "2-digit",
+						year: "numeric",
+						month: "long",
+						day: "2-digit",
+					}}
+					/>
+					{ isNew && (
+						<span class="rounded-full border border-pink-400 text-pink-400 bg-pink-200/10 px-2 py-0.5 text-xs">New</span>
+						)}
+					{post.data.updatedDate && (
+						<span class="rounded-full border border-teal-400 text-teal-400 bg-teal-200/10 px-2 py-0.5 text-xs">Updated</span>
+						)}
+				</div>
+			<Tag class="citrus-link font-bold  text-xl py-4 pl-7 sm:order-1 sm:flex-gro md:line-clamp-1 ">
 				<a data-astro-prefetch href={`/posts/${post.id}/`} class="inline-flex items-center gap-6">
 					
-						<Icon name="solar:alarm-broken" class="size-6 text-accent-base/60" />
+						
 					
 					{post.data.draft && <span class="text-red-500">(Draft) </span>}
 					{post.data.title}
@@ -43,17 +55,27 @@ const { as: Tag = "div", post, withDesc = false, progress } = Astro.props;
 		</>
 	) : (
 		<>
-			<FormattedDate 
-				class="text-sm shrink-0 text-lighter" 
-				date={post.data.publishDate}
-				dateTimeOptions={{
-					// hour: "2-digit",
-					// minute: "2-digit",
-					year: "numeric",
-					month: "long",
-					day: "2-digit",
-				}}
-			/>
+		<div class="flex items-center gap-2">
+				<Icon name="solar:alarm-broken" class="size-5 text-accent-base/60" />
+				<FormattedDate
+					class="shrink-0 text-lighter text-sm"
+					date={post.data.publishDate}
+					dateTimeOptions={{
+						// hour: "2-digit",
+						// minute: "2-digit",
+						year: "numeric",
+						month: "long",
+						day: "2-digit",
+					}}
+					/>
+					
+					{ isNew && (
+						<span class="rounded-full border border-pink-500 text-pink-500 bg-pink-200/10 px-2 py-0.5 text-xs">New</span>
+						)}
+					{post.data.updatedDate && (
+						<span class="rounded-full border border-teal-500 text-teal-500 bg-teal-200/10 px-2 py-0.5 text-xs">Updated</span>
+						)}
+				</div>
 			<Tag class="citrus-link  mt-2.5 pl-3 text-xl font-bold ">
 				<a data-astro-prefetch href={`/posts/${post.id}/`} class="inline-flex items-center gap-6">
 					<Icon name={post.data.icon && post.data.icon.length !== 0 ? `twemoji:${icons[post.data.icon as string]}`:"mdi:note"} class="size-6 opacity-70" />
