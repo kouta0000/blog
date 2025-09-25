@@ -19,7 +19,7 @@ const jstDate = new Date(today.getTime() + 9 * 60 * 60 * 1000);
 const isNew = (jstDate.getDate() - post.data.publishDate.getDate()) <= 7;
 ---
 
-<div class={withDesc ? "flex flex-col transition-all duration-1000 opacity-0 translate-y-10 intersect:translate-y-0  intersect:opacity-100 intersect-once" : "flex flex-col grow sm:flex-row sm:items-center sm:justify-between transition-all duration-700 opacity-0 translate-x-4 translate-y-6 intersect:translate-x-0 intersect:translate-y-0  intersect:opacity-100 intersect-once"}>
+<div class={withDesc ? "flex flex-col transition-all duration-1000 opacity-0 translate-y-10 intersect:translate-y-0  intersect:opacity-100 intersect-once" : "flex flex-col grow  transition-all duration-700 opacity-0 translate-x-4 translate-y-6 intersect:translate-x-0 intersect:translate-y-0  intersect:opacity-100 intersect-once"}>
 	{!withDesc ? (
 		<>
 			<div class="flex items-center gap-2">
@@ -42,7 +42,7 @@ const isNew = (jstDate.getDate() - post.data.publishDate.getDate()) <= 7;
 						<span class="rounded-full border border-teal-400 text-teal-400 bg-teal-200/10 px-2 py-0.5 text-xs">Updated</span>
 						)}
 				</div>
-			<Tag class="citrus-link font-bold  text-lg py-4 pl-10 md:line-clamp-1 ">
+			<Tag class="citrus-link font-bold  text-lg py-4 pl-10 md:line-clamp-1 md:pl-16 md:py-8 md:text-xl">
 				<a data-astro-prefetch href={`/posts/${post.id}/`} class="inline-flex items-center gap-6">
 					
 						
