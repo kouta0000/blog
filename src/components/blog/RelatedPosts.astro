@@ -1,0 +1,36 @@
+---
+import {type  CollectionEntry} from 'astro:content';
+import {getRelatedPosts} from '@/utils/blog'
+import { Icon } from 'astro-icon/components';
+import PostPreview from './PostPreview.astro';
+interface Props {
+    post: CollectionEntry<"post">;
+}
+const maxNumber = 6;
+const {post} = Astro.props;
+const relatedPosts = await getRelatedPosts(post,6);
+---
+<hr class="bg-accent-base/20 w-full my-10" />
+<section aria-label="Blog related post list" class="my-5">
+    <h2 class="title mb-8 text-xl text-accent-two flex items-center gap-3">
+        <Icon name="mdi:router-network-wireless" class="size-7 opacity-80"/>
+        <a href="/posts/">
+            かんれん記事
+        </a>
+    </h2>
+    <ul class="space-y-4 md:space-y-2" role="list">
+        {
+            relatedPosts.map((p,i) => (
+                <li class="gap-2 sm:grid-cols-[auto_1fr]">
+                    <PostPreview post={p} />
+                    <hr class="h-1 w-full rounded-3xl bg-bgColor"/>
+                </li>
+            ))
+        }
+    </ul>
+    <div class="mt-8 flex justify-end">
+    <a class="btn btn-ghost whitespace-nowrap rounded-full text-accent-base waves" href="/posts">
+        すべての記事 <Icon name="mingcute:right-fill" class="size-full p-2" />
+    </a>
+    </div>
+</section>

@@ -9,6 +9,7 @@ import { Icon } from "astro-icon/components";
 import { getAllPosts } from "@/data/post";
 import LikeButton from '@/components/blog/LikeButton.svelte'
 import CommentsSection from '@/components/CommentsSection.svelte';
+import RelatedPosts from "@/components/blog/RelatedPosts.astro";
 
 interface Props {
 	post: CollectionEntry<"post">;
@@ -129,6 +130,7 @@ const { headings } = await render(post);
 		)
 	}
 	<CommentsSection post_id={post.id} client:only />
+	<RelatedPosts post={post} />
 </BaseLayout>
 <script>
 	import ripple from 'ripple-effects-v2';
