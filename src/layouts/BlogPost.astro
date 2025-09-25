@@ -8,6 +8,7 @@ import SeriesPanel from "@/components/SeriesPanel.astro";
 import { Icon } from "astro-icon/components";
 import { getAllPosts } from "@/data/post";
 import LikeButton from '@/components/blog/LikeButton.svelte'
+import CommentsSection from '@/components/CommentsSection.svelte';
 
 interface Props {
 	post: CollectionEntry<"post">;
@@ -127,6 +128,7 @@ const { headings } = await render(post);
 			</nav>
 		)
 	}
+	<CommentsSection post_id={post.id} client:only />
 </BaseLayout>
 <script>
 	import ripple from 'ripple-effects-v2';
