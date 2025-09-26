@@ -1,6 +1,5 @@
 ---
 import { type CollectionEntry, render } from "astro:content";
-import Image from "astro/components/Image.astro";
 import Masthead from "@/components/blog/Masthead.astro";
 import TOC from "@/components/blog/TOC.astro";
 import WebMentions from "@/components/blog/webmentions/index.astro";
@@ -33,9 +32,6 @@ const { headings } = await render(post);
 ---
 
 <BaseLayout meta={{ articleDate, description, ogImage: socialImage, title }}>
-	
- 	
-	<Image width="500" height="" src={post.data.coverImage?.src} />
 
 	<!-- SeriesPanel is inserted into the named slot "sidebar" -->
 	{seriesId && (<SeriesPanel slot="sidebar" seriesId={seriesId} />)}
@@ -133,11 +129,11 @@ const { headings } = await render(post);
 	<CommentsSection post_id={post.id} client:only />
 	<RelatedPosts post={post} />
 </BaseLayout>
-<script>
+<script data-astro-rerun>
 	import ripple from 'ripple-effects-v2';
 	ripple(".waves");
 </script>
-<script>
+<script data-astro-rerun>
 	import { Observer } from 'tailwindcss-intersect';
 	Observer.start();
 </script>

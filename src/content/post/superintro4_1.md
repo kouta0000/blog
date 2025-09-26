@@ -10,7 +10,7 @@ updatedDate: ''
 description: 誰が言うかで変わる
 coverImage:
   alt: humans
-  src: /images/Gemini_Generated_Image_vxjvz6vxjvz6vxjv.png
+  src: /src/assets/images/Gemini_Generated_Image_vxjvz6vxjvz6vxjv.png
 ---
 英語に「三単現のs」というものがあったのを覚えているでしょうか。
 

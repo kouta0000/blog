@@ -9,6 +9,7 @@ import type { SiteMeta } from "@/types";
 import ThemeToggle from "@/components/ThemeToggle.astro";
 import ColorPalet from "@/components/blog/ColorPalet.svelte";
 import { Icon } from "astro-icon/components";
+import ClientRouter from "astro/components/ClientRouter.astro";
 
 interface Props {
 	meta: SiteMeta;
@@ -19,13 +20,14 @@ const {
 } = Astro.props;
 ---
 
-<html lang={siteConfig.lang} class="overflow-x-hidden scroll-pt-20 scroll-smooth font-ja text-textColor antialiased"
+<html transition:name="root" lang={siteConfig.lang} class="overflow-x-hidden scroll-pt-20 scroll-smooth font-ja text-textColor antialiased"
 lang={siteConfig.lang}>
 	<head>
+		<ClientRouter/>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 	</head>
-	<body class="bg-bgColor min-h-screen">
-		<script>
+	<body class="bg-bgColor min-h-screen" transition:animate="fade">
+		<script data-astro-rerun>
 			import ripple from 'ripple-effects-v2';
 			ripple(".waves");
 		</script>
