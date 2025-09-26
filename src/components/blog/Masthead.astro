@@ -97,7 +97,7 @@ const postSeries = content.data.seriesId
 
 {
 	content.data.coverImage && (
-		<div class="max-h-[50vh] mb-4 mt-2 overflow-hidden rounded-lg" transition:animate="slide">
+		<div class="max-h-[50vh] mb-4 mt-2 overflow-hidden rounded-lg">
 			
 			<Image
 				
@@ -158,7 +158,7 @@ const postSeries = content.data.seriesId
 		)
 	}
 </div>
-<script>
+<script is:inline data-astro-reload>
 	import { Observer } from 'tailwindcss-intersect';
 	Observer.start();
 </script>

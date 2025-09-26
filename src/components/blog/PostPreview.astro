@@ -104,7 +104,7 @@ const isNew = (jstDate.getDate() - post.data.publishDate.getDate()) <= 7;
 		</>
 	)}
 </div>
-<script>
+<script is:inline data-astro-reload>
 	import { Observer } from 'tailwindcss-intersect';
 	Observer.start();
 </script>

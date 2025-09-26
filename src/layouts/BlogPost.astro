@@ -133,12 +133,12 @@ const { headings } = await render(post);
 	import ripple from 'ripple-effects-v2';
 	ripple(".waves");
 </script>
-<script data-astro-rerun>
+<script is:inline data-astro-rerun>
 	import { Observer } from 'tailwindcss-intersect';
 	Observer.start();
 </script>
 <!-- Copy code button -->
-<script>
+<script is:inline data-astro-rerun>
 	// Wait for the content to fully load
 	document.addEventListener("DOMContentLoaded", () => {
 		// Find all pre blocks
@@ -178,7 +178,7 @@ const { headings } = await render(post);
 	});
 </script>
 
-<script>
+<script is:inline data-astro-rerun>
 	const ANIMATION_DURATION = 300;
 	// Get the button and panel elements
 	const togglePanelBtn = document.getElementById("toggle-panel");
@@ -248,7 +248,7 @@ const { headings } = await render(post);
 	}
 </script>
 
-<script>
+<script is:inilne data-astro-rerun>
 	// Get the button and panel elements
 	const toggleTocBtn = document.getElementById('toggle-toc');
 	const closeTocBtn = document.getElementById('close-toc');
@@ -313,7 +313,7 @@ const { headings } = await render(post);
 	}
 </script>
 
-<script>
+<script is:inline data-astro-rerun>
 	// Wait for the content to fully load
 	document.addEventListener("DOMContentLoaded", () => {
 		const buttonsPanel = document.getElementById("buttons-panel");
@@ -328,7 +328,7 @@ const { headings } = await render(post);
 </script>
 
 <!-- Scroll to top button -->
-<script>
+<script is:inline data-astro-rerun>
 	const scrollBtn = document.getElementById("to-top-button") as HTMLButtonElement;
 	const targetHeader = document.querySelector("header") as HTMLElement;
 

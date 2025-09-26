@@ -27,9 +27,13 @@ lang={siteConfig.lang}>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 	</head>
 	<body class="bg-bgColor min-h-screen" transition:animate="fade">
-		<script data-astro-rerun>
+		<script is:inline data-astro-rerun>
 			import ripple from 'ripple-effects-v2';
 			ripple(".waves");
+		</script>
+		<script is:inline data-astro-reload>
+			import { Observer } from 'tailwindcss-intersect';
+			Observer.start();
 		</script>
 		<ThemeProvider />
 		<SkipLink />
