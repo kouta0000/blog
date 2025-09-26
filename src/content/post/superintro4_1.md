@@ -1,11 +1,17 @@
 ---
+title: 第4講その1　人称変化
+seriesId: フランス語超入門
+tags:
+  - フランス語
+  - 人称変化
+icon: french
 publishDate: 2025-09-14
-title: "第4講その1　人称変化"
-seriesId: "フランス語超入門"
+updatedDate: ''
 description: 誰が言うかで変わる
-tags: [フランス語,人称変化]
+coverImage:
+  alt: humans
+  src: /images/Gemini_Generated_Image_vxjvz6vxjvz6vxjv.png
 ---
-
 英語に「三単現のs」というものがあったのを覚えているでしょうか。
 
 「三単現」というのは、「三人称」・「単数」・「現在」の頭文字を取ってくっつけたものです。主語が「三人称」かつ「単数」で、動詞が「現在」のときに、動詞にsがつくんでしたね。
@@ -51,4 +57,3 @@ tags: [フランス語,人称変化]
 だらだら書いていたら長くなったので、続きは次の記事にします。
 
 [続く]
-
