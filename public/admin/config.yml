@@ -49,10 +49,19 @@ collections:
       - label: "Text"
         name: "body"
         widget: "markdown"
-      - label: "CoverImage"
+      - label: "Cover image"
         name: "coverImage"
-        widget: "image"
-        required: false
+        widget: "object"
+        collapsed: false
+        fields:
+          - label: "Alt text"
+            name: "alt"
+            widget: "string"
+            required: true
+          - label: "Source"
+            name: "src"
+            widget: "image"
+            required: true
       - label: "OgImage"
         name: "ogImage"
         widget: "image"
