@@ -10,7 +10,7 @@ const maxNumber = 6;
 const {post} = Astro.props;
 const relatedPosts = await getRelatedPosts(post,6);
 ---
-<hr class="bg-accent-base/20 w-full my-10" />
+
 <section aria-label="Blog related post list" class="my-5">
     <h2 class="title mb-8 text-xl text-accent-two flex items-center gap-3">
         <Icon name="mdi:router-network-wireless" class="size-7 opacity-80"/>

@@ -56,7 +56,7 @@
 
   
   
-<section class="rounded-b-xl relative mx-auto dark:bg-slate-900 w-full md:w-9/10 lg:w-4/5 p-5 flex flex-col mt-20 text-textColor/60 border border-accent-base/20 rounded-xl" >
+<section class="rounded-b-xl relative mx-auto w-full md:w-9/10 lg:w-4/5 p-5 flex flex-col mt-20 text-textColor/60 " >
     <h4 class="text-left my-3 flex items-center gap-3">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 0 1 1.037-.443 48.282 48.282 0 0 0 5.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
@@ -77,7 +77,7 @@
       <textarea id="content" class="textarea textarea-base w-full  rounded-xl" rows="4" required bind:value={content}></textarea>
     </div>
 
-    <button type="button" class="btn btn-base w-1/2 ms-auto my-3" disabled={submitting} onclick={handleSubmit}>
+    <button type="button" class="btn bg-accent-base/10 w-1/2 ms-auto my-3" disabled={submitting} onclick={handleSubmit}>
       {submitting ? '送信中...' : '送信'}
     </button>
 <hr class="bg-accent-base/20 mt-5"/>
