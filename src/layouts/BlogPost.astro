@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, render } from "astro:content";
+import Image from "astro/components/Image.astro";
 import Masthead from "@/components/blog/Masthead.astro";
 import TOC from "@/components/blog/TOC.astro";
 import WebMentions from "@/components/blog/webmentions/index.astro";
@@ -34,7 +35,7 @@ const { headings } = await render(post);
 <BaseLayout meta={{ articleDate, description, ogImage: socialImage, title }}>
 	
  	
-	
+	<Image width="500" height="" src={post.data.coverImage?.src} />
 
 	<!-- SeriesPanel is inserted into the named slot "sidebar" -->
 	{seriesId && (<SeriesPanel slot="sidebar" seriesId={seriesId} />)}
