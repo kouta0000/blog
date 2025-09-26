@@ -3,7 +3,7 @@ backend:
   repo: kouta0000/blog
   branch: main
 
-media_folder: "public/images"
+media_folder: "src/assets/images"
 public_folder: "/images"
 
 collections:
