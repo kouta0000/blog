@@ -21,8 +21,9 @@
         const formData = new FormData(form);
         try{
             await fetch('/',{
-                method: 'POST',
-                body: formData
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
             })
             submitting = false;
             isfinished = true;
@@ -67,7 +68,7 @@
     {/if}
 </dialog>
 <form method="POST" name="contact" bind:this={form} onsubmit={showModal} class="space-y-6 w-full border border-accent-base/20 rounded-xl p-5" data-netlify="true">
-    <input type="hidden" name="form-name" value="contact" />
+    
     <div class="space-y-3 w-full p-3">
         <h4 class="">お名前・ニックネーム</h4>
         <label class="input input-base rounded-full mx-auto w-full">
