@@ -12,8 +12,10 @@
 
     // ダイアログが閉じられたときに実行される関数
     const resetState = () => {
+        setTimeout(()=>{
         isfinished = false;
         alert = false;
+        }, 3000);
     };
 
     const submit = async() => {
