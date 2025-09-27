@@ -40,4 +40,8 @@ export const menuLinks: { path: string; title: string }[] = [
 		path: "/notes/",
 		title: "メモ",
 	},
+	{
+		path: "/contact",
+		title: "お問い合わせ"
+	}
 ];

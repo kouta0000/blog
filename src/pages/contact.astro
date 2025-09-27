@@ -1,0 +1,12 @@
+---
+import Contact from '@/components/Contact.svelte';
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+	description: "お問い合わせ",
+	title: "お問い合わせ",
+};
+---
+<PageLayout meta={meta} >
+<Contact client:only />
+</PageLayout>

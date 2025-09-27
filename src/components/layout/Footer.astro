@@ -7,9 +7,14 @@ const year = new Date().getFullYear();
 <footer
 	class="semibold mt-auto flex w-full flex-col items-center justify-center gap-y-2 pb-4 pt-8 text-center align-top text-accent sm:flex-row sm:justify-between sm:text-sm"
 >
-	<div class="me-0 font-semibold sm:me-4">
+	<div class="me-0 font-semibold sm:me-4 text-start">
+		<a href="/terms" class="link">規約</a>
+		・
+		<a href="/privacypolicy" class="link">プライバシーポリシー</a>
+		<p class="mt-3">
 		&copy; {siteConfig.author}
 		{year}.<span class="inline-block">&nbsp;Powered by&nbsp;Astro Citrus</span>
+		</p>
 	</div>
 	<nav
 		aria-label="More on this site"

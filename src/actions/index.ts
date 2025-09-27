@@ -1,6 +1,6 @@
 // src/actions/index.ts
 
-import { defineAction } from 'astro:actions';
+import {defineAction } from 'astro:actions';
 import { z } from 'astro:schema';
 import fs from 'fs';
 import path from 'path';
@@ -222,5 +222,48 @@ export const server = {
     
         return { result: data };
       },
+    }),
+
+    contact: defineAction({
+      input: z.object({
+        name: z.string(),
+        email: z.string(),
+        message: z.string(),
+        subject: z.string(),
+        _honey: z.string(),
+        _dummy: z.string()
+      }).passthrough(),
+      handler: async ({ name, email, message, subject, _honey, _dummy }) => {
+        console.log(name);
+    
+        if (_honey.trim() !== "") {
+          return new Response("Bot detected", { status: 403 });
+        }
+    
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("email", email);
+        formData.append("message", message);
+        formData.append("_subject", subject);
+    
+        try {
+          const res = await fetch("https://formsubmit.co/kukkmathphys1236@gmail.com", {
+            method: "POST",
+            body: formData,
+          });
+    
+          if (!res.ok) {
+            console.error("送信失敗:", res.statusText);
+            return new Response("送信失敗", { status: 500 });
+          }
+    
+          console.log("📩 メッセージ受信:");
+          return { success: true };
+        } catch (error) {
+          console.error("エラー:", error);
+          return new Response("エラーが発生しました", { status: 500 });
+        }
+      },
     })
+    
 }
