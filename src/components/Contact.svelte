@@ -47,6 +47,7 @@
 </script>
 
 <dialog onclose={resetState} bind:this={dialog} class="modal">
+    <div class="modal-box">
     {#if !isfinished}
         <div class="flex flex-col items-center">
             {#if submitting}
@@ -66,6 +67,7 @@
         <p>{alert ? '送信エラー' : '送信が完了しました'}</p>
     </div>
     {/if}
+    </div>
 </dialog>
 <form method="POST" name="contact" bind:this={form} onsubmit={showModal} class="space-y-6 w-full border border-accent-base/20 rounded-xl p-5" data-netlify="true">
     <input type="hidden" name="form-name" value="contact" />
