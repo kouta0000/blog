@@ -1,4 +1,4 @@
-<script lang="ts" >
+<script lang="ts">
     import { actions } from "astro:actions";
     import { fromStore } from "svelte/store";
     let {href}:{href:string} = $props();
@@ -9,44 +9,41 @@
     let form:HTMLFormElement | undefined = $state();
     let isfinished = $state(false);
     let dialog:HTMLDialogElement | undefined = $state();
-    const submit = async() => {
-    // 修正後のコード
-const submit = async() => {
-    submitting = true;
-    const formData = new FormData(form);
-    try{
-        await fetch('/',{
-            method: 'POST',
-            body: formData
-        })
-        submitting = false;
-        isfinished = true;
-        setTimeout(()=>{
-            dialog?.close();
-        }, 3000)
-    } catch(error) {
-        submitting = false;
-        isfinished = true;
-        alert = true;
-        setTimeout(()=>{
-            dialog?.close();
-        }, 3000)
-        return
-    };
-}
 
-// ダイアログが閉じられたときに実行される関数
-const resetState = () => {
-    isfinished = false;
-    alert = false;
-};
+    // ダイアログが閉じられたときに実行される関数
+    const resetState = () => {
+        isfinished = false;
+        alert = false;
+    };
+
+    const submit = async() => {
+        submitting = true;
+        const formData = new FormData(form);
+        try{
+            await fetch('/',{
+                method: 'POST',
+                body: formData
+            })
+            submitting = false;
+            isfinished = true;
+            setTimeout(()=>{
+                dialog?.close();
+            }, 3000)
+        } catch(error) {
+            submitting = false;
+            isfinished = true;
+            alert = true;
+            setTimeout(()=>{
+                dialog?.close();
+            }, 3000)
+        }
+    }
 
     const showModal = (e:Event) => {
         e.preventDefault();
         if(dialog) dialog.showModal();
     }
 </script>
-
 
 <dialog onclose={resetState} bind:this={dialog} class="modal">
     {#if !isfinished}
