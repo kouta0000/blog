@@ -18,21 +18,21 @@
                 body: formData
             })
         } catch(error) {
-            sbumitting = false;
+            submitting = false;
+            isfinished = true;
             alert = true;
             setTimeout(()=>{
-            alert = false;
             dialog?.close();
         })
+        alert = false;
         return
         };
         submitting = false;
         isfinished = true;
         setTimeout(()=>{
-            isfinished=false;
-            alert = false;
             dialog?.close();
         }, 3000)
+        isfinished=false;
     }
     const showModal = (e:Event) => {
         e.preventDefault();
@@ -40,22 +40,26 @@
     }
 </script>
 <dialog bind:this={dialog} class="modal">
+    {#if !isfinished}
         <div class="flex flex-col items-center">
             {#if submitting}
-            {#if !alert}
             <span class="loading loading-dots"></span>
             <p>送信中</p>
-            {:else}
-            <p>送信エラー</p>
             {/if}
             {:else}
-            <p>{isfinished ? '送信が完了しました': '送信します　よろしいですか？'}</p>
+            <p>{'送信します　よろしいですか？'}</p>
             {/if}
           <div class="modal-action">
             <button onclick={submit} class="btn">はい</button>
             <button onclick={()=> {dialog?.close();}} class="btn">いいえ</button>
           </div>
-        </div>   
+        </div>
+    {:else}
+
+    <div class="flex flex-col items-center">
+        <p>{alert ? '送信エラー' : '送信が完了しました'}</p>
+    </div>
+    {/if}
 </dialog>
 <form method="POST"  bind:this={form} onsubmit={showModal} class="space-y-6 w-full border border-accent-base/20 rounded-xl p-5" data-netlify="true" >
     <div class="space-y-3 w-full p-3">
