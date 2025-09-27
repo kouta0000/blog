@@ -39,19 +39,45 @@
         if(dialog) dialog.showModal();
     }
 </script>
+<div class="prose text-textColor">
+<h1 class="mb-10 font-bold border-b pb-2">お問い合わせについて</h1>
+<h3 class="text-xl font-bold mb-4">ブログ内容について</h3>
+<p>ブログの内容についての質問や疑問を送っていただくのは大歓迎です。</p>
+<p>各記事のコメント欄でもいいですし、当方に直接ご連絡をいただいてもかまいません。</p>
+<h3 class="text-xl font-bold mb-4">お仕事の依頼について</h3>
+<p>ブログの内容に興味を持っていただき、仕事の依頼をぜひしたいという嬉しい依頼も大歓迎です。</p>
+<p>以下のようなご依頼には対応できます。</p>
+<ul class="space-y-4 mb-10">
+    <li>
+        フランス語の家庭教師・講師（初心者の方、仏検・入試対策をしたい方など）
+    </li>
+    <li>
+        プログラミングの家庭教師（HTML, CSS, Javascript, Tailwind, Svelte, Astro, Pythonなど）
+    </li>
+    <li>
+        個人ブログやポートフォリオブログの作成
+    </li>
+    <li>
+        個人サイト・小規模サイトの改修や機能追加
+    </li>
+</ul>
+<p>ご連絡の際は以下のフォームに氏名、アドレス、メッセージを書き添えてお送りくいただくか、以下のメールアドレスに直接ご連絡ください。</p>
+<figure>
+<img alt="email adress image" src="/images/my_email.png" class="scale-75" />
+<figcaption class="text-xs pl-10">※スパム対策のため画像化してあります</figcaption>
+</figure>
 <dialog bind:this={dialog} class="modal">
     {#if !isfinished}
         <div class="flex flex-col items-center">
             {#if submitting}
             <span class="loading loading-dots"></span>
             <p>送信中</p>
-            {/if}
             {:else}
             <p>{'送信します　よろしいですか？'}</p>
             {/if}
           <div class="modal-action">
-            <button onclick={submit} class="btn">はい</button>
-            <button onclick={()=> {dialog?.close();}} class="btn">いいえ</button>
+            <button onclick={submit} class="btn" disabled={submitting}>はい</button>
+            <button onclick={()=> {dialog?.close();}} class="btn" disabled={submitting}>いいえ</button>
           </div>
         </div>
     {:else}
@@ -110,3 +136,4 @@
     <input type="hidden" name="subject" value="ブログメッセージ">
 
 </form>
+</div>
