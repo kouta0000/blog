@@ -1,40 +1,38 @@
 <script lang="ts" >
     import { actions } from "astro:actions";
+    import { fromStore } from "svelte/store";
     let {href}:{href:string} = $props();
     let mail = $state('');
     let dummy = $state('');
     let submitting = $state(false);
+    let alert = $state(false);
     let form:HTMLFormElement | undefined = $state();
     let isfinished = $state(false);
     let dialog:HTMLDialogElement | undefined = $state();
     const submit = async() => {
         submitting = true;
-        if(form) {
-            try {
-                const payload = {
-                    name: form.user.value,
-                    email: form.email.value,
-                    message: form.message.value,
-                    subject: form.subject.value,
-                    _honey: form._honey.value,
-                    _dummy: form._dummy.value
-                };
-                
-                const {error} = await actions.contact(payload);
-            } catch {
-                console.error("フォームが見つかりません")
-            } finally {
-                submitting = false;
-                isfinished = true;
-                await setTimeout(()=>{
-                    dialog?.close();
-                    isfinished = false;
-                },3000)
-            }
-        } else {
-            console.error("送信エラー。やり直してください")
-        }
-       
+        const formData = new FormData(form);
+        try{
+            await fetch('/',{
+                method: 'POST',
+                body: formData
+            })
+        } catch(error) {
+            sbumitting = false;
+            alert = true;
+            setTimeout(()=>{
+            alert = false;
+            dialog?.close();
+        })
+        return
+        };
+        submitting = false;
+        isfinished = true;
+        setTimeout(()=>{
+            isfinished=false;
+            alert = false;
+            dialog?.close();
+        }, 3000)
     }
     const showModal = (e:Event) => {
         e.preventDefault();
@@ -44,8 +42,12 @@
 <dialog bind:this={dialog} class="modal">
         <div class="flex flex-col items-center">
             {#if submitting}
+            {#if !alert}
             <span class="loading loading-dots"></span>
             <p>送信中</p>
+            {:else}
+            <p>送信エラー</p>
+            {/if}
             {:else}
             <p>{isfinished ? '送信が完了しました': '送信します　よろしいですか？'}</p>
             {/if}
@@ -55,7 +57,7 @@
           </div>
         </div>   
 </dialog>
-<form method="POST"  bind:this={form} action="https://formsubmit.co/kukkmathphys1236@gmail.com" class="space-y-6 w-full border border-accent-base/20 rounded-xl p-5" >
+<form method="POST"  bind:this={form} onsubmit={showModal} class="space-y-6 w-full border border-accent-base/20 rounded-xl p-5" data-netlify="true" >
     <div class="space-y-3 w-full p-3">
         <h4 class="">お名前・ニックネーム</h4>
         <label class="input input-base rounded-full mx-auto w-full">
