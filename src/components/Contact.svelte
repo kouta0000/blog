@@ -10,30 +10,37 @@
     let isfinished = $state(false);
     let dialog:HTMLDialogElement | undefined = $state();
     const submit = async() => {
-        submitting = true;
-        const formData = new FormData(form);
-        try{
-            await fetch('/',{
-                method: 'POST',
-                body: formData
-            })
-        } catch(error) {
-            submitting = false;
-            isfinished = true;
-            alert = true;
-            setTimeout(()=>{
-            dialog?.close();
+    // 修正後のコード
+const submit = async() => {
+    submitting = true;
+    const formData = new FormData(form);
+    try{
+        await fetch('/',{
+            method: 'POST',
+            body: formData
         })
-        alert = false;
-        return
-        };
         submitting = false;
         isfinished = true;
         setTimeout(()=>{
             dialog?.close();
         }, 3000)
-        isfinished=false;
-    }
+    } catch(error) {
+        submitting = false;
+        isfinished = true;
+        alert = true;
+        setTimeout(()=>{
+            dialog?.close();
+        }, 3000)
+        return
+    };
+}
+
+// ダイアログが閉じられたときに実行される関数
+const resetState = () => {
+    isfinished = false;
+    alert = false;
+};
+
     const showModal = (e:Event) => {
         e.preventDefault();
         if(dialog) dialog.showModal();
@@ -66,7 +73,7 @@
 <img alt="email adress image" src="/images/my_email.png" class="scale-75" />
 <figcaption class="text-xs pl-10">※スパム対策のため画像化してあります</figcaption>
 </figure>
-<dialog bind:this={dialog} class="modal">
+<dialog onclose={resetState} bind:this={dialog} class="modal">
     {#if !isfinished}
         <div class="flex flex-col items-center">
             {#if submitting}
