@@ -5,7 +5,7 @@ tags:
   - フランス語
   - 人称変化
 publishDate: 2025-09-15
-updatedDate: ''
+updatedDate: 2025-09-28T01:04:00
 description: 人称変化を実際に覚える
 draft: false
 coverImage:
@@ -40,14 +40,14 @@ updateDate: 2025-09-21T21:13:00
 
 人称代名詞はまだちゃんとみたことがなかったですね。以下に一覧で挙げておきましょう。
 
-|日本語|フランス語|
-|:-----:|:--------:|
-|わたし|je|
-|あなた|tu|
-|彼・彼女|il, elle|
-|わたしたち|nous|
-|あなた（丁寧or複数）|vous|
-|彼ら・彼女ら|ils, elles|
+| 日本語 | フランス語 |
+| --- | --- |
+| わたし | je |
+| あなた | tu |
+| 彼・彼女 | il, elle |
+| わたしたち | nous |
+| あなた（丁寧or複数） | vous |
+| 彼ら・彼女ら | ils, elles |
 
 いくつかの注意点を。vousに丁寧とありますが、英語のyouと違い、フランス語は**親しい相手に使うあなた**(tu)と**知らいないあるいは目上の人につかうあなた**(vous)を区別します。これが、日本語でいう尊敬語や丁寧語の機能を一種担うわけです。インドヨーロッパ言語ではふつうのことで、英語もかつてはそうでしたが、いまはすべてyouになってしまっています。
 
@@ -63,14 +63,14 @@ updateDate: 2025-09-21T21:13:00
 
 どんな文法書も-erで終わる動詞の変化はさいしょのさいしょの方に書かれています。それくらい重要だからです。これを完璧にすれば90％をマスターできるなんて。急がば廻れ。ゆっくり覚えましょう。ここで、aimer（愛する）、manger（食べる）、regarder（見るwatchの方）の**直接法現在形**の人称変化表を挙げておきます。
 
-|aimer|manger|regarder|
-|:----:|:----:|:------:|
-|aime|mange|regarde|
-|aimes|manges|regardes|
-|aime|mange|regarde|
-|aimons|mangeons|regardons|
-|aimez|mangez|regardez|
-|aiment|mangent|regardent|
+| aimer | manger | regarder |
+| --- | --- | --- |
+| aime | mange | regarde |
+| aimes | manges | regardes |
+| aime | mange | regarde |
+| aimons | mangeons | regardons |
+| aimez | mangez | regardez |
+| aiment | mangent | regardent |
 
 :::note
 mangerはnousのときに、例外的にeが入っています。これは不規則といえば、不規則なのですが、発音上は不規則ではありません。gの発音を思い出してください。後ろにeがくると[]の発音になりましたね。反対に言えば、mangerを支配するのは、[]の**音**なのです。もし規則通りにつづれば、mangonsとなりますがこれでは、「マンジョン」ではなく「マンゴン」になります。「マンジョン」という発音が先にあって、そのように発音させたいから、それに合わせて仕方なくつづりを変更しているのですね。
