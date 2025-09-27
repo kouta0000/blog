@@ -71,7 +71,7 @@
     {/if}
     </div>
 </dialog>
-<form method="POST" name="contact" bind:this={form} onsubmit={showModal} class="space-y-6 w-full border border-accent-base/20 rounded-xl p-5" data-netlify="true">
+<form method="POST" name="contact" bind:this={form} onsubmit={showModal} class="space-y-3 w-full border border-accent-base/20 rounded-xl p-5" data-netlify="true">
     <input type="hidden" name="form-name" value="contact" />
     <div class="space-y-3 w-full p-3">
         <h4 class="">お名前・ニックネーム</h4>
