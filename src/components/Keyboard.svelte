@@ -80,7 +80,7 @@
     
     <div class='w-full flex flex-col gap-6'>
     
-        <textarea bind:this={textarea} class='textarea bg-slate-50 dark:bg-slate-900 w-full font-bold text-2xl text-center md:text-2xl tracking-widest' bind:value={text} placeholder="キーボード入力もできます" ></textarea>
+        <textarea bind:this={textarea} class='textarea bg-slate-50 dark:bg-slate-900 w-full font-bold text-2xl placeholder:text-lg placeholder:font-semibold text-center md:text-2xl tracking-widest' bind:value={text} placeholder="入力" ></textarea>
         <div id="buttons" class='w-full flex justify-between'>
             <div out:fade in:fade={{delay: 1000}} class='h-12 w-16 sm:h-14 sm:w-18  md:h-16 md:w-24  relative rounded-md pointer-events-auto group'>
                 {#if copied}
