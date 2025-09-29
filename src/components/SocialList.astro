@@ -18,7 +18,7 @@ const socialLinks: {
 		name: "mdi:github",
 	},
 	{
-		friendlyName: 'Note',
+		friendlyName: 'note',
 		link: "https://note.com/roan_dokugo1236",
 		name: "emojione-monotone:letter-n"
 	},
@@ -36,7 +36,7 @@ const socialLinks: {
 			socialLinks.map(({ friendlyName, isWebmention, link, name }) => (
 				<li class="flex">
 					<a
-						class="inline-block hover:text-link drop-shadow-[0px_2.5px_2.5px_rgba(0,0,0,0.175)]"
+						class="inline-block inline-flex items-center gap-2 hover:text-link drop-shadow-[0px_2.5px_2.5px_rgba(0,0,0,0.175)]"
 						href={link}
 						rel={`noreferrer ${isWebmention ? "me authn" : ""}`}
 						target="_blank"
