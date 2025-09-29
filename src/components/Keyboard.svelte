@@ -139,12 +139,14 @@
         
         <div class='grid gap-3 grid-cols-5 md:grid-cols-6'>
         {#each keyboards as k (k)}
-        <div class='size-14 sm:size-16 md:size-20 relative rounded-md pointer-events-auto'>
-        <span class="bg-black dark:bg-white absolute inset-0 rounded-lg active:scale-90"></span>
-        <button class='inset-shadow shadow-xl bg-slate-600 text-white text-xl font-semibold dark:bg-slate-900 rounded-md cursor-pointer z-2 absolute inset-1.5 -translate-y-2 active:translate-y-0  pointer-events-auto' onclick={()=>{inputToTextarea(k)}}>
-            {k}
-        </button>
-        </div>
+        <div class='size-14 sm:size-16 md:size-20 relative rounded-md pointer-events-auto group'>
+    <span class="bg-black dark:bg-white absolute inset-0 rounded-lg group-active:scale-90 pointer-events-none"></span>
+
+    <button class='inset-shadow shadow-xl bg-slate-600 text-white text-xl font-semibold dark:bg-slate-900 rounded-md cursor-pointer z-10 absolute inset-1.5 -translate-y-2 active:translate-y-0  pointer-events-auto' onclick={()=>{inputToTextarea(k)}}>
+        {k}
+    </button>
+</div>
+
         {/each}
         </div>
         
