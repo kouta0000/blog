@@ -116,7 +116,7 @@
                     </div>
                     <div out:fade in:fade={{delay: 1000}} class='size-12 sm:size-14 md:size-16  relative rounded-md pointer-events-auto group'>
                         <span class="bg-black dark:bg-white absolute inset-0 rounded-lg group-active:scale-90"></span>
-                        <button class='inset-shadow shadow-xl bg-slate-400  text-xl font-semibold dark:bg-slate-900 rounded-md cursor-pointer z-2 absolute inset-1.5 -translate-y-2 active:translate-y-0 transition-all duration-100 pointer-events-auto' onclick={()=>{text=''}}>
+                        <button class='inset-shadow shadow-xl bg-slate-400  text-xl font-semibold dark:bg-slate-900 rounded-md cursor-pointer z-2 absolute inset-1.5 -translate-y-2 active:translate-y-0 transition-all duration-100 pointer-events-auto' onclick={()=>{text='';textarea?.focus()}}>
                             c
                         </button>
                     </div>
