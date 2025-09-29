@@ -32,6 +32,8 @@
     "astro-webmanifest": "^1.0.0",
     "cssnano": "^7.0.6",
     "hastscript": "^9.0.0",
+    "html2canvas-pro": "^1.5.11",
+    "jspdf": "^3.0.3",
     "mdast-util-directive": "^3.0.0",
     "mdast-util-to-markdown": "^2.1.2",
     "mdast-util-to-string": "^4.0.0",

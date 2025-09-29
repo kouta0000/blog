@@ -52,7 +52,7 @@
     }
   }
 </script>
-
+<h1>IPA入力機</h1>
 <div role="tablist" class="tabs tabs-border bg-slate-100 dakr:bg-slate-900 w-full divide flex justify-end">
     <a role="tab active:tab-active" onclick={()=>keyboards = french} class="tab">仏</a>
     <a role="tab active:tab-active" onclick={()=>keyboards = english} class="tab">英</a>

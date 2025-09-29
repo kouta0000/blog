@@ -1,6 +1,7 @@
 ---
 import Keyboard from '@/components/Keyboard.svelte';
 import PageLayout from '@/layouts/Base.astro';
+import Conjugation from '@/components/Conjugation.svelte'
 const meta = {
     description: '道具箱',
     title: '道具箱'
@@ -9,5 +10,5 @@ const meta = {
 <PageLayout meta={meta}>
 
 <Keyboard client:only/>
-
+<Conjugation client:only />
 </PageLayout>
