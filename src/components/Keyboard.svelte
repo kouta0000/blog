@@ -78,11 +78,11 @@
   </div>
 <div class='bg-accent-base rounded-xl min-h-[50vh] flex flex-col items-center gap-6 py-10 px-4 sm:p-6 md:p-10 font-ipa'>
     
-    <div class='w-full flex flex-col gap-6'>
+    <div class='w-full flex flex-col gap-6' transition:fade>
     
         <textarea bind:this={textarea} class='textarea bg-slate-50 dark:bg-slate-900 w-full font-bold text-2xl placeholder:text-lg placeholder:font-semibold text-center md:text-2xl tracking-widest' bind:value={text} placeholder="入力" ></textarea>
         <div id="buttons" class='w-full flex justify-between'>
-            <div out:fade in:fade={{delay: 1000}} class='h-12 w-16 sm:h-14 sm:w-18  md:h-16 md:w-24  relative rounded-md pointer-events-auto group'>
+            <div class='h-12 w-16 sm:h-14 sm:w-18  md:h-16 md:w-24  relative rounded-md pointer-events-auto group'>
                 {#if copied}
                 <div class='absolute bottom-[100%] -right-3 rounded-xl bg-teal-200/40 text-center text-xs p-1'>
                     <p>copied ☺</p>
