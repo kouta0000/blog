@@ -17,11 +17,15 @@ const socialLinks: {
 		link: "https://github.com/kouta0000",
 		name: "mdi:github",
 	},
+	{
+		friendlyName: 'Note',
+		link: "https://note.com/roan_dokugo1236",
+		name:"mdi:note"
+	}
 ];
 ---
 
 <div class="flex flex-wrap items-end gap-x-2">
-	<p>Github</p>
 	<ul class="flex flex-1 items-center gap-x-2 sm:flex-initial">
 		{
 			socialLinks.map(({ friendlyName, isWebmention, link, name }) => (
