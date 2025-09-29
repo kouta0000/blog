@@ -110,6 +110,9 @@ export default {
           "YuGothic",
           "メイリオ",
           "sans-serif"
+        ],
+        ipa: [
+          "Noto Sans",
         ]
       },
       transitionProperty: {
