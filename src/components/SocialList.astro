@@ -20,7 +20,12 @@ const socialLinks: {
 	{
 		friendlyName: 'Note',
 		link: "https://note.com/roan_dokugo1236",
-		name:"mdi:note"
+		name: "emojione-monotone:letter-n"
+	},
+	{
+		friendlyName: 'Zenn',
+		link: 'https://zenn.dev/roan_dokugo',
+		name: "emojione-monotone:letter-z"
 	}
 ];
 ---
@@ -36,8 +41,9 @@ const socialLinks: {
 						rel={`noreferrer ${isWebmention ? "me authn" : ""}`}
 						target="_blank"
 					>
-						<Icon aria-hidden="true" class="h-8 w-8" focusable="false" name={name} />
-						<span class="sr-only">{friendlyName}</span>
+					<span class="">{friendlyName}</span>
+					<Icon aria-hidden="true" class="h-8 w-8" focusable="false" name={name} />
+						
 					</a>
 				</li>
 			))
