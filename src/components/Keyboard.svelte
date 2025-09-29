@@ -36,11 +36,27 @@
         text += input;
     }
     const back = ()=>{
-        text = text.slice(0,text.length-1);
+        if(textarea && textarea.selectionStart) {
+            const index = textarea.selectionStart;
+            text = text.slice(0,text.length-1);
+            textarea.focus();
+        } else {
+            text = text.slice(0,text.length-1);
+        }
+        
+           
+
     }
     const addkakko = (input:string)=>{
-
+        if(textarea && textarea.selectionStart) {
+            const index = textarea.selectionStart;
             text = input[0]+text+input[1];
+            textarea.focus();
+            setTimeout(()=>{textarea?.setSelectionRange(index+1,index+1)},0);
+        } else {
+            text = input[0]+text+input[1];
+        }
+            
         
     }
     const copy = async() => {
