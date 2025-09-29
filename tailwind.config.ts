@@ -129,7 +129,7 @@ export default {
               "@apply font-normal text-quote px-8 ml-4 [&>p:first-of-type]:mt-0 [&>p:last-of-type]:mb-0":
                 "",
               "p::before": {
-                "@apply leading-none font-serif font-medium relative content-[''] text-2xl text-lightest top-[0.31125rem] md:top-[0.31125rem] -ms-4 me-0.5":
+                "@apply leading-none font-serif font-medium relative content-[''] text-2xl text-lightest top-[0.31125rem] md:top-[0.31125rem] me-0.5":
                   "",
               },
               "p::after": {

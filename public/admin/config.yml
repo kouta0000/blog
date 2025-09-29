@@ -57,11 +57,11 @@ collections:
           - label: "Alt text"
             name: "alt"
             widget: "string"
-            required: true
+            required: false
           - label: "Source"
             name: "src"
             widget: "image"
-            required: true
+            required: false
       - label: "OgImage"
         name: "ogImage"
         widget: "image"
