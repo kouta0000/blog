@@ -102,25 +102,25 @@
             </div>
             <div>
                 <div class="flex flex-nowrap gap-1">
-                <div out:fade in:fade={{delay: 1000}} class='size-12 sm:size-14 md:size-16  relative rounded-md pointer-events-auto group'>
+                <div class='size-12 sm:size-14 md:size-16  relative rounded-md pointer-events-auto group'>
                     <span class="bg-black dark:bg-white absolute inset-0 rounded-lg group-active:scale-90"></span>
                     <button class='inset-shadow shadow-xl bg-slate-400 text-xl font-semibold dark:bg-slate-900 rounded-md cursor-pointer z-2 absolute inset-1.5 -translate-y-2 active:translate-y-0 transition-all duration-100 pointer-events-auto' onclick={()=>{addkakko('[]')}}>
                         {'[*]'}
                     </button>
                     </div>
-                    <div out:fade in:fade={{delay: 1000}} class='size-12 sm:size-14 md:size-16  relative rounded-md pointer-events-auto group'>
+                    <div class='size-12 sm:size-14 md:size-16  relative rounded-md pointer-events-auto group'>
                         <span class="bg-black dark:bg-white absolute inset-0 rounded-lg group-active:scale-90"></span>
                         <button class='inset-shadow shadow-xl bg-slate-400  text-xl font-semibold dark:bg-slate-900 rounded-md cursor-pointer z-2 absolute inset-1.5 -translate-y-2 active:translate-y-0 transition-all duration-100 pointer-events-auto' onclick={()=>{addkakko('//')}}>
                             /*/
                         </button>
                     </div>
-                    <div out:fade in:fade={{delay: 1000}} class='size-12 sm:size-14 md:size-16  relative rounded-md pointer-events-auto group'>
+                    <div class='size-12 sm:size-14 md:size-16  relative rounded-md pointer-events-auto group'>
                         <span class="bg-black dark:bg-white absolute inset-0 rounded-lg group-active:scale-90"></span>
                         <button class='inset-shadow shadow-xl bg-slate-400  text-xl font-semibold dark:bg-slate-900 rounded-md cursor-pointer z-2 absolute inset-1.5 -translate-y-2 active:translate-y-0 transition-all duration-100 pointer-events-auto' onclick={()=>{text='';textarea?.focus()}}>
                             c
                         </button>
                     </div>
-                    <div out:fade in:fade={{delay: 1000}} class='size-12 sm:size-14 md:size-16  relative rounded-md pointer-events-auto group'>
+                    <div class='size-12 sm:size-14 md:size-16  relative rounded-md pointer-events-auto group'>
                         <span class="bg-black dark:bg-white absolute inset-0 rounded-lg group-active:scale-90"></span>
                         <button class='inset-shadow shadow-xl bg-slate-400  text-xl font-semibold dark:bg-slate-900 rounded-md cursor-pointer z-2 absolute inset-1.5 -translate-y-2 active:translate-y-0 transition-all duration-100 pointer-events-auto flex items-center justify-center'  onclick={back}>
                             <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="currentColor"  class="size-6 icon icon-tabler icons-tabler-filled icon-tabler-backspace">
@@ -138,7 +138,7 @@
         
         <div class='grid gap-3 grid-cols-5 md:grid-cols-6'>
         {#each keyboards as k (k)}
-        <div out:fade in:fade={{delay: 1000}} class='size-14 sm:size-16 md:size-20 relative rounded-md pointer-events-auto group'>
+        <div class='size-14 sm:size-16 md:size-20 relative rounded-md pointer-events-auto group'>
         <span class="bg-black dark:bg-white absolute inset-0 rounded-lg group-active:scale-90"></span>
         <button class='inset-shadow shadow-xl bg-slate-600 text-white text-xl font-semibold dark:bg-slate-900 rounded-md cursor-pointer z-2 absolute inset-1.5 -translate-y-2 active:translate-y-0 transition-all duration-100 pointer-events-auto' onclick={()=>{inputToTextarea(k)}}>
             {k}
