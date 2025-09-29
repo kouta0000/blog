@@ -26,7 +26,7 @@
 
 
     const inputToTextarea = (input:string) => {
-        if(textarea && textarea.selectionStart) {
+        if(textarea) {
             const index = textarea.selectionStart;
             text = text.slice(0,index) + input + text.slice(index);
             textarea.focus();
@@ -36,7 +36,7 @@
         text += input;
     }
     const back = ()=>{
-        if(textarea && textarea.selectionStart) {
+        if(textarea) {
             const index = textarea.selectionStart;
             text = text.slice(0,text.length-1);
             textarea.focus();
@@ -48,7 +48,7 @@
 
     }
     const addkakko = (input:string)=>{
-        if(textarea && textarea.selectionStart) {
+        if(textarea) {
             const index = textarea.selectionStart;
             text = input[0]+text+input[1];
             textarea.focus();
@@ -68,6 +68,7 @@
       console.error("Copy failed", err);
       alert("コピーに失敗しました");
     }
+    textarea?.focus()
   }
 </script>
 <h1>IPA入力機</h1>
