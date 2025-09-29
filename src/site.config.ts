@@ -41,6 +41,10 @@ export const menuLinks: { path: string; title: string }[] = [
 		title: "メモ",
 	},
 	{
+		path: '/utils/',
+		title: '道具箱'
+	},
+	{
 		path: "/contact",
 		title: "お問い合わせ"
 	}

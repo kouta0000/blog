@@ -1,0 +1,13 @@
+---
+import Keyboard from '@/components/Keyboard.svelte';
+import PageLayout from '@/layouts/Base.astro';
+const meta = {
+    description: '道具箱',
+    title: '道具箱'
+}
+---
+<PageLayout meta={meta}>
+
+<Keyboard client:only/>
+
+</PageLayout>
