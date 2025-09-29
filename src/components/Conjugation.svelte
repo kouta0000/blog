@@ -107,7 +107,7 @@
       </div>
 
 
-
+<div class="w-full h-10 overflow-hidden">
       <div class="bg-white rounded-xl my-6  absolute left-[9999px] w-[1684px] h-[1190px]" bind:this={table}>
         <table class="table ">
           <!-- head -->
@@ -139,6 +139,6 @@
         </table>
       </div>
 
-
+</div>
       
   
