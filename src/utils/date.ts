@@ -11,7 +11,7 @@ export function getFormattedDate(
 	const today = new Date();
 	const jstDate = new Date(today.getTime() + 9 * 60 * 60 * 1000);
 
-	if(date.getFullYear() === jstDate.getFullYear() && jstDate.getMonth() === jstDate.getMonth() && (jstDate.getDate() - date.getDate()) <= 7) {
+	if(date.getFullYear() === jstDate.getFullYear() && date.getMonth() === jstDate.getMonth() && (jstDate.getDate() - date.getDate()) <= 7) {
 		const days = jstDate.getDate() - date.getDate();
 		return days === 0 ? '今日': days.toString() + '日前';
 	}
