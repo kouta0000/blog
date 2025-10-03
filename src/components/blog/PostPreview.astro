@@ -16,7 +16,7 @@ const icons: { [key: string]: string } = {
 const { as: Tag = "div", post, withDesc = false, progress } = Astro.props;
 const today = new Date();
 const jstDate = new Date(today.getTime() + 9 * 60 * 60 * 1000);
-const isNew = (jstDate.getDate() - post.data.publishDate.getDate()) <= 7;
+const isNew = post.date.getFullYear() === jstDate.getFullYear() && post.date.getMonth() === jstDate.getMonth() && (jstDate.getDate() - post.date.getDate()) <= 7;
 ---
 
 <div class={withDesc ? "flex flex-col transition-all duration-1000 opacity-0 translate-y-10 intersect:translate-y-0  intersect:opacity-100 intersect-once" : "flex flex-col grow  transition-all duration-700 opacity-0 translate-x-4 translate-y-6 intersect:translate-x-0 intersect:translate-y-0  intersect:opacity-100 intersect-once"}>
