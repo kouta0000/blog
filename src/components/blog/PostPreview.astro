@@ -4,6 +4,7 @@ import FormattedDate from "@/components/FormattedDate.astro";
 import type { HTMLTag, Polymorphic } from "astro/types";
 import { Icon } from "astro-icon/components";
 import Badge from "../Badge.astro";
+import { render } from "astro:content";
 type Props<Tag extends HTMLTag = 'div'> = Polymorphic<{ as: Tag }> & {
 	post: CollectionEntry<"post">;
 	withDesc?: boolean;
@@ -17,9 +18,10 @@ const { as: Tag = "div", post, withDesc = false, progress } = Astro.props;
 const today = new Date();
 const jstDate = new Date(today.getTime() + 9 * 60 * 60 * 1000);
 const isNew = post.data.publishDate.getFullYear() === jstDate.getFullYear() && post.data.publishDate.getMonth() === jstDate.getMonth() && (jstDate.getDate() - post.data.publishDate.getDate()) <= 7;
+const { Content } = await render(post)
 ---
 
-<div class={withDesc ? "flex flex-col transition-all duration-1000 opacity-0 translate-y-10 intersect:translate-y-0  intersect:opacity-100 intersect-once" : "flex flex-col grow  transition-all duration-700 opacity-0 translate-x-4 translate-y-6 intersect:translate-x-0 intersect:translate-y-0  intersect:opacity-100 intersect-once"}>
+<div class={withDesc ? "flex flex-col" : "flex flex-col grow"}>
 	{!withDesc ? (
 		<>
 			<div class="flex items-center gap-2">
@@ -42,16 +44,16 @@ const isNew = post.data.publishDate.getFullYear() === jstDate.getFullYear() && p
 						<span class="rounded-full border border-teal-400 text-teal-400 bg-teal-200/10 px-2 py-0.5 text-xs">Updated</span>
 						)}
 				</div>
-			<Tag class="citrus-link font-bold  text-lg py-4 pl-10 md:line-clamp-1 md:pl-16 md:py-8 md:text-xl">
+			<Tag class="citrus-link text-md py-4  md:line-clamp-1 md:pl-16 md:py-8 md:text-xl font-semibold">
 				<a data-astro-prefetch href={`/posts/${post.id}/`} class="inline-flex items-center gap-6">
-					
-						
-					
 					{post.data.draft && <span class="text-red-500">(Draft) </span>}
 					{post.data.title}
 				</a>
-				
 			</Tag>
+			<div class="prose mt-1 mb-4 text-light relative  hover:text-blue-500/80">
+				<a data-astro-prefetch href={`/posts/${post.id}/`} class="absolute inset-0 z-10"></a>
+			{post.body?.slice(0,200)}
+			</div>
 		</>
 	) : (
 		<>
@@ -76,14 +78,18 @@ const isNew = post.data.publishDate.getFullYear() === jstDate.getFullYear() && p
 						<span class="rounded-full border border-teal-500 text-teal-500 bg-teal-200/10 px-2 py-0.5 text-xs">Updated</span>
 						)}
 				</div>
-			<Tag class="citrus-link mt-4 mb-1 pl-3 text-xl  font-bold ">
+			<Tag class="citrus-link mt-4 mb-1 pl-3 text-md">
 				<a data-astro-prefetch href={`/posts/${post.id}/`} class="inline-flex items-center gap-6">
 					<Icon name={post.data.icon && post.data.icon.length !== 0 ? `twemoji:${icons[post.data.icon as string]}`:"mdi:note"} class="size-6 opacity-70" />
-					{post.data.title}
+					{post.data.title +'　　'+post.data.description}
 				</a>
 				
 			</Tag>
-			<p class="mt-0.5 line-clamp-2 pl-5">{post.data.description}</p>
+			<p class="my-1 line-clamp-2 pl-5"></p>
+			<div class="prose mb-1 relative text-light hover:text-blue-500/80">
+				<a data-astro-prefetch href={`/posts/${post.id}/`} class="absolute inset-0 z-10"></a>
+			{post.body?.slice(0,200)}
+			</div>
 			<div class="py-4 flex px-5 flex gap-3 flex-wrap">
 				{
 					post.data.tags?.length ? (
