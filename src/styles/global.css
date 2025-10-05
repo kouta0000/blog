@@ -234,6 +234,7 @@
 		letter-spacing: 0.075em;
 		font-size: 15.5px;
 		color: var(--theme-text);
+		text-align: justify;
 		
 	}
 
