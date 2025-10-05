@@ -219,7 +219,7 @@ export default {
             /* Admonitions/Aside */
             ".aside": {
               "--admonition-color": "var(--tw-prose-quotes)",
-              "@apply mb-16 mt-8 py-4 px-8 border-s-[0.625rem] rounded-lg border-[--admonition-color]":
+              "@apply mb-16 mt-8  py-2 px-4 border-s-[0.625rem] rounded-lg border-[--admonition-color]":
                 "",
               ".aside-title": {
                 "@apply font-bold text-base flex items-center gap-2 my-0 capitalize text-[--admonition-color]":
@@ -236,6 +236,7 @@ export default {
                 "> :last-child": {
                   "@apply mb-0": "",
                 },
+                "@apply text-sm": "",
               },
             },
             ".aside.aside-note": {
