@@ -85,7 +85,7 @@
 		/*** ОСНОВНЫЕ ЦВЕТА (Базовый, фон, акценты, текст) ***/
 		/* Базовый цвет-оттенок темы */
 		--hue: 235;            /* ベースの色相（数値） */
-		--saturation: 40%;
+		--saturation: 10%;
 		
 		--hue-deg: calc(var(--hue) * 1deg);
 		--accent-hue-deg: calc(var(--hue-deg) + 230deg);
@@ -232,7 +232,7 @@
 
 	html {
 		letter-spacing: 0.075em;
-		font-size: 16px;
+		font-size: 15.5px;
 		color: var(--theme-text);
 		
 	}
