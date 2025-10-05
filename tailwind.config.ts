@@ -158,7 +158,7 @@ export default {
               "@apply border-t border-solid border-color-200": "",
             },
             strong: {
-              fontWeight: "700",
+              fontWeight: "600",
             },
             sup: {
               "&:hover": {
