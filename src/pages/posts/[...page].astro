@@ -60,16 +60,16 @@ const descYearKeys = Object.keys(groupedByYear).sort((a, b) => +b - +a);
 			<Icon aria-hidden="true" class="h-6 w-6" focusable="false" name="mdi:rss" />
 		</a>
 	</h1>
-	<div class="grid gap-y-8 sm:grid-cols-[1fr_auto] sm:gap-x-8">
-		<section aria-label="Blog post list" class="grow">
+	<div class="">
+		<section aria-label="Blog post list" class="">
 			{
 				descYearKeys.map((yearKey) => (
 					<>
 						<h4 class="title">{yearKey}</h4>
 						<ul class="mb-8 mt-4 space-y-4 text-start">
 							{groupedByYear[yearKey]?.map((p) => (
-								<li class="grid gap-1 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
-									<PostPreview post={p} withDesc={true} />
+								<li class="">
+									<PostPreview post={p}/>
 								</li>
 								<hr class="h-4 w-full bg-bgColor"/>
 

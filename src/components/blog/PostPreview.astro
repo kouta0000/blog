@@ -18,10 +18,10 @@ const { as: Tag = "div", post, withDesc = false, progress } = Astro.props;
 const today = new Date();
 const jstDate = new Date(today.getTime() + 9 * 60 * 60 * 1000);
 const isNew = post.data.publishDate.getFullYear() === jstDate.getFullYear() && post.data.publishDate.getMonth() === jstDate.getMonth() && (jstDate.getDate() - post.data.publishDate.getDate()) <= 7;
-const { Content } = await render(post)
+const {Content} = await render(post);
 ---
 
-<div class={withDesc ? "flex flex-col" : "flex flex-col grow"}>
+<div class={withDesc ? "flex flex-col w-full" : "w-full flex flex-col"}>
 	{!withDesc ? (
 		<>
 			<div class="flex items-center gap-2">
@@ -43,16 +43,21 @@ const { Content } = await render(post)
 					{post.data.updatedDate && (
 						<span class="rounded-full border border-teal-400 text-teal-400 bg-teal-200/10 px-2 py-0.5 text-xs">Updated</span>
 						)}
-				</div>
-			<Tag class="citrus-link text-md py-4  md:line-clamp-1 md:pl-16 md:py-8 md:text-xl font-semibold">
+			</div>
+			<Tag class="citrus-link text-md mt-4 border-l-4 border-accent-base/40 pl-4 md:line-clamp-1 md:pl-16 md:text-lg font-semibold">
 				<a data-astro-prefetch href={`/posts/${post.id}/`} class="inline-flex items-center gap-6">
 					{post.data.draft && <span class="text-red-500">(Draft) </span>}
 					{post.data.title}
 				</a>
 			</Tag>
-			<div class="prose mt-1 mb-4 text-light relative  hover:text-blue-500/80">
-				<a data-astro-prefetch href={`/posts/${post.id}/`} class="absolute inset-0 z-10"></a>
-			{post.body?.slice(0,200)}
+			<div class="prose prose-headings:font-normal prose-strong:font-normal group flex flex-col items-center relative">
+				<a data-astro-prefetch href={`/posts/${post.id}/`} class="absolute inset-0 z-20"></a>
+				<div class="font-normal mt-1 mb-4 text-light relative prose-citrus line-clamp-6  max-w-full overflow-hidden">
+					
+					<Content />......
+				</div>
+			
+				<Icon name="mdi:chevron-right" class="group-hover:text-blue-400 group-hover:scale-120 self-end mb-5"/>
 			</div>
 		</>
 	) : (
@@ -77,36 +82,20 @@ const { Content } = await render(post)
 					{post.data.updatedDate && (
 						<span class="rounded-full border border-teal-500 text-teal-500 bg-teal-200/10 px-2 py-0.5 text-xs">Updated</span>
 						)}
+						<div class="flex px-5 flex gap-3 flex-wrap">
+				
+			</div>
 				</div>
-			<Tag class="citrus-link mt-4 mb-1 pl-3 text-md">
+				
+			<Tag class="citrus-link mt-4 mb-1 pl-3 text-md ">
 				<a data-astro-prefetch href={`/posts/${post.id}/`} class="inline-flex items-center gap-6">
-					<Icon name={post.data.icon && post.data.icon.length !== 0 ? `twemoji:${icons[post.data.icon as string]}`:"mdi:note"} class="size-6 opacity-70" />
+					<Icon name={post.data.icon && post.data.icon.length !== 0 ? `twemoji:${icons[post.data.icon as string]}`:"mdi:note"} class="size-6 opacity-70 text-accent-two" />
 					{post.data.title +'　　'+post.data.description}
 				</a>
 				
 			</Tag>
-			<p class="my-1 line-clamp-2 pl-5"></p>
-			<div class="prose mb-1 relative text-light hover:text-blue-500/80">
-				<a data-astro-prefetch href={`/posts/${post.id}/`} class="absolute inset-0 z-10"></a>
-			{post.body?.slice(0,200)}
-			</div>
-			<div class="py-4 flex px-5 flex gap-3 flex-wrap">
-				{
-					post.data.tags?.length ? (
-						
-						<>
-						{post.data.tags.map((tag) => (
-							<a aria-label={`View all posts with the tag: ${tag}`} href={`/tags/${tag}`} class="opacity-70 whitespace-nowrap">
-								<Badge variant="outline"  title={tag} />
-							</a>
-						))}
-						</>
-						) : (
-							<Icon aria-hidden="true" class="flex-shrink-0 inline-block h-5 w-5 text-lightest" focusable="false" name="mingcute:hashtag-fill" />
-							<span class="text-sm text-lightest">No tags</span>
-							)
-						}
-			</div>
+			
+			
 		</>
 	)}
 </div>
