@@ -104,7 +104,7 @@ export default {
         jp: [
           "Roboto",
           "Inter", 
-          "Open Sans",
+          "Noto Sans",
           "Noto Sans JP",
           "游ゴシック体",
           "YuGothic",
@@ -179,7 +179,7 @@ export default {
             },
            
             table: {
-              "@apply overflow-hidden rounded-lg my-8 px-4": "",
+              "@apply overflow-hidden rounded-lg my-8 px-4 text-sm": "",
             },
             "tbody tr": {
               borderBottomWidth: "none",
