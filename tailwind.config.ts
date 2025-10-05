@@ -123,6 +123,9 @@ export default {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            p: {
+              "@apply leading-[31px] md:leading-[40px]":'',
+            },
             a: {
               "@apply citrus-link": "",
             },
