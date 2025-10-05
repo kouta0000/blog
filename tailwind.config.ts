@@ -148,7 +148,9 @@ export default {
             pre: {
               "@apply relative py-1.5": "",
             },
-
+            h2: {
+              "@apply border-l-8 pl-4 flex items-center": "",
+            },
             code: {
               "@apply px-2 py-1 text-sm rounded-lg bg-color-150": "",
             },
@@ -177,7 +179,7 @@ export default {
             },
            
             table: {
-              "@apply overflow-hidden rounded-lg": "",
+              "@apply overflow-hidden rounded-lg my-8 px-4": "",
             },
             "tbody tr": {
               borderBottomWidth: "none",
@@ -195,7 +197,7 @@ export default {
               "@apply items-center min-h-8": "",
             },
             "td, th": {
-              "@apply px-4 py-1": "", // Паддинг для всех ячеек таблицы
+              "@apply px-4 py-2": "", // Паддинг для всех ячеек таблицы
             },
             'th[align="center"], td[align="center"]': {
               "text-align": "center",
@@ -217,7 +219,7 @@ export default {
             /* Admonitions/Aside */
             ".aside": {
               "--admonition-color": "var(--tw-prose-quotes)",
-              "@apply my-4 p-4 border-s-[0.625rem] rounded-lg border-[--admonition-color]":
+              "@apply mb-16 mt-8 py-4 px-8 border-s-[0.625rem] rounded-lg border-[--admonition-color]":
                 "",
               ".aside-title": {
                 "@apply font-bold text-base flex items-center gap-2 my-0 capitalize text-[--admonition-color]":
@@ -237,7 +239,7 @@ export default {
               },
             },
             ".aside.aside-note": {
-              "--admonition-color": theme("colors.blue.400"),
+              "--admonition-color": theme("colors.blue.800"),
               "@apply bg-blue-400/10": "",
               ".aside-title": {
                 "&:before": {
@@ -246,7 +248,7 @@ export default {
               },
             },
             ".aside.aside-tip": {
-              "--admonition-color": theme("colors.lime.500"),
+              "--admonition-color": theme("colors.lime.800"),
               "@apply bg-lime-500/10": "",
               ".aside-title": {
                 "&:before": {
@@ -255,7 +257,7 @@ export default {
               },
             },
             ".aside.aside-important": {
-              "--admonition-color": theme("colors.purple.400"),
+              "--admonition-color": theme("colors.purple.800"),
               "@apply bg-purple-400/10": "",
               ".aside-title": {
                 "&:before": {
@@ -264,7 +266,7 @@ export default {
               },
             },
             ".aside.aside-warning": {
-              "--admonition-color": theme("colors.orange.400"),
+              "--admonition-color": theme("colors.orange.800"),
               "@apply bg-orange-400/10": "",
               ".aside-title": {
                 "&:before": {
@@ -273,7 +275,7 @@ export default {
               },
             },
             ".aside.aside-caution": {
-              "--admonition-color": theme("colors.red.500"),
+              "--admonition-color": theme("colors.red.800"),
               "@apply bg-red-500/10": "",
               ".aside-title": {
                 "&:before": {
