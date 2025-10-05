@@ -124,7 +124,7 @@ export default {
         DEFAULT: {
           css: {
             p: {
-              "@apply leading-[33px] md:leading-[42px]":'',
+              "@apply leading-[32px] md:leading-[40px] py-1.5":'',
             },
             a: {
               "@apply citrus-link": "",

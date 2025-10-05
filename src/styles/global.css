@@ -231,8 +231,8 @@
 	}
 
 	html {
-		letter-spacing: 0.075em;
-		font-size: 15.5px;
+		letter-spacing: 1.2px;
+		font-size: 15px;
 		color: var(--theme-text);
 		text-align: justify;
 		
